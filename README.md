@@ -3,7 +3,18 @@
 Python backend developer from Ukraine. I build Django and DRF backends,
 take them to production and keep them running after launch.
 
-Currently building **Vartovyi**, an uptime monitoring service, to learn FastAPI and async Python.
+### What I work on
+
+- Production backends for an EdTech company: an LMS platform with a React frontend
+  and Firebase authentication, and an internal admin system with role-based access
+  and automated PostgreSQL backups (code is private)
+- Both are covered with tests and deployed with Docker on a VPS
+- Building **Vartovyi**, an uptime monitoring service, to learn FastAPI and async Python
+
+### How I work
+
+Tests are part of every feature, not an afterthought. I record architecture
+decisions in ADRs and write setup guides, so a project can be picked up by someone else.
 
 ### Stack
 
@@ -20,9 +31,12 @@ Currently building **Vartovyi**, an uptime monitoring service, to learn FastAPI 
 
 ### Projects
 
-**[VyshyvankaDaily](https://github.com/ZamotVlad/VyshyvankaDaily)**
-A daily Ukrainian embroidery ornament for each of the 27 regions, drawn by a deterministic SVG generator.
-Django, django-modeltranslation, Pytest.
+- **[VyshyvankaDaily](https://github.com/ZamotVlad/VyshyvankaDaily)** - a daily Ukrainian
+  embroidery ornament for each of the 27 regions, drawn by a deterministic SVG generator.
+  Multilingual, security-scanned with OWASP ZAP. Django, django-modeltranslation, Pytest
+- **[DevScout](https://github.com/ZamotVlad/DevScout)** - collects Python job listings
+  from DOU and Djinni on a schedule and serves them through a Django admin and a Telegram bot.
+  Django, DRF, Celery Beat, Redis, PostgreSQL, Docker, GitHub Actions
 
 ### Contact
 
