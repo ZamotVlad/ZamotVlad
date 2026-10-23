@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vladyslav Zamotailo, Python backend-розробник</title>
-<meta name="description" content="Python backend-розробник з України. Django, DRF, PostgreSQL, Celery. Продакшн-бекенди для LMS і адмін-систем.">
+<meta name="description" content="Python backend-розробник з України. Django, DRF, FastAPI, PostgreSQL, Celery. Продакшн-бекенди для LMS і адмін-систем.">
 <meta name="author" content="Vladyslav Zamotailo">
 <meta name="theme-color" content="#1d1a17">
 <link rel="canonical" href="https://zamotvlad.github.io/ZamotVlad/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Vladyslav Zamotailo, Python backend developer">
-<meta property="og:description" content="Django, DRF, PostgreSQL, Celery. Production backends for an LMS and admin systems.">
+<meta property="og:description" content="Django, DRF, FastAPI, PostgreSQL, Celery. Production backends for an LMS and admin systems.">
 <meta property="og:url" content="https://zamotvlad.github.io/ZamotVlad/">
 <meta property="og:image" content="https://zamotvlad.github.io/ZamotVlad/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -42,7 +42,7 @@
   "image": "https://zamotvlad.github.io/ZamotVlad/assets/img/photo.webp",
   "url": "https://zamotvlad.github.io/ZamotVlad/",
   "sameAs": ["https://github.com/ZamotVlad", "https://www.linkedin.com/in/vladyslav-zamotailo/", "https://t.me/zamotvlad"],
-  "knowsAbout": ["Python", "Django", "Django REST Framework", "PostgreSQL", "Celery", "Redis", "Docker"]
+  "knowsAbout": ["Python", "Django", "Django REST Framework", "FastAPI", "PostgreSQL", "Celery", "Redis", "Docker"]
 }
 </script>
 </head>
@@ -61,7 +61,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#experience" data-i18n="nav.exp">Досвід</a>
-      <a href="#incidents" data-i18n="nav.inc">Інциденти</a>
+      <a href="#incidents" data-i18n="nav.inc">Прод</a>
       <a href="#projects" data-i18n="nav.proj">Проекти</a>
       <a href="#skills" data-i18n="nav.skills">Навички</a>
       <a href="#contact" data-i18n="nav.contact">Контакт</a>
@@ -83,14 +83,17 @@
 <main id="main">
   <!-- hero -->
   <section class="hero" aria-labelledby="name">
+    <canvas class="sky" id="sky" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="who">
         <div class="who-top">
           <div class="avatar">
             <img src="assets/img/photo.webp" srcset="assets/img/photo.webp 1x, assets/img/photo@2x.webp 2x" width="112" height="112" alt="Vladyslav Zamotailo">
-            <svg viewBox="0 0 132 132" aria-hidden="true">
-              <circle cx="66" cy="66" r="64" fill="none" stroke="currentColor" stroke-opacity=".28" stroke-dasharray="2 6"/>
-              <g class="orbit"><circle cx="66" cy="2" r="3.5" fill="currentColor"/></g>
+            <svg viewBox="0 0 160 160" aria-hidden="true">
+              <circle cx="80" cy="80" r="66" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="2 6"/>
+              <circle cx="80" cy="80" r="77" fill="none" stroke="currentColor" stroke-opacity=".14"/>
+              <g class="orbit orbit-a"><circle cx="80" cy="14" r="4" fill="currentColor"/></g>
+              <g class="orbit orbit-b"><circle cx="80" cy="3" r="2.2" class="moon"/></g>
             </svg>
           </div>
           <div>
@@ -120,6 +123,7 @@
           <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="itleo" type="button">ITLEO admin</button>
           <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="vysh" type="button">VyshyvankaDaily</button>
           <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="devscout" type="button">DevScout</button>
+          <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="vartovyi" type="button">Vartovyi</button>
         </div>
         <div class="ex-stage">
           <div class="ex-head"><span>vlad.stack / <b id="ex-path">leogame-lms</b></span><span data-i18n="ex.drag">потягни вузол</span></div>
@@ -127,7 +131,14 @@
           <div class="ex-tip" id="ex-tip" hidden></div>
         </div>
         <p class="ex-caption" id="ex-caption" aria-live="polite"></p>
-        <ol class="ex-log" id="ex-log" aria-hidden="true"></ol>
+        <div class="term">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>mission-control — tail -f /var/log/prod</span></div>
+          <ol class="ex-log" id="ex-log" aria-live="off"></ol>
+          <form class="term-input" id="term-form" autocomplete="off">
+            <label for="term" class="prompt">vlad@prod:~$</label>
+            <input id="term" type="text" spellcheck="false" autocapitalize="off" data-i18n-ph="term.ph" placeholder="введи help">
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -148,15 +159,16 @@
           <div class="job-when"><span data-i18n="job1.when">Січ 2025 — зараз</span><span class="dur" id="job1-dur"></span></div>
           <div class="job-body">
             <h3>Python Backend Developer <small>ITLEO Academy</small></h3>
-            <p class="job-stack">Python · Django · DRF · PostgreSQL · Celery · Redis · aiogram · Firebase · Docker · Pytest</p>
+            <p class="job-stack">Python · Django · DRF · PostgreSQL · Celery · Redis · aiogram · Firebase · Docker · Pytest · Ruff · GitHub Actions</p>
 
-            <details class="case hl-target" open data-name="LeoGame LMS" data-skills="Python Django DRF DjangoORM PostgreSQL Celery Redis REST aiogram Firebase OAuth GoogleCalendar Docker Pytest Git">
+            <details class="case hl-target" open data-name="LeoGame LMS" data-skills="Python Django DRF DjangoORM PostgreSQL Celery Redis asyncio REST TelegramBot Firebase OAuth GoogleCalendar Docker Pytest Ruff GitHubActions Git">
               <summary>
                 <div><h4 data-i18n="case1.title">LeoGame Academy, LMS-платформа</h4><p data-i18n="case1.sub">Бекенд навчальної платформи з React-фронтендом</p></div>
                 <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
               </summary>
               <div class="case-body">
                 <ul>
+                  <li data-i18n="case1.b0">Кабінет студента: курси, уроки й матеріали, здача домашніх завдань, оцінки, прогрес і розклад занять</li>
                   <li data-i18n="case1.b1">Бекенд LMS: групи, зарахування, уроки, перевірка домашніх завдань, оцінки за іспити і прогрес студентів</li>
                   <li data-i18n="case1.b2">REST API для React-фронтенду з автентифікацією через Firebase</li>
                   <li data-i18n="case1.b3">Два Telegram-боти на aiogram: публічний для запису на демо-урок і внутрішній зі сповіщеннями про нові заявки. Обидва передають дані в адмінку</li>
@@ -170,7 +182,7 @@
               </div>
             </details>
 
-            <details class="case hl-target" data-name="ITLEO admin" data-skills="Python Django DjangoORM PostgreSQL Docker DockerCompose Gunicorn Linux Pytest Git">
+            <details class="case hl-target" data-name="ITLEO admin" data-skills="Python Django DjangoORM PostgreSQL Docker DockerCompose Gunicorn Linux Pytest Ruff GitHubActions Git">
               <summary>
                 <div><h4 data-i18n="case2.title">ITLEO Academy, адмін-система</h4><p data-i18n="case2.sub">Внутрішня система з ролями, бекапами і моїм деплоєм</p></div>
                 <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
@@ -180,7 +192,7 @@
                   <li data-i18n="case2.b1">Доступ для 5 ролей за принципом «заборонено все, що явно не дозволено»</li>
                   <li data-i18n="case2.b2">Автоматичні бекапи PostgreSQL з перевіркою, що з них можна відновитись</li>
                   <li data-i18n="case2.b3">Деплой і підтримка на VPS: Docker Compose, Gunicorn, SSL</li>
-                  <li data-i18n-html="case2.b4">Знайшов і виправив дві проблеми в проді. Розбори є в розділі <a href="#incidents">Інциденти</a></li>
+                  <li data-i18n-html="case2.b4">Знайшов і виправив дві проблеми в проді. Розбори є нижче, у розділі <a href="#incidents">«Проблеми в проді»</a></li>
                 </ul>
                 <div class="metrics">
                   <span class="metric"><b>300+</b><span data-i18n="m.tests">автотестів</span></span>
@@ -196,33 +208,33 @@
           <div class="job-when"><span data-i18n="job2.when">Лип 2024 — гру 2024</span><span class="dur" data-i18n="job2.dur">6 міс.</span></div>
           <div class="job-body">
             <h3><span data-i18n="job2.title">Стажування, Python Backend</span> <small>ITLEO Academy</small></h3>
-            <p class="sec-note" data-i18n="job2.text">Стажування з backend-розробки на Python і Django. Після нього продовжив у компанії як розробник.</p>
+            <p class="sec-note" data-i18n="job2.text">Стажування з backend-розробки на Python і Django. Після нього я лишився в компанії розробником.</p>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- incidents -->
+  <!-- production problems -->
   <section class="section" id="incidents" aria-labelledby="inc-title">
     <div class="wrap">
       <div class="sec-head rv">
         <div>
           <span class="eyebrow">GET /incidents <b>200</b></span>
-          <h2 id="inc-title" data-i18n="inc.title">Інциденти, які я закрив</h2>
+          <h2 id="inc-title" data-i18n="inc.title">Проблеми в проді, які я розв'язав</h2>
         </div>
         <div class="slider-ctl">
-          <button class="round" id="inc-prev" type="button" data-i18n-aria="prev" aria-label="Попередній">
+          <button class="round" id="inc-prev" type="button" data-i18n-aria="prev" aria-label="Попередня">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
           </button>
-          <button class="round" id="inc-next" type="button" data-i18n-aria="next" aria-label="Наступний">
+          <button class="round" id="inc-next" type="button" data-i18n-aria="next" aria-label="Наступна">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
         </div>
       </div>
-      <p class="sec-note rv" data-i18n="inc.note" style="margin:-16px 0 28px">Короткі розбори у форматі постмортему: що зламалось, чому і що я зробив.</p>
+      <p class="sec-note rv inc-note" data-i18n="inc.note">Короткі розбори: що зламалось, чому і як я це виправив.</p>
 
-      <div class="track" id="inc-track" tabindex="0" aria-label="Incidents">
+      <div class="track" id="inc-track" tabindex="0" data-i18n-aria="inc.title" aria-label="Проблеми в проді">
         <article class="inc">
           <div class="inc-top"><span>ITLEO admin · prod</span><span class="sev">403 CSRF</span></div>
           <h3 data-i18n="inc1.title">Форми в адмінці падали з помилкою CSRF</h3>
@@ -238,41 +250,23 @@
           <dl>
             <div><dt data-i18n="inc.sym">Симптом</dt><dd data-i18n="inc2.sym">Автоматичне продовження сертифіката завершувалось помилкою.</dd></div>
             <div><dt data-i18n="inc.cause">Причина</dt><dd data-i18n="inc2.cause">ACME challenge маршрутизувався не туди, тому перевірка домену не проходила.</dd></div>
-            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc2.fix">Виправив маршрут для ACME challenge. Сертифікат знову продовжується сам.</dd></div>
+            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc2.fix">Виправив маршрут для ACME challenge. Сертифікат знову продовжується автоматично.</dd></div>
           </dl>
         </article>
         <article class="inc">
-          <div class="inc-top"><span>VyshyvankaDaily</span><span class="sev">race condition</span></div>
-          <h3 data-i18n="inc3.title">Гонка під час щоденної генерації</h3>
+          <div class="inc-top"><span>VyshyvankaDaily · prod</span><span class="sev">race condition</span></div>
+          <h3 data-i18n="inc3.title">Гонка в щоденній генерації орнаментів</h3>
           <dl>
             <div><dt data-i18n="inc.sym">Симптом</dt><dd data-i18n="inc3.sym">Паралельні запити на початку дня могли одночасно запустити генерацію орнаменту.</dd></div>
-            <div><dt data-i18n="inc.cause">Причина</dt><dd data-i18n="inc3.cause">Перевірка, чи орнамент уже є, і його створення не були атомарними.</dd></div>
-            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc3.fix">Прибрав гонку: тепер орнамент на день створюється рівно один раз.</dd></div>
-          </dl>
-        </article>
-        <article class="inc">
-          <div class="inc-top"><span>VyshyvankaDaily</span><span class="sev">31 KB → 7 KB</span></div>
-          <h3 data-i18n="inc4.title">Шлях до PageSpeed 100</h3>
-          <dl>
-            <div><dt data-i18n="inc.sym">Симптом</dt><dd data-i18n="inc4.sym">Сторінки вантажили зайві стилі.</dd></div>
-            <div><dt data-i18n="inc.cause">Причина</dt><dd data-i18n="inc4.cause">CSS важив 31 KB, і більша частина не використовувалась.</dd></div>
-            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc4.fix">Скоротив CSS до 7 KB. PageSpeed 100 у всіх чотирьох категоріях.</dd></div>
-          </dl>
-        </article>
-        <article class="inc">
-          <div class="inc-top"><span>VyshyvankaDaily</span><span class="sev">security</span></div>
-          <h3 data-i18n="inc5.title">Заголовки безпеки на A+</h3>
-          <dl>
-            <div><dt data-i18n="inc.sym">Симптом</dt><dd data-i18n="inc5.sym">OWASP ZAP і StackHawk знаходили зауваження до безпеки.</dd></div>
-            <div><dt data-i18n="inc.cause">Причина</dt><dd data-i18n="inc5.cause">Не вистачало суворої CSP, обмеження частоти запитів і заголовків безпеки.</dd></div>
-            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc5.fix">Додав strict CSP, rate limiting і заголовки безпеки. Оцінка A+, знахідки сканерів закриті.</dd></div>
+            <div><dt data-i18n="inc.cause">Причина</dt><dd data-i18n="inc3.cause">Перевірка, чи орнамент на сьогодні вже є, і його створення не були атомарними.</dd></div>
+            <div><dt data-i18n="inc.fix">Виправлення</dt><dd class="fix" data-i18n="inc3.fix">Прибрав гонку, і тепер орнамент на день створюється рівно один раз.</dd></div>
           </dl>
         </article>
       </div>
       <div class="scrub">
         <label class="sr-only" for="inc-range" data-i18n="scrub">Прокрутити картки</label>
-        <input type="range" id="inc-range" min="0" max="1000" value="0">
-        <output id="inc-count" for="inc-range">1 / 5</output>
+        <input type="range" id="inc-range" min="0" max="1000" value="0" step="1">
+        <output id="inc-count" for="inc-range">1 / 3</output>
       </div>
     </div>
   </section>
@@ -283,22 +277,24 @@
       <div class="sec-head rv">
         <div>
           <span class="eyebrow">GET /projects <b>200</b></span>
-          <h2 id="proj-title" data-i18n="proj.title">Проекти</h2>
+          <h2 id="proj-title" data-i18n="proj.title">Власні проекти</h2>
         </div>
-        <p class="sec-note" data-i18n="proj.note">Власні проекти. Код відкритий на GitHub.</p>
+        <p class="sec-note" data-i18n="proj.note">Те, що я будую поза роботою: від ідеї до продакшену.</p>
       </div>
 
       <div class="projects">
-        <article class="proj featured hl-target rv" data-name="VyshyvankaDaily" data-skills="Python Django DjangoORM PostgreSQL HTML CSS JavaScript GoogleOAuth OAuth Heroku GitHubActions Pytest Git">
+        <article class="proj hl-target rv" data-name="VyshyvankaDaily" data-skills="Python Django DjangoORM PostgreSQL HTML CSS JavaScript Bootstrap GoogleOAuth OAuth Brevo Sentry Heroku Gunicorn Docker DockerCompose GitHubActions Pytest Ruff PreCommit Git">
           <div class="proj-main">
             <div class="proj-top"><h3>VyshyvankaDaily</h3><span class="tag live" data-i18n="tag.live">працює</span></div>
-            <p data-i18n="vy.desc">Двомовний веб-застосунок: щодня новий орнамент для кожної з 27 областей України. Орнаменти малює детермінований SVG-генератор.</p>
+            <p data-i18n="vy.desc">Двомовний веб-застосунок: щодня новий орнамент вишивки для кожної з 27 областей України з поясненням символіки.</p>
             <ul>
-              <li data-i18n="vy.b1">Вхід через Google OAuth і підтвердження email через Brevo</li>
-              <li data-i18n="vy.b2">Sentry для помилок, CI на GitHub Actions, щоденні бекапи</li>
-              <li data-i18n="vy.b3">Strict CSP, rate limiting, знахідки OWASP ZAP і StackHawk закриті</li>
+              <li data-i18n="vy.b1">Орнаменти будуються алгоритмічно на групах симетрії (shapely, svgpathtools), без завантажених картинок. Та сама дата завжди дає той самий результат</li>
+              <li data-i18n="vy.b2">Дві мови через django-modeltranslation, вхід через Google (django-allauth), підтвердження email через Brevo</li>
+              <li data-i18n="vy.b3">Strict CSP, rate limiting, заголовки безпеки на A+, знахідки OWASP ZAP і StackHawk закриті</li>
+              <li data-i18n="vy.b4">CSS скоротив з 31 KB до 7 KB, PageSpeed 100 у всіх чотирьох категоріях</li>
+              <li data-i18n="vy.b5">Sentry, щоденні бекапи, CI з Ruff, перевіркою міграцій і 300+ тестами</li>
             </ul>
-            <div class="chips"><span>Django</span><span>PostgreSQL</span><span>Google OAuth</span><span>Brevo</span><span>Sentry</span><span>Heroku</span><span>GitHub Actions</span><span>Pytest</span></div>
+            <div class="chips"><span>Django 5.2</span><span>PostgreSQL</span><span>modeltranslation</span><span>allauth</span><span>Brevo</span><span>Bootstrap 5</span><span>Sentry</span><span>Heroku</span><span>Ruff</span><span>pre-commit</span><span>Pytest</span></div>
             <div class="links">
               <a href="https://vyshyvankadaily.live" target="_blank" rel="noopener">vyshyvankadaily.live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
               <a href="https://github.com/ZamotVlad/VyshyvankaDaily" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -312,19 +308,49 @@
           </div>
         </article>
 
-        <article class="proj hl-target rv" data-name="DevScout" data-skills="Python Django DRF DjangoORM Celery Redis PostgreSQL Docker GitHubActions REST Git">
-          <div class="proj-top"><h3>DevScout</h3><span class="tag live">open source</span></div>
-          <p data-i18n="ds.desc">Збирає вакансії Python з DOU і Djinni за розкладом і віддає їх через Django admin та Telegram-бота.</p>
-          <div class="chips"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>GitHub Actions</span></div>
-          <div class="links">
-            <a href="https://github.com/ZamotVlad/DevScout" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <article class="proj hl-target rv" data-name="Vartovyi" data-skills="Python FastAPI asyncio Pydantic SQLAlchemy Alembic PostgreSQL Redis REST OpenAPI JWT httpx Docker DockerCompose Pytest Ruff Mypy Uv HTML CSS JavaScript ADR Docs Git">
+          <div class="proj-main">
+            <div class="proj-top"><h3>Vartovyi</h3><span class="tag" data-i18n="tag.wip">в розробці</span></div>
+            <p data-i18n="va.desc">Сервіс моніторингу доступності сайтів і API, мій аналог UptimeRobot для вивчення FastAPI і async Python. Перевіряє URL за розкладом, рахує uptime, відкриває й закриває інциденти і показує публічну сторінку статусу.</p>
+            <ul>
+              <li data-i18n="va.b1">Асинхронний рушій перевірок: TaskGroup + Semaphore, окремий asyncio.timeout() на кожну перевірку, один httpx.AsyncClient на процес</li>
+              <li data-i18n="va.b2">JWT access + refresh з ротацією, відкликання через чорний список jti у Redis, API-ключі для скриптів і CI</li>
+              <li data-i18n="va.b3">Шари api, services, repositories і domain. Домен не залежить від фреймворку і тестується без БД і мережі</li>
+              <li data-i18n="va.b4">Тест бере всі маршрути з OpenAPI-схеми і перевіряє, що кожен захищений відхиляє анонімний запит</li>
+              <li data-i18n="va.b5">Ключові рішення записані в ADR: SQLAlchemy 2.0 замість SQLModel, власна JWT-автентифікація, рушій перевірок на asyncio</li>
+            </ul>
+            <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Alembic</span><span>PostgreSQL</span><span>Redis</span><span>httpx</span><span>uv</span><span>pytest</span><span>Ruff</span><span>mypy --strict</span><span>Docker</span></div>
+            <p class="links-note" data-i18n="va.private">Код поки приватний, покажу на співбесіді.</p>
+          </div>
+          <div class="big-metrics">
+            <div><b>3</b><span data-i18n="va.m1">ADR з контекстом і наслідками</span></div>
+            <div><b>strict</b><span data-i18n="va.m2">mypy для app і tests</span></div>
+            <div><b>5 с</b><span data-i18n="va.m3">такт планувальника</span></div>
+            <div><b>24 · 7 · 30</b><span data-i18n="va.m4">uptime за години і дні</span></div>
           </div>
         </article>
 
-        <article class="proj hl-target rv" data-name="Vartovyi" data-skills="Python FastAPI asyncio Git">
-          <div class="proj-top"><h3>Vartovyi</h3><span class="tag" data-i18n="tag.wip">в роботі</span></div>
-          <p data-i18n="va.desc">Сервіс моніторингу аптайму. На ньому я вчу FastAPI та асинхронний Python.</p>
-          <div class="chips"><span>FastAPI</span><span>asyncio</span><span>Python</span></div>
+        <article class="proj hl-target rv" data-name="DevScout" data-skills="Python Django DRF DjangoORM Celery Redis PostgreSQL REST BeautifulSoup TelegramBot HTML Bootstrap Docker DockerCompose GitHubActions Pytest Git">
+          <div class="proj-main">
+            <div class="proj-top"><h3>DevScout</h3><span class="tag live">open source</span></div>
+            <p data-i18n="ds.desc">Збирає вакансії Python для початківців з DOU і Djinni, фільтрує їх і показує в дашборді та Telegram-боті.</p>
+            <ul>
+              <li data-i18n="ds.b1">Celery Beat запускає збір раз на 4–8 годин: відкритий розділ вакансій DOU і офіційна RSS-стрічка Djinni</li>
+              <li data-i18n="ds.b2">Фільтр за стоп-словами відсікає нерелевантні напрямки і вакансії рівня Middle+</li>
+              <li data-i18n="ds.b3">Нічна задача видаляє записи, старші за 30 днів</li>
+              <li data-i18n="ds.b4">Дашборд на Django і Bootstrap 5 з фільтрами, пошуком і пагінацією. Приватний Telegram-бот з whitelist за chat id</li>
+            </ul>
+            <div class="chips"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>BeautifulSoup4</span><span>pyTelegramBotAPI</span><span>Bootstrap 5</span><span>Docker Compose</span><span>GitHub Actions</span></div>
+            <div class="links">
+              <a href="https://github.com/ZamotVlad/devscout" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="big-metrics">
+            <div><b>2</b><span data-i18n="ds.m1">джерела вакансій</span></div>
+            <div><b>4–8 год</b><span data-i18n="ds.m2">інтервал збору</span></div>
+            <div><b>30 днів</b><span data-i18n="ds.m3">зберігання записів</span></div>
+            <div><b>1</b><span data-i18n="ds.m4">команда, щоб підняти весь стек у Docker</span></div>
+          </div>
         </article>
       </div>
     </div>
@@ -338,32 +364,35 @@
           <span class="eyebrow">GET /skills <b>200</b></span>
           <h2 id="skills-title" data-i18n="skills.title">Навички</h2>
         </div>
-        <p class="sec-note" data-i18n="skills.note">Натисни на навичку, і я підсвічу, де саме її використовував.</p>
+        <p class="sec-note" data-i18n="skills.note">Натисни на навичку, і я підсвічу проекти, де її використовував.</p>
       </div>
-      <div class="skills rv">
+      <div class="skills rv" id="skill-list">
         <div class="skill-group"><h3 data-i18n="g.backend">Backend</h3><div class="row">
-          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button>
+          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="FastAPI">FastAPI</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button><button class="skill" type="button" data-skill="Pydantic">Pydantic</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.data">Бази даних</h3><div class="row">
-          <button class="skill" type="button" data-skill="PostgreSQL">PostgreSQL</button><button class="skill" type="button" data-skill="Redis">Redis</button><button class="skill" type="button" data-skill="DjangoORM">Django ORM</button>
+          <button class="skill" type="button" data-skill="PostgreSQL">PostgreSQL</button><button class="skill" type="button" data-skill="Redis">Redis</button><button class="skill" type="button" data-skill="DjangoORM">Django ORM</button><button class="skill" type="button" data-skill="SQLAlchemy">SQLAlchemy 2.0</button><button class="skill" type="button" data-skill="Alembic">Alembic</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.api">API і автентифікація</h3><div class="row">
           <button class="skill" type="button" data-skill="REST">REST API</button><button class="skill" type="button" data-skill="OpenAPI">OpenAPI / Swagger</button><button class="skill" type="button" data-skill="JWT">JWT</button><button class="skill" type="button" data-skill="OAuth">OAuth 2.0</button><button class="skill" type="button" data-skill="GoogleOAuth">Google OAuth</button><button class="skill" type="button" data-skill="Firebase">Firebase Auth</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.int">Інтеграції</h3><div class="row">
-          <button class="skill" type="button" data-skill="GoogleCalendar">Google Calendar API</button><button class="skill" type="button" data-skill="aiogram">Telegram Bot API (aiogram)</button>
+          <button class="skill" type="button" data-skill="TelegramBot">Telegram Bot API</button><button class="skill" type="button" data-skill="GoogleCalendar">Google Calendar API</button><button class="skill" type="button" data-skill="Brevo">Brevo</button><button class="skill" type="button" data-skill="httpx">httpx</button><button class="skill" type="button" data-skill="BeautifulSoup">BeautifulSoup</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.devops">DevOps</h3><div class="row">
-          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button>
+          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button><button class="skill" type="button" data-skill="Sentry">Sentry</button><button class="skill" type="button" data-skill="Uv">uv</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.test">Тести і якість</h3><div class="row">
-          <button class="skill" type="button" data-skill="Pytest">Pytest</button><button class="skill" type="button" data-skill="Ruff">Ruff</button>
+          <button class="skill" type="button" data-skill="Pytest">Pytest</button><button class="skill" type="button" data-skill="Ruff">Ruff</button><button class="skill" type="button" data-skill="Mypy">mypy</button><button class="skill" type="button" data-skill="PreCommit">pre-commit</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.front">Frontend</h3><div class="row">
           <button class="skill" type="button" data-skill="HTML">HTML</button><button class="skill" type="button" data-skill="CSS">CSS</button><button class="skill" type="button" data-skill="JavaScript">JavaScript</button><button class="skill" type="button" data-skill="Bootstrap">Bootstrap 5</button>
         </div></div>
-        <div class="skill-group"><h3 data-i18n="g.know">Знайомий</h3><div class="row">
-          <button class="skill" type="button" data-skill="FastAPI">FastAPI</button>
+        <div class="skill-group"><h3 data-i18n="g.ai">AI-інструменти</h3><div class="row">
+          <button class="skill" type="button" data-skill="ClaudeCode" data-note="note.claude">Claude Code</button><button class="skill" type="button" data-skill="Prompting" data-note="note.prompt">Prompt engineering</button>
+        </div></div>
+        <div class="skill-group"><h3 data-i18n="g.practice">Практики</h3><div class="row">
+          <button class="skill" type="button" data-skill="ADR">ADR</button><button class="skill" type="button" data-skill="Docs" data-i18n="s.docs">Документація і setup guides</button>
         </div></div>
       </div>
       <p class="used" id="used" aria-live="polite"><span data-i18n="used.hint">Обери навичку вище.</span></p>
@@ -423,9 +452,20 @@
 <footer class="foot">
   <div class="wrap">
     <span>© <span id="year">2026</span> Vladyslav Zamotailo</span>
-    <span data-i18n="foot.made">Статичний сайт на GitHub Pages, без фреймворків</span>
+    <button class="hood-btn" type="button" popovertarget="hood" id="hood-btn"><span data-i18n="hood.btn">Під капотом</span> <span aria-hidden="true">↗</span></button>
   </div>
 </footer>
+
+<div class="hood" id="hood" popover>
+  <h3 data-i18n="hood.title">Як зроблено цей сайт</h3>
+  <ul>
+    <li data-i18n="hood.1">Чистий HTML, CSS і JavaScript без фреймворків і збірки. Хостинг на GitHub Pages</li>
+    <li data-i18n="hood.2">Canvas 2D для схеми архітектури і зоряного неба, з фізикою пружин</li>
+    <li data-i18n="hood.3">View Transitions API для зміни теми й мови</li>
+    <li data-i18n="hood.4">CSS scroll-driven animations, container queries і @property</li>
+    <li data-i18n="hood.5">Нативні dialog і Popover API, клавіатурна навігація, prefers-reduced-motion</li>
+  </ul>
+</div>
 
 <dialog class="palette" id="palette" aria-label="Command palette">
   <label>
