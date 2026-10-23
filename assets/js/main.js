@@ -6,10 +6,15 @@
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const behavior = reduce ? "auto" : "smooth";
+  const transition = fn => (document.startViewTransition && !reduce) ? document.startViewTransition(fn) : fn();
 
   /* ---------- language ---------- */
   let lang = root.lang === "en" ? "en" : "uk";
-  const t = k => (I18N[lang] && I18N[lang][k]) || I18N.uk[k] || k;
+  const t = (k, c) => {
+    const s = (I18N[lang] && I18N[lang][k]) || I18N.uk[k] || k;
+    return c === undefined ? s : s.replace("{c}", c);
+  };
 
   function applyLang() {
     root.lang = lang;
@@ -24,7 +29,7 @@
     renderUsed();
     if (window.Explorer) Explorer.setLang(lang);
   }
-  function setLang(l) { lang = l; store.set("site-lang", l); applyLang(); }
+  function setLang(l) { lang = l; store.set("site-lang", l); transition(applyLang); }
   $("#lang-btn").addEventListener("click", () => setLang(lang === "uk" ? "en" : "uk"));
 
   function duration(from, to) {
@@ -36,12 +41,12 @@
   /* ---------- theme ---------- */
   function toggleTheme() {
     const next = root.dataset.theme === "light" ? "dark" : "light";
-    const swap = () => {
+    transition(() => {
       root.dataset.theme = next; store.set("site-theme", next);
       $('meta[name="theme-color"]').setAttribute("content", next === "light" ? "#f2ede5" : "#1d1a17");
       if (window.Explorer) Explorer.refreshColors();
-    };
-    if (document.startViewTransition && !reduce) document.startViewTransition(swap); else swap();
+      Sky.refresh();
+    });
   }
   $("#theme-btn").addEventListener("click", toggleTheme);
 
@@ -62,6 +67,7 @@
     else fallback();
   }
   $("#copy-mail").addEventListener("click", copyMail);
+  const openCv = () => window.open("assets/cv/Vladyslav_Zamotailo_Backend_Python.pdf", "_blank", "noopener");
 
   /* ---------- header: border, progress, active section ---------- */
   const top = $("#top"), bar = $("#progress");
@@ -81,8 +87,9 @@
   }, { rootMargin: "-45% 0px -50% 0px" });
   $$("main section[id]").forEach(s => spy.observe(s));
 
-  /* ---------- reveal: only things below the fold get a small slide ---------- */
-  if (!reduce && "IntersectionObserver" in window) {
+  /* ---------- reveal: CSS scroll-driven animations where supported, otherwise a small observer ---------- */
+  const scrollTimeline = CSS.supports && CSS.supports("animation-timeline: view()");
+  if (!reduce && !scrollTimeline && "IntersectionObserver" in window) {
     const rv = $$(".rv").filter(el => el.getBoundingClientRect().top > innerHeight);
     rv.forEach(el => el.classList.add("pre"));
     const io = new IntersectionObserver(es => es.forEach(e => {
@@ -91,30 +98,53 @@
     rv.forEach(el => io.observe(el));
   }
 
-  /* ---------- incidents slider: buttons, drag, range scrubber ---------- */
+  /* ---------- slider: buttons, mouse drag, range scrubber ---------- */
   const track = $("#inc-track"), range = $("#inc-range"), count = $("#inc-count");
   const prev = $("#inc-prev"), next = $("#inc-next"), cards = [...track.children];
-  const stepW = () => cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 20);
+  const gap = () => parseFloat(getComputedStyle(track).columnGap) || 20;
+  const stepW = () => cards[0].getBoundingClientRect().width + gap();
   const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
+  let scrubbing = false;
+  function paintRange(v) { range.style.setProperty("--fill", (v / 10).toFixed(1) + "%"); }
   function syncSlider() {
-    const max = maxScroll(), p = max ? track.scrollLeft / max : 0;
-    range.value = Math.round(p * 1000);
-    range.style.setProperty("--fill", (p * 100).toFixed(1) + "%");
-    const i = Math.min(cards.length, Math.round(track.scrollLeft / stepW()) + 1);
-    count.textContent = `${max - track.scrollLeft < 4 ? cards.length : i} / ${cards.length}`;
+    const max = maxScroll();
+    if (!scrubbing) {
+      const v = max ? Math.round(track.scrollLeft / max * 1000) : 0;
+      range.value = v; paintRange(v);
+    }
+    const i = max - track.scrollLeft < 4 ? cards.length : Math.min(cards.length, Math.round(track.scrollLeft / stepW()) + 1);
+    count.textContent = `${i} / ${cards.length}`;
     prev.disabled = track.scrollLeft < 4; next.disabled = track.scrollLeft > max - 4;
+    range.disabled = max < 4;
   }
-  const behavior = reduce ? "auto" : "smooth";
+  // snap points are card starts, clamped to the end of the track (the last cards may share one)
+  const snapToNearest = () => {
+    const max = maxScroll(), x = track.scrollLeft;
+    const points = cards.map((_, i) => Math.min(i * stepW(), max));
+    const left = points.reduce((a, b) => Math.abs(b - x) < Math.abs(a - x) ? b : a, 0);
+    track.scrollTo({ left, behavior });
+  };
   prev.addEventListener("click", () => track.scrollBy({ left: -stepW(), behavior }));
   next.addEventListener("click", () => track.scrollBy({ left: stepW(), behavior }));
-  range.addEventListener("input", () => { track.scrollLeft = range.value / 1000 * maxScroll(); });
+  range.addEventListener("input", () => {
+    // while the thumb moves, snapping is off so the cards follow the thumb exactly
+    if (!scrubbing) { scrubbing = true; track.classList.add("scrubbing"); }
+    paintRange(range.value);
+    track.scrollLeft = range.value / 1000 * maxScroll();
+  });
+  const endScrub = () => {
+    if (!scrubbing) return;
+    scrubbing = false; track.classList.remove("scrubbing"); syncSlider();
+  };
+  range.addEventListener("change", endScrub);
+  range.addEventListener("pointerup", endScrub);
+  range.addEventListener("blur", endScrub);
   track.addEventListener("scroll", syncSlider, { passive: true });
   addEventListener("resize", syncSlider);
   track.addEventListener("keydown", e => {
     if (e.key === "ArrowRight") { e.preventDefault(); next.click(); }
     if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
   });
-  // mouse drag (touch already scrolls natively)
   let dragX = null, startLeft = 0, moved = false;
   track.addEventListener("pointerdown", e => {
     if (e.pointerType !== "mouse" || e.button !== 0) return;
@@ -129,11 +159,7 @@
   addEventListener("pointerup", () => {
     if (dragX === null) return;
     dragX = null;
-    if (moved) {
-      track.classList.remove("dragging");
-      const i = Math.round(track.scrollLeft / stepW());
-      track.scrollTo({ left: i * stepW(), behavior });
-    }
+    if (moved) { track.classList.remove("dragging"); snapToNearest(); }
   });
   syncSlider();
 
@@ -142,15 +168,14 @@
   let activeSkill = null;
   function renderUsed() {
     used.innerHTML = "";
-    if (!activeSkill) {
-      const s = document.createElement("span"); s.textContent = t("used.hint"); used.append(s);
-      document.body.classList.remove("dim"); targets.forEach(x => x.classList.remove("hit"));
-      return;
-    }
-    const hits = targets.filter(x => x.dataset.skills.split(" ").includes(activeSkill));
+    const btn = skills.find(b => b.dataset.skill === activeSkill);
+    const hits = activeSkill ? targets.filter(x => x.dataset.skills.split(" ").includes(activeSkill)) : [];
     targets.forEach(x => x.classList.toggle("hit", hits.includes(x)));
     document.body.classList.toggle("dim", hits.length > 0);
-    if (!hits.length) { const s = document.createElement("span"); s.textContent = t("used.none"); used.append(s); return; }
+    const note = (text, cls) => { const s = document.createElement("span"); s.textContent = text; if (cls) s.className = cls; used.append(s); };
+    if (!activeSkill) return note(t("used.hint"));
+    if (btn && btn.dataset.note) return note(t(btn.dataset.note));
+    if (!hits.length) return note(t("used.none"));
     const b = document.createElement("b"); b.textContent = t("used.in"); used.append(b);
     hits.forEach((h, i) => {
       const a = document.createElement("a");
@@ -172,7 +197,110 @@
       renderUsed();
     });
   });
-  addEventListener("keydown", e => { if (e.key === "Escape" && activeSkill && !$("#palette").open) { activeSkill = null; skills.forEach(b => b.setAttribute("aria-pressed", "false")); renderUsed(); } });
+  addEventListener("keydown", e => {
+    if (e.key === "Escape" && activeSkill && !$("#palette").open) { activeSkill = null; skills.forEach(b => b.setAttribute("aria-pressed", "false")); renderUsed(); }
+  });
+
+  /* ---------- terminal under the graph ---------- */
+  const term = $("#term"), history = []; let hIdx = 0;
+  const sections = ["experience", "incidents", "projects", "skills", "education", "contact"];
+  const projectAliases = { leogame: "leogame", lms: "leogame", itleo: "itleo", admin: "itleo", vysh: "vysh", vyshyvankadaily: "vysh", devscout: "devscout", vartovyi: "vartovyi" };
+  function runCommand(raw) {
+    const [cmd, ...args] = raw.trim().split(/\s+/), arg = (args[0] || "").toLowerCase(), say = (k, c, cls) => Explorer.print(t(k, c), cls);
+    Explorer.print("$ " + raw, "cmd");
+    switch ((cmd || "").toLowerCase()) {
+      case "": return;
+      case "help": return say("t.help");
+      case "whoami": return say("t.whoami");
+      case "stack": return say("t.stack");
+      case "projects": return say("t.projects");
+      case "ls": return say("t.ls");
+      case "contact": return say("t.contact");
+      case "cv": say("t.cv"); return openCv();
+      case "theme": toggleTheme(); return say("t.theme");
+      case "lang": return setLang(lang === "uk" ? "en" : "uk");
+      case "clear": return Explorer.clear();
+      case "sudo": return say("t.sudo", null, "warn");
+      case "cd": {
+        const id = sections.find(s => s.startsWith(arg));
+        if (!arg || !id) return say("t.cdnf", arg || "?", "warn");
+        return document.getElementById(id).scrollIntoView({ behavior });
+      }
+      case "open": {
+        const key = projectAliases[arg];
+        if (!key) return say("t.opennf", arg || "?", "warn");
+        say("t.open", key); return Explorer.select(key);
+      }
+      default: return say("t.nf", cmd, "warn");
+    }
+  }
+  $("#term-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = term.value; term.value = "";
+    if (v.trim()) { history.push(v); hIdx = history.length; }
+    runCommand(v);
+  });
+  term.addEventListener("keydown", e => {
+    if (e.key === "ArrowUp" && history.length) { e.preventDefault(); hIdx = Math.max(0, hIdx - 1); term.value = history[hIdx]; }
+    if (e.key === "ArrowDown" && history.length) { e.preventDefault(); hIdx = Math.min(history.length, hIdx + 1); term.value = history[hIdx] || ""; }
+    if (e.key === "Tab" && term.value) {
+      const all = ["help", "whoami", "stack", "projects", "open ", "ls", "cd ", "contact", "cv", "theme", "lang", "clear"];
+      const m = all.find(c => c.startsWith(term.value.toLowerCase()));
+      if (m) { e.preventDefault(); term.value = m; }
+    }
+  });
+
+  /* ---------- starfield behind the hero ---------- */
+  const Sky = (() => {
+    const cv = $("#sky"); if (!cv) return { refresh() {} };
+    const ctx = cv.getContext("2d");
+    let W = 0, H = 0, stars = [], comet = null, mx = 0, my = 0, tx = 0, ty = 0, running = false, starC = "", accC = "";
+    const css = k => getComputedStyle(root).getPropertyValue(k).trim();
+    function refresh() { starC = css("--text"); accC = css("--accent"); if (!running) draw(0); }
+    function resize() {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+      W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round(W * H / 5200);
+      stars = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.1 + .25,
+        d: Math.random() * .8 + .2, p: Math.random() * 6.28, s: Math.random() * .02 + .005, warm: Math.random() < .14
+      }));
+      if (!running) draw(0);
+    }
+    function draw(time) {
+      ctx.clearRect(0, 0, W, H);
+      tx += (mx - tx) * .05; ty += (my - ty) * .05;
+      for (const s of stars) {
+        s.p += s.s;
+        const a = reduce ? .55 : .35 + .45 * Math.sin(s.p);
+        const x = (s.x + tx * s.d * 14 + W) % W, y = (s.y + ty * s.d * 10 + H) % H;
+        ctx.globalAlpha = a * (s.warm ? .9 : .55);
+        ctx.fillStyle = s.warm ? accC : starC;
+        ctx.beginPath(); ctx.arc(x, y, s.r, 0, 6.283); ctx.fill();
+      }
+      if (!reduce) {
+        if (!comet && Math.random() < .0025) comet = { x: Math.random() * W * .7, y: Math.random() * H * .4, vx: 5 + Math.random() * 3, vy: 2 + Math.random() * 1.5, life: 1 };
+        if (comet) {
+          const c = comet, g = ctx.createLinearGradient(c.x, c.y, c.x - c.vx * 14, c.y - c.vy * 14);
+          g.addColorStop(0, accC); g.addColorStop(1, "transparent");
+          ctx.globalAlpha = c.life; ctx.strokeStyle = g; ctx.lineWidth = 1.4;
+          ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(c.x - c.vx * 14, c.y - c.vy * 14); ctx.stroke();
+          c.x += c.vx; c.y += c.vy; c.life -= .012;
+          if (c.life <= 0 || c.x > W || c.y > H) comet = null;
+        }
+      }
+      ctx.globalAlpha = 1;
+      if (running) requestAnimationFrame(draw);
+    }
+    addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+    new ResizeObserver(resize).observe(cv);
+    if (!reduce) new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !running) { running = true; requestAnimationFrame(draw); }
+      else if (!e.isIntersecting) running = false;
+    }).observe(cv);
+    refresh(); resize();
+    return { refresh };
+  })();
 
   /* ---------- command palette ---------- */
   const pal = $("#palette"), input = $("#pal-input"), list = $("#pal-list");
@@ -182,8 +310,8 @@
   const open = url => () => window.open(url, "_blank", "noopener");
   const commands = () => [
     { label: t("nav.exp"), kind: "pal.go", run: go("experience") },
-    { label: t("nav.inc"), kind: "pal.go", run: go("incidents") },
-    { label: t("nav.proj"), kind: "pal.go", run: go("projects") },
+    { label: t("inc.title"), kind: "pal.go", run: go("incidents") },
+    { label: t("proj.title"), kind: "pal.go", run: go("projects") },
     { label: t("nav.skills"), kind: "pal.go", run: go("skills") },
     { label: t("edu.title"), kind: "pal.go", run: go("education") },
     { label: t("nav.contact"), kind: "pal.go", run: go("contact") },
@@ -191,7 +319,7 @@
     { label: t("pal.copy"), kind: "pal.act", run: copyMail },
     { label: t("pal.theme"), kind: "pal.act", run: toggleTheme },
     { label: t("pal.lang"), kind: "pal.act", run: () => setLang(lang === "uk" ? "en" : "uk") },
-    { label: t("pal.cv"), kind: "pal.link", run: open("assets/cv/Vladyslav_Zamotailo_Backend_Python.pdf") },
+    { label: t("pal.cv"), kind: "pal.link", run: openCv },
     { label: "GitHub", kind: "pal.link", run: open("https://github.com/ZamotVlad") },
     { label: "LinkedIn", kind: "pal.link", run: open("https://www.linkedin.com/in/vladyslav-zamotailo/") },
     { label: "Telegram", kind: "pal.link", run: open("https://t.me/zamotvlad") },
@@ -234,6 +362,13 @@
     if (e.key === "Enter") { e.preventDefault(); run(sel); }
   });
   pal.addEventListener("click", e => { if (e.target === pal) pal.close(); });
+
+  // browsers without the Popover API: the footer button toggles the panel by hand
+  const hood = $("#hood");
+  if (!HTMLElement.prototype.hasOwnProperty("popover")) {
+    hood.hidden = true;
+    $("#hood-btn").addEventListener("click", () => { hood.hidden = !hood.hidden; });
+  }
 
   /* ---------- boot ---------- */
   $("#year").textContent = new Date().getFullYear();
