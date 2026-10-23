@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zamotailo Kinetic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&family=Manrope:wght@400;500;700&family=Martian+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a giant variable-font name that bends toward the cursor, a bento grid about me, then projects that slide sideways as you scroll down. */
+:root {
+  --chalk: #f4f5f7;
+  --paper: #ffffff;
+  --ink: #0b0b12;
+  --soft: #4b4d5c;
+  --cobalt: #1f3bff;
+  --sun: #ffc93c;
+  --rule: #dcdfe8;
+  --on-cobalt: #ffffff;
+  --f-display: "Roboto Flex", "Arial", system-ui, sans-serif;
+  --f-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "Martian Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --chalk: #0b0b12; --paper: #15151f; --ink: #f4f5f7; --soft: #a9abbb; --cobalt: #5b73ff; --sun: #ffd25e;
+    --rule: #272838; --on-cobalt: #0b0b12; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --chalk: #0b0b12; --paper: #15151f; --ink: #f4f5f7; --soft: #a9abbb; --cobalt: #5b73ff; --sun: #ffd25e;
+  --rule: #272838; --on-cobalt: #0b0b12; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--chalk); color: var(--ink); font: 400 1.0625rem/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1320px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--chalk); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--chalk) 85%, transparent); backdrop-filter: blur(10px); }
+.top .wrap { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+.logo { font: 800 1.125rem/1 var(--f-display); font-stretch: 140%; text-decoration: none; }
+.logo b { color: var(--cobalt); }
+.nav { display: flex; gap: 24px; margin-left: auto; }
+.nav a { text-decoration: none; font-weight: 500; color: var(--soft); }
+.nav a:hover { color: var(--cobalt); }
+.tools { display: flex; gap: 6px; padding: 4px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); }
+.tbtn { font: 500 .75rem/1 var(--f-mono); color: var(--ink); background: transparent; border: 0; border-radius: 999px; padding: 9px 12px; min-height: 34px; cursor: pointer; }
+.tbtn:hover { background: var(--cobalt); color: var(--on-cobalt); }
+@media (max-width: 720px) { .nav { display: none; } .tools { margin-left: auto; } }
+
+/* hero */
+.hero { padding-block: 40px 24px; }
+.hello { font: 500 .8125rem/1.4 var(--f-mono); color: var(--soft); display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 16px; }
+.hello span:first-child::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--sun); margin-right: 10px; box-shadow: 0 0 0 3px color-mix(in srgb, var(--sun) 30%, transparent); }
+.name { margin: 0; font-family: var(--f-display); line-height: .84; letter-spacing: -.02em; font-size: clamp(3.5rem, 13.5vw, 13rem); user-select: none; }
+.name .row { display: flex; flex-wrap: nowrap; white-space: nowrap; }
+.name .row + .row { color: var(--cobalt); justify-content: flex-end; }
+.name .ch { display: inline-block; font-variation-settings: "wght" var(--w, 800), "wdth" var(--s, 100), "opsz" 144; transition: font-variation-settings .35s cubic-bezier(.2,.8,.2,1); }
+.under { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; margin-top: 32px; }
+@media (max-width: 760px) { .under { grid-template-columns: minmax(0, 1fr); } }
+.lede { font-size: clamp(1.125rem, 1.6vw, 1.375rem); line-height: 1.5; max-width: 40ch; margin: 0; text-wrap: pretty; }
+.lede em { font-style: normal; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--sun) 70%, transparent) 62%); }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 999px; font: 700 1rem/1 var(--f-body); text-decoration: none; border: 2px solid var(--ink); transition: transform .2s, background .2s, color .2s; }
+.btn.primary { background: var(--cobalt); border-color: var(--cobalt); color: var(--on-cobalt); }
+.btn:hover { transform: translateY(-2px); }
+.btn:not(.primary):hover { background: var(--ink); color: var(--chalk); }
+
+/* bento */
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; padding-block: 40px; }
+.tile { background: var(--paper); border: 1px solid var(--rule); border-radius: 26px; padding: 26px; min-width: 0; }
+.tile h3 { font: 500 .6875rem/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .12em; color: var(--soft); margin: 0 0 14px; }
+.tile p { margin: 0; }
+.t-about { grid-column: span 3; grid-row: span 2; display: flex; flex-direction: column; gap: 20px; }
+.t-about p { font-size: 1.125rem; }
+.photo { margin-top: auto; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 18px; border: 2px dashed var(--rule); display: grid; place-items: center; color: var(--soft); font: 400 .75rem/1.4 var(--f-mono); text-align: center; padding: 12px; }
+.t-big { grid-column: span 3; background: var(--cobalt); color: var(--on-cobalt); border-color: var(--cobalt); }
+.t-big h3 { color: inherit; opacity: .75; }
+.t-big .quote { font: 700 clamp(1.5rem, 2.6vw, 2.25rem)/1.1 var(--f-display); font-stretch: 115%; letter-spacing: -.01em; }
+.t-way { grid-column: span 3; }
+.t-way ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.t-way li { display: flex; gap: 12px; }
+.t-way li::before { content: ""; flex: 0 0 8px; height: 8px; margin-top: .6em; border-radius: 2px; background: var(--sun); }
+.t-stack { grid-column: span 6; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.t-stack h3 { margin: 0 12px 0 0; }
+.pill { font: 500 .8125rem/1 var(--f-mono); border: 1px solid var(--rule); border-radius: 999px; padding: 10px 14px; transition: background .2s, color .2s, border-color .2s; }
+.pill:hover { background: var(--ink); color: var(--chalk); border-color: var(--ink); }
+@media (max-width: 860px) { .t-about, .t-big, .t-way { grid-column: span 6; grid-row: auto; } }
+
+/* horizontal projects */
+.hscroll { position: relative; }
+.hscroll .pin { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 64px); overflow: hidden; padding-block: 24px 40px; }
+.hscroll .head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+h2 { font: 800 clamp(2.5rem, 6vw, 5rem)/.9 var(--f-display); font-stretch: 125%; letter-spacing: -.02em; margin: 0; }
+.progress { width: 180px; max-width: 40vw; height: 4px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+.progress i { display: block; height: 100%; width: 100%; background: var(--cobalt); transform-origin: left; transform: scaleX(var(--p, 0)); }
+.rail { display: flex; gap: 20px; will-change: transform; }
+.proj { flex: 0 0 min(80vw, 460px); min-width: 0; background: var(--paper); border: 1px solid var(--rule); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 16px; min-height: 380px;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease, border-color .25s; }
+.proj:hover { border-color: var(--cobalt); }
+.proj .tagline { display: flex; justify-content: space-between; gap: 12px; font: 500 .6875rem/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--soft); }
+.proj .tagline .live { color: var(--cobalt); }
+.proj h3 { font: 800 clamp(2rem, 3.4vw, 2.75rem)/.95 var(--f-display); font-stretch: 120%; letter-spacing: -.02em; margin: 0; overflow-wrap: anywhere; }
+.proj p { margin: 0; color: var(--soft); }
+.proj .stack { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+.proj .stack span { font: 400 .75rem/1 var(--f-mono); padding: 7px 10px; border-radius: 999px; background: var(--chalk); }
+.proj a { font: 500 .8125rem/1 var(--f-mono); color: var(--cobalt); text-decoration: none; }
+.proj a:hover { text-decoration: underline; }
+.proj.accent { background: var(--sun); border-color: var(--sun); color: #0b0b12; }
+.proj.accent p, .proj.accent .tagline { color: #2a2a35; }
+.proj.accent a { color: #0b0b12; }
+.proj.accent .stack span { background: rgba(255,255,255,.55); }
+
+/* fallback: no pinning on small screens or reduced motion */
+.hscroll.static { height: auto !important; }
+.hscroll.static .pin { position: static; overflow: visible; }
+.hscroll.static .rail { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; transform: none !important; }
+.hscroll.static .proj { scroll-snap-align: start; }
+
+/* contact */
+.contact { padding-block: 64px 32px; }
+.contact .big { font: 800 clamp(1.5rem, 6vw, 5rem)/1 var(--f-display); font-stretch: 112%; letter-spacing: -.02em; margin: 0 0 20px; overflow-wrap: anywhere; }
+.contact .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.note { font: 400 .6875rem/1.5 var(--f-mono); color: var(--soft); margin-top: 40px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Zamotailo<b>.</b></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about" data-i18n="navAbout">Про мене</a>
+      <a href="#projects" data-i18n="navProjects">Проекти</a>
+      <a href="#contact" data-i18n="navContact">Контакт</a>
+    </nav>
+    <div class="tools">
+      <button class="tbtn" id="lang-btn" type="button" aria-label="Switch language">EN</button>
+      <button class="tbtn" id="theme-btn" type="button" aria-label="Switch theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="display:block"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="hello"><span data-i18n="hello">Відкритий до пропозицій</span><span data-i18n="where">Україна · віддалено</span></p>
+      <h1 class="name" id="name" aria-label="Vladyslav Zamotailo">
+        <span class="row" aria-hidden="true">Vladyslav</span>
+        <span class="row" aria-hidden="true">Zamotailo</span>
+      </h1>
+      <div class="under">
+        <p class="lede" data-i18n-html="lede">Python backend-розробник. Будую сервіси на Django і DRF, <em>виводжу їх у прод</em> і стежу, щоб вони працювали після запуску.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact" data-i18n="ctaWrite">Написати мені</a>
+          <a class="btn" href="#contact" data-i18n="ctaCv">CV · PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="bento" id="about">
+      <div class="tile t-about">
+        <h3 data-i18n="aboutH">про мене</h3>
+        <p data-i18n="about">Я бекенд-розробник з України. Зараз роблю продакшн-бекенди для EdTech-компанії: LMS-платформу з React-фронтендом і внутрішню адмінку з ролями та бекапами. Паралельно пишу Vartovyi, щоб розібратись у FastAPI і async.</p>
+        <div class="photo" data-i18n="photo">тут буде фото · assets/img/photo.webp</div>
+      </div>
+      <div class="tile t-big">
+        <h3 data-i18n="bigH">принцип</h3>
+        <p class="quote" data-i18n="quote">Тести входять у кожну фічу, а не дописуються потім.</p>
+      </div>
+      <div class="tile t-way">
+        <h3 data-i18n="wayH">як я працюю</h3>
+        <ul>
+          <li data-i18n="w1">Записую архітектурні рішення в ADR</li>
+          <li data-i18n="w2">Пишу інструкції з розгортання, щоб проект міг підхопити хтось інший</li>
+          <li data-i18n="w3">Docker, CI на GitHub Actions, деплой на VPS</li>
+        </ul>
+      </div>
+      <div class="tile t-stack">
+        <h3 data-i18n="stackH">стек</h3>
+        <span class="pill">Python</span><span class="pill">Django</span><span class="pill">DRF</span><span class="pill">FastAPI</span>
+        <span class="pill">PostgreSQL</span><span class="pill">Redis</span><span class="pill">Celery</span><span class="pill">Docker</span>
+        <span class="pill">Pytest</span><span class="pill">Linux</span><span class="pill">GitHub Actions</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="hscroll" id="projects">
+    <div class="pin">
+      <div class="wrap">
+        <div class="head">
+          <h2 data-i18n="projTitle">Проекти</h2>
+          <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+        </div>
+        <div class="rail" id="rail">
+          <article class="proj accent">
+            <div class="tagline"><span>Telegram bot</span><span class="live">open source</span></div>
+            <h3>DevScout</h3>
+            <p data-i18n="p1">Збирає вакансії Python з DOU і Djinni за розкладом і віддає їх через Django admin та Telegram-бота.</p>
+            <div class="stack"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span></div>
+            <a href="https://github.com/ZamotVlad/DevScout" target="_blank" rel="noopener">GitHub ↗</a>
+          </article>
+          <article class="proj">
+            <div class="tagline"><span class="live">open source</span><span>27 / 27</span></div>
+            <h3>Vyshyvanka­Daily</h3>
+            <p data-i18n="p2">Щодня новий орнамент вишивки для кожної з 27 областей. Малює детермінований SVG-генератор, сайт кількома мовами, перевірений OWASP ZAP.</p>
+            <div class="stack"><span>Django</span><span>modeltranslation</span><span>Pytest</span><span>OWASP ZAP</span></div>
+            <a href="https://github.com/ZamotVlad/VyshyvankaDaily" target="_blank" rel="noopener">GitHub ↗</a>
+          </article>
+          <article class="proj">
+            <div class="tagline"><span data-i18n="wip">в роботі</span><span>async</span></div>
+            <h3>Vartovyi</h3>
+            <p data-i18n="p3">Сервіс моніторингу аптайму. На ньому я вчу FastAPI та асинхронний Python.</p>
+            <div class="stack"><span>FastAPI</span><span>asyncio</span><span>PostgreSQL</span></div>
+          </article>
+          <article class="proj">
+            <div class="tagline"><span data-i18n="private">приватний код</span><span>prod</span></div>
+            <h3>EdTech LMS</h3>
+            <p data-i18n="p4">LMS з React-фронтендом і входом через Firebase, плюс адмінка з ролями доступу й автоматичними бекапами PostgreSQL. Покрито тестами, деплой у Docker на VPS.</p>
+            <div class="stack"><span>Django</span><span>DRF</span><span>Firebase Auth</span><span>Docker</span><span>Pytest</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="hello"><span data-i18n="contactK">Напиши мені</span></p>
+      <p class="big" id="mail">zamotvlad@gmail.com</p>
+      <div class="row">
+        <button class="btn primary" id="copy" type="button" data-i18n="copy">Скопіювати email</button>
+        <a class="btn" href="https://www.linkedin.com/in/vladyslav-zamotailo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://t.me/zamotvlad" target="_blank" rel="noopener">Telegram ↗</a>
+        <a class="btn" href="https://github.com/ZamotVlad" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <p class="note" data-i18n="note">Прототип 3 з 3 · Kinetic</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const dict = {
+    uk: {
+      navAbout: "Про мене", navProjects: "Проекти", navContact: "Контакт", hello: "Відкритий до пропозицій", where: "Україна · віддалено",
+      lede: "Python backend-розробник. Будую сервіси на Django і DRF, <em>виводжу їх у прод</em> і стежу, щоб вони працювали після запуску.",
+      ctaWrite: "Написати мені", ctaCv: "CV · PDF", aboutH: "про мене",
+      about: "Я бекенд-розробник з України. Зараз роблю продакшн-бекенди для EdTech-компанії: LMS-платформу з React-фронтендом і внутрішню адмінку з ролями та бекапами. Паралельно пишу Vartovyi, щоб розібратись у FastAPI і async.",
+      photo: "тут буде фото · assets/img/photo.webp", bigH: "принцип", quote: "Тести входять у кожну фічу, а не дописуються потім.",
+      wayH: "як я працюю", w1: "Записую архітектурні рішення в ADR", w2: "Пишу інструкції з розгортання, щоб проект міг підхопити хтось інший", w3: "Docker, CI на GitHub Actions, деплой на VPS",
+      stackH: "стек", projTitle: "Проекти",
+      p1: "Збирає вакансії Python з DOU і Djinni за розкладом і віддає їх через Django admin та Telegram-бота.",
+      p2: "Щодня новий орнамент вишивки для кожної з 27 областей. Малює детермінований SVG-генератор, сайт кількома мовами, перевірений OWASP ZAP.",
+      p3: "Сервіс моніторингу аптайму. На ньому я вчу FastAPI та асинхронний Python.",
+      p4: "LMS з React-фронтендом і входом через Firebase, плюс адмінка з ролями доступу й автоматичними бекапами PostgreSQL. Покрито тестами, деплой у Docker на VPS.",
+      wip: "в роботі", private: "приватний код", contactK: "Напиши мені", copy: "Скопіювати email", copied: "Скопійовано", note: "Прототип 3 з 3 · Kinetic"
+    },
+    en: {
+      navAbout: "About", navProjects: "Projects", navContact: "Contact", hello: "Open to offers", where: "Ukraine · remote",
+      lede: "Python backend developer. I build Django and DRF services, <em>ship them to production</em> and keep them running after launch.",
+      ctaWrite: "Write to me", ctaCv: "CV · PDF", aboutH: "about",
+      about: "I'm a backend developer from Ukraine. Right now I build production backends for an EdTech company: an LMS platform with a React frontend and an internal admin with roles and backups. On the side I'm writing Vartovyi to get properly into FastAPI and async.",
+      photo: "photo goes here · assets/img/photo.webp", bigH: "rule", quote: "Tests are part of every feature, not something added later.",
+      wayH: "how I work", w1: "I record architecture decisions in ADRs", w2: "I write setup guides so someone else can pick the project up", w3: "Docker, CI on GitHub Actions, deploys to a VPS",
+      stackH: "stack", projTitle: "Projects",
+      p1: "Collects Python job listings from DOU and Djinni on a schedule and serves them through a Django admin and a Telegram bot.",
+      p2: "A new embroidery ornament every day for each of Ukraine's 27 regions, drawn by a deterministic SVG generator. Multilingual, scanned with OWASP ZAP.",
+      p3: "An uptime monitoring service. It's how I'm learning FastAPI and async Python.",
+      p4: "An LMS with a React frontend and Firebase sign-in, plus an admin with role-based access and automated PostgreSQL backups. Covered with tests, deployed with Docker on a VPS.",
+      wip: "in progress", private: "private code", contactK: "Get in touch", copy: "Copy email", copied: "Copied", note: "Prototype 3 of 3 · Kinetic"
+    }
+  };
+  const root = document.documentElement;
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  let lang = store.get("vz-lang") || "uk";
+  const t = k => dict[lang][k] || k;
+  function applyLang() {
+    root.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+    document.querySelectorAll("[data-i18n-html]").forEach(el => el.innerHTML = t(el.dataset.i18nHtml));
+    document.getElementById("lang-btn").textContent = lang === "uk" ? "EN" : "UA";
+  }
+  document.getElementById("lang-btn").addEventListener("click", () => { lang = lang === "uk" ? "en" : "uk"; store.set("vz-lang", lang); applyLang(); });
+  const saved = store.get("vz-theme"); if (saved) root.dataset.theme = saved;
+  document.getElementById("theme-btn").addEventListener("click", () => {
+    const cur = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.theme = cur === "dark" ? "light" : "dark"; store.set("vz-theme", root.dataset.theme);
+  });
+  applyLang();
+
+  const copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click", () => {
+    const done = () => { copyBtn.textContent = t("copied"); setTimeout(() => copyBtn.textContent = t("copy"), 1600); };
+    const sel = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if (navigator.clipboard) navigator.clipboard.writeText(document.getElementById("mail").textContent).then(done, sel); else sel();
+  });
+
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = matchMedia("(pointer: fine)").matches;
+
+  // split the name into letters that react to the cursor
+  const rows = [...document.querySelectorAll("#name .row")];
+  rows.forEach(r => { r.innerHTML = [...r.textContent].map(c => `<span class="ch">${c}</span>`).join(""); });
+  const chars = [...document.querySelectorAll("#name .ch")];
+  function bend(px, py) {
+    chars.forEach(c => {
+      const b = c.getBoundingClientRect(), dx = (b.left + b.width / 2) - px, dy = (b.top + b.height / 2) - py;
+      const d = Math.min(1, Math.hypot(dx, dy * 1.4) / 420);
+      c.style.setProperty("--w", Math.round(1000 - d * 820));
+      c.style.setProperty("--s", Math.round(125 - d * 60));
+    });
+  }
+  function rest() { chars.forEach(c => { c.style.removeProperty("--w"); c.style.removeProperty("--s"); }); }
+  if (!reduce && fine) {
+    let raf; const name = document.getElementById("name");
+    addEventListener("pointermove", e => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => {
+      const b = name.getBoundingClientRect();
+      if (e.clientY < b.top - 160 || e.clientY > b.bottom + 160) rest(); else bend(e.clientX, e.clientY);
+    }); }, { passive: true });
+  } else if (!reduce) {
+    // touch screens: a slow wave runs through the letters instead
+    let t0 = performance.now();
+    const wave = now => { const ph = (now - t0) / 900; chars.forEach((c, i) => { const v = (Math.sin(ph - i * .45) + 1) / 2; c.style.setProperty("--w", Math.round(250 + v * 750)); c.style.setProperty("--s", Math.round(62 + v * 46)); }); requestAnimationFrame(wave); };
+    requestAnimationFrame(wave);
+  }
+
+  // horizontal scroll for projects
+  const sec = document.getElementById("projects"), rail = document.getElementById("rail"), bar = document.getElementById("bar");
+  const pin = sec.querySelector(".pin");
+  function layout() {
+    const wide = innerWidth > 760 && !reduce;
+    sec.classList.toggle("static", !wide);
+    if (!wide) { sec.style.height = ""; return; }
+    const dist = Math.max(0, rail.scrollWidth - rail.parentElement.clientWidth);
+    sec.style.height = (pin.offsetHeight + dist) + "px";
+    sec.dataset.dist = dist; onScroll();
+  }
+  function onScroll() {
+    if (sec.classList.contains("static")) return;
+    const dist = +sec.dataset.dist, top = sec.getBoundingClientRect().top - pin.offsetTop;
+    const p = Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / Math.max(1, dist)));
+    rail.style.transform = `translateX(${-p * dist}px)`; bar.style.setProperty("--p", p.toFixed(3));
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", layout);
+  document.fonts ? document.fonts.ready.then(layout) : layout();
+  layout();
+
+  // 3D tilt on cards
+  if (!reduce && fine) document.querySelectorAll(".proj").forEach(card => {
+    card.addEventListener("pointermove", e => { const b = card.getBoundingClientRect(); const x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+      card.style.setProperty("--ry", (x * 8).toFixed(2) + "deg"); card.style.setProperty("--rx", (-y * 8).toFixed(2) + "deg"); });
+    card.addEventListener("pointerleave", () => { card.style.removeProperty("--ry"); card.style.removeProperty("--rx"); });
+  });
+})();
+</script>
+</body>
+</html>
