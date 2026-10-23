@@ -112,7 +112,8 @@
       const v = max ? Math.round(track.scrollLeft / max * 1000) : 0;
       range.value = v; paintRange(v);
     }
-    const i = max - track.scrollLeft < 4 ? cards.length : Math.min(cards.length, Math.round(track.scrollLeft / stepW()) + 1);
+    // count from scroll progress: on wide screens the track scrolls less than one card width
+    const i = max ? 1 + Math.round(track.scrollLeft / max * (cards.length - 1)) : 1;
     count.textContent = `${i} / ${cards.length}`;
     prev.disabled = track.scrollLeft < 4; next.disabled = track.scrollLeft > max - 4;
     range.disabled = max < 4;
