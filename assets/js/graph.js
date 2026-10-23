@@ -269,7 +269,7 @@
     pathEl.textContent = scene.path;
     if (Date.now() > holdUntil) {
       logEl.innerHTML = "";
-      scene.routes.slice(0, 3).forEach(r => addLog(r[1]));
+      scene.routes.slice(0, 4).forEach(r => addLog(r[1]));
     }
     if (reduce) nodes.forEach(n => { n.x = n.hx; n.y = n.hy; n.alpha = n.target; });
     hideTip();

@@ -61,7 +61,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#experience" data-i18n="nav.exp">Досвід</a>
-      <a href="#incidents" data-i18n="nav.inc">Прод</a>
+      <a href="#incidents" data-i18n="nav.inc">Інциденти</a>
       <a href="#projects" data-i18n="nav.proj">Проекти</a>
       <a href="#skills" data-i18n="nav.skills">Навички</a>
       <a href="#contact" data-i18n="nav.contact">Контакт</a>
@@ -82,7 +82,7 @@
 
 <main id="main">
   <!-- hero -->
-  <section class="hero" aria-labelledby="name">
+  <section class="hero" id="intro" aria-labelledby="name">
     <canvas class="sky" id="sky" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="who">
@@ -114,6 +114,19 @@
             <svg class="ico ico-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
           </a>
         </div>
+        <div class="now">
+          <span class="now-label" data-i18n="now.label">зараз</span>
+          <ul>
+            <li data-i18n="now.1">Розробляю бекенд LeoGame LMS. Нещодавно зробив кабінет студента</li>
+            <li data-i18n="now.2">Вчу FastAPI і async Python на власному сервісі Vartovyi</li>
+          </ul>
+        </div>
+        <div class="hero-links">
+          <a href="https://github.com/ZamotVlad" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/vladyslav-zamotailo/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
+          <a href="https://t.me/zamotvlad" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57L20.5 2.8c.88-.33 1.65.2 1.44 1.5Z"/></svg></a>
+          <span class="hero-mail">zamotvlad@gmail.com</span>
+        </div>
       </div>
 
       <div class="explorer">
@@ -132,7 +145,7 @@
         </div>
         <p class="ex-caption" id="ex-caption" aria-live="polite"></p>
         <div class="term">
-          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>mission-control — tail -f /var/log/prod</span></div>
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>mission-control: tail -f /var/log/prod</span></div>
           <ol class="ex-log" id="ex-log" aria-live="off"></ol>
           <form class="term-input" id="term-form" autocomplete="off">
             <label for="term" class="prompt">vlad@prod:~$</label>
@@ -156,7 +169,7 @@
 
       <div class="timeline">
         <article class="job current rv">
-          <div class="job-when"><span data-i18n="job1.when">Січ 2025 — зараз</span><span class="dur" id="job1-dur"></span></div>
+          <div class="job-when"><span data-i18n="job1.when">Січ 2025 - зараз</span><span class="dur" id="job1-dur"></span></div>
           <div class="job-body">
             <h3>Python Backend Developer <small>ITLEO Academy</small></h3>
             <p class="job-stack">Python · Django · DRF · PostgreSQL · Celery · Redis · aiogram · Firebase · Docker · Pytest · Ruff · GitHub Actions</p>
@@ -205,7 +218,7 @@
         </article>
 
         <article class="job rv">
-          <div class="job-when"><span data-i18n="job2.when">Лип 2024 — гру 2024</span><span class="dur" data-i18n="job2.dur">6 міс.</span></div>
+          <div class="job-when"><span data-i18n="job2.when">Лип 2024 - гру 2024</span><span class="dur" data-i18n="job2.dur">6 міс.</span></div>
           <div class="job-body">
             <h3><span data-i18n="job2.title">Стажування, Python Backend</span> <small>ITLEO Academy</small></h3>
             <p class="sec-note" data-i18n="job2.text">Стажування з backend-розробки на Python і Django. Після нього я лишився в компанії розробником.</p>
@@ -294,17 +307,19 @@
               <li data-i18n="vy.b4">CSS скоротив з 31 KB до 7 KB, PageSpeed 100 у всіх чотирьох категоріях</li>
               <li data-i18n="vy.b5">Sentry, щоденні бекапи, CI з Ruff, перевіркою міграцій і 300+ тестами</li>
             </ul>
+          </div>
+          <div class="proj-side">
+            <div class="big-metrics">
+            <div><b>100</b><span data-i18n="vy.m1">PageSpeed у 4 категоріях</span></div>
+            <div><b>A+</b><span data-i18n="vy.m2">заголовки безпеки</span></div>
+            <div><b>300+</b><span data-i18n="vy.m3">автотестів</span></div>
+            <div><b>27</b><span data-i18n="vy.m4">областей, новий орнамент щодня</span></div>
+          </div>
             <div class="chips"><span>Django 5.2</span><span>PostgreSQL</span><span>modeltranslation</span><span>allauth</span><span>Brevo</span><span>Bootstrap 5</span><span>Sentry</span><span>Heroku</span><span>Ruff</span><span>pre-commit</span><span>Pytest</span></div>
             <div class="links">
               <a href="https://vyshyvankadaily.live" target="_blank" rel="noopener">vyshyvankadaily.live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
               <a href="https://github.com/ZamotVlad/VyshyvankaDaily" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
-          </div>
-          <div class="big-metrics">
-            <div><b>100</b><span data-i18n="vy.m1">PageSpeed у 4 категоріях</span></div>
-            <div><b>A+</b><span data-i18n="vy.m2">заголовки безпеки</span></div>
-            <div><b>300+</b><span data-i18n="vy.m3">автотестів</span></div>
-            <div><b>27</b><span data-i18n="vy.m4">областей, новий орнамент щодня</span></div>
           </div>
         </article>
 
@@ -319,14 +334,16 @@
               <li data-i18n="va.b4">Тест бере всі маршрути з OpenAPI-схеми і перевіряє, що кожен захищений відхиляє анонімний запит</li>
               <li data-i18n="va.b5">Ключові рішення записані в ADR: SQLAlchemy 2.0 замість SQLModel, власна JWT-автентифікація, рушій перевірок на asyncio</li>
             </ul>
-            <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Alembic</span><span>PostgreSQL</span><span>Redis</span><span>httpx</span><span>uv</span><span>pytest</span><span>Ruff</span><span>mypy --strict</span><span>Docker</span></div>
-            <p class="links-note" data-i18n="va.private">Код поки приватний, покажу на співбесіді.</p>
           </div>
-          <div class="big-metrics">
+          <div class="proj-side">
+            <div class="big-metrics">
             <div><b>3</b><span data-i18n="va.m1">ADR з контекстом і наслідками</span></div>
             <div><b>strict</b><span data-i18n="va.m2">mypy для app і tests</span></div>
             <div><b>5 с</b><span data-i18n="va.m3">такт планувальника</span></div>
             <div><b>24 · 7 · 30</b><span data-i18n="va.m4">uptime за години і дні</span></div>
+          </div>
+            <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Alembic</span><span>PostgreSQL</span><span>Redis</span><span>httpx</span><span>uv</span><span>pytest</span><span>Ruff</span><span>mypy --strict</span><span>Docker</span></div>
+            <p class="links-note" data-i18n="va.private">Код поки приватний, покажу на співбесіді.</p>
           </div>
         </article>
 
@@ -335,21 +352,23 @@
             <div class="proj-top"><h3>DevScout</h3><span class="tag live">open source</span></div>
             <p data-i18n="ds.desc">Збирає вакансії Python для початківців з DOU і Djinni, фільтрує їх і показує в дашборді та Telegram-боті.</p>
             <ul>
-              <li data-i18n="ds.b1">Celery Beat запускає збір раз на 4–8 годин: відкритий розділ вакансій DOU і офіційна RSS-стрічка Djinni</li>
+              <li data-i18n="ds.b1">Celery Beat запускає збір раз на 4-8 годин: відкритий розділ вакансій DOU і офіційна RSS-стрічка Djinni</li>
               <li data-i18n="ds.b2">Фільтр за стоп-словами відсікає нерелевантні напрямки і вакансії рівня Middle+</li>
               <li data-i18n="ds.b3">Нічна задача видаляє записи, старші за 30 днів</li>
               <li data-i18n="ds.b4">Дашборд на Django і Bootstrap 5 з фільтрами, пошуком і пагінацією. Приватний Telegram-бот з whitelist за chat id</li>
             </ul>
+          </div>
+          <div class="proj-side">
+            <div class="big-metrics">
+            <div><b>2</b><span data-i18n="ds.m1">джерела вакансій</span></div>
+            <div><b>4-8 год</b><span data-i18n="ds.m2">інтервал збору</span></div>
+            <div><b>30 днів</b><span data-i18n="ds.m3">зберігання записів</span></div>
+            <div><b>1</b><span data-i18n="ds.m4">команда, щоб підняти весь стек у Docker</span></div>
+          </div>
             <div class="chips"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>BeautifulSoup4</span><span>pyTelegramBotAPI</span><span>Bootstrap 5</span><span>Docker Compose</span><span>GitHub Actions</span></div>
             <div class="links">
               <a href="https://github.com/ZamotVlad/devscout" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
-          </div>
-          <div class="big-metrics">
-            <div><b>2</b><span data-i18n="ds.m1">джерела вакансій</span></div>
-            <div><b>4–8 год</b><span data-i18n="ds.m2">інтервал збору</span></div>
-            <div><b>30 днів</b><span data-i18n="ds.m3">зберігання записів</span></div>
-            <div><b>1</b><span data-i18n="ds.m4">команда, щоб підняти весь стек у Docker</span></div>
           </div>
         </article>
       </div>
@@ -410,7 +429,7 @@
       </div>
       <div class="edu rv">
         <div class="edu-card">
-          <span class="when">2024 — 2028</span>
+          <span class="when">2024 - 2028</span>
           <h3 data-i18n="edu.deg">Бакалавр, Computer Science</h3>
           <p data-i18n="edu.uni">Донецький національний університет. Навчаюсь зараз.</p>
         </div>
@@ -421,6 +440,11 @@
             <div class="lang-row"><span data-i18n="lang.en">Англійська</span><span data-i18n="lang.en.lvl">B1 · EF SET: читання і письмо B2</span></div>
           </div>
         </div>
+        <div class="edu-card">
+          <span class="when" data-i18n="edu.nowwhen">2026</span>
+          <h3 data-i18n="edu.now">Зараз вивчаю</h3>
+          <p data-i18n="edu.nowtext">Вчуся на власному проекті Vartovyi: FastAPI, async Python і поділ сервісу на шари.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -428,6 +452,7 @@
   <!-- contact -->
   <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
+      <div class="contact-main">
       <div class="rv">
         <span class="eyebrow">POST /contact <b>201</b></span>
         <h2 id="contact-title" data-i18n="contact.title">Шукаєте Python-розробника в команду? Напишіть мені.</h2>
@@ -445,6 +470,22 @@
         <a class="btn" href="https://github.com/ZamotVlad" target="_blank" rel="noopener">GitHub <svg class="ico ico-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         <a class="btn" href="assets/cv/Vladyslav_Zamotailo_Backend_Python.pdf" target="_blank" rel="noopener"><span data-i18n="cta.cv">Резюме, PDF</span> <svg class="ico ico-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
       </div>
+      </div>
+      <figure class="response rv" aria-label="Contact details as an API response">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>POST /contact</span></div>
+<pre><code><span class="c">HTTP/1.1</span> <span class="ok">201 Created</span>
+<span class="c">Content-Type: application/json</span>
+
+{
+  <span class="k">"name"</span>: <span class="v">"Vladyslav Zamotailo"</span>,
+  <span class="k">"role"</span>: <span class="v">"Python Backend Developer"</span>,
+  <span class="k">"location"</span>: <span class="v">"Uman, Ukraine"</span>,
+  <span class="k">"stack"</span>: [<span class="v">"Django"</span>, <span class="v">"DRF"</span>, <span class="v">"FastAPI"</span>, <span class="v">"PostgreSQL"</span>],
+  <span class="k">"email"</span>: <span class="v">"zamotvlad@gmail.com"</span>,
+  <span class="k">"telegram"</span>: <span class="v">"@zamotvlad"</span>,
+  <span class="k">"open_to_offers"</span>: <span class="b">true</span>
+}</code></pre>
+      </figure>
     </div>
   </section>
 </main>
