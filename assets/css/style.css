@@ -559,6 +559,9 @@ input[type="range"]:hover::-webkit-slider-thumb, input[type="range"]:active::-we
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top;
   -webkit-mask-image: linear-gradient(#000 78%, transparent); mask-image: linear-gradient(#000 78%, transparent);
 }
+/* a light screenshot is toned down on the dark theme so it does not glare, and comes back to full brightness on hover */
+:root:not([data-theme="light"]) .shot-light img { filter: brightness(.82) saturate(.9); transition: filter .6s var(--ease); }
+:root:not([data-theme="light"]) .proj:hover .shot-light img { filter: none; }
 .shot figcaption { font: 400 .75rem/1.4 var(--f-mono); color: var(--muted); }
 .proj-main .chips { margin-top: 4px; }
 

@@ -277,7 +277,7 @@
   }
 
   function resize() {
-    const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+    const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, innerWidth < 760 ? 1.5 : 2);
     if (!r.width) return;
     W = r.width; H = r.height; tall = W / H < 1;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
@@ -469,6 +469,11 @@
 
   function start() {
     if (reduce) return;
+    // the animation waits until the browser is idle, so it never competes with the first paint
+    const idle = window.requestIdleCallback || (fn => setTimeout(fn, 200));
+    idle(observe, { timeout: 1500 });
+  }
+  function observe() {
     // only animate while the explorer is on screen
     new IntersectionObserver(([e]) => {
       const on = e.isIntersecting;

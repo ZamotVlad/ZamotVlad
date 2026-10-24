@@ -283,11 +283,13 @@
     const ctx = cv.getContext("2d");
     let W = 0, H = 0, stars = [], comet = null, mx = 0, my = 0, tx = 0, ty = 0, running = false, starC = "", accC = "";
     const css = k => getComputedStyle(root).getPropertyValue(k).trim();
+    const light = matchMedia("(pointer: coarse)").matches || innerWidth < 760;
     function refresh() { starC = css("--text"); accC = css("--accent"); if (!running) draw(0); }
     function resize() {
-      const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+      const r = cv.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, light ? 1 : 2);
       W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const n = Math.round(W * H / 5200);
+      // phones get a sparser sky: fewer stars and a single-density canvas keep the main thread free
+      const n = Math.round(W * H / (light ? 11000 : 5200));
       stars = Array.from({ length: n }, () => ({
         x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.1 + .25,
         d: Math.random() * .8 + .2, p: Math.random() * 6.28, s: Math.random() * .02 + .005, warm: Math.random() < .14
@@ -305,7 +307,7 @@
         ctx.fillStyle = s.warm ? accC : starC;
         ctx.beginPath(); ctx.arc(x, y, s.r, 0, 6.283); ctx.fill();
       }
-      if (!reduce) {
+      if (!reduce && !light) {
         if (!comet && Math.random() < .0025) comet = { x: Math.random() * W * .7, y: Math.random() * H * .4, vx: 5 + Math.random() * 3, vy: 2 + Math.random() * 1.5, life: 1 };
         if (comet) {
           const c = comet, g = ctx.createLinearGradient(c.x, c.y, c.x - c.vx * 14, c.y - c.vy * 14);
@@ -321,7 +323,8 @@
     }
     addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
     new ResizeObserver(resize).observe(cv);
-    if (!reduce) new IntersectionObserver(([e]) => {
+    // on phones the sky is drawn once and stays still; the twinkle loop runs only on larger screens
+    if (!reduce && !light) new IntersectionObserver(([e]) => {
       if (e.isIntersecting && !running) { running = true; requestAnimationFrame(draw); }
       else if (!e.isIntersecting) running = false;
     }).observe(cv);
