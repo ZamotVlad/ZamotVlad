@@ -92,7 +92,7 @@ window.I18N = {
     "used.in": "Використовував у:",
     "used.none": "Використовую, але в проектах на цій сторінці окремо не описано.",
     "note.claude": "Користуюсь щодня, коли пишу і перевіряю код.",
-    "note.wp": "Робив сайти на WordPress з конструктором Elementor.",
+    "note.wp": "Оптимізовував сайти на WordPress з конструктором Elementor.",
     "note.prompt": "Ставлю AI задачі так, щоб результат можна було перевірити.",
 
     "edu.title": "Освіта і мови",
@@ -225,7 +225,7 @@ window.I18N = {
     "used.in": "Used in:",
     "used.none": "I use it, but it isn't called out in the projects on this page.",
     "note.claude": "I use it every day when I write and review code.",
-    "note.wp": "I've built sites on WordPress with the Elementor page builder.",
+    "note.wp": "I've optimized WordPress sites built with the Elementor page builder.",
     "note.prompt": "I write tasks for AI so that I can check the result.",
 
     "edu.title": "Education and languages",
