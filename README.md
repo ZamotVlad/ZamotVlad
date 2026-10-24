@@ -40,4 +40,4 @@ decisions in ADRs and write setup guides, so a project can be picked up by someo
 
 ### Contact
 
-[LinkedIn](https://www.linkedin.com/in/vladyslav-zamotailo/) · [Telegram](https://t.me/zamotvlad) · zamotvlad@gmail.com
+[Website](https://zamotvlad.github.io/ZamotVlad/) · [LinkedIn](https://www.linkedin.com/in/vladyslav-zamotailo/) · [Telegram](https://t.me/zamotvlad) · zamotvlad@gmail.com

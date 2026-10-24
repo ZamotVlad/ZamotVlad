@@ -7,7 +7,9 @@
 <script>
   // the site lives in /ZamotVlad/ on github.io and at the root on a custom domain
   var base = location.hostname.endsWith("github.io") ? "/ZamotVlad/" : "/";
-  document.write('<link rel="icon" href="' + base + 'favicon.svg" type="image/svg+xml">');
+  var icon = document.createElement("link");
+  icon.rel = "icon"; icon.type = "image/svg+xml"; icon.href = base + "favicon.svg";
+  document.head.appendChild(icon);
 </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@600&family=JetBrains+Mono&display=swap">
 <style>
