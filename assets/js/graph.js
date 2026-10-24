@@ -156,7 +156,7 @@
       text: {
         uk: {
           caption: "Celery Beat за розкладом запускає збір вакансій з DOU і RSS Djinni. Worker фільтрує їх і зберігає в PostgreSQL, а звідти вони йдуть у дашборд на Django і Telegram-бота.",
-          beat: "Збір раз на 4–8 годин і нічне очищення старих записів.",
+          beat: "Збір раз на 4-8 годин і нічне очищення старих записів.",
           redis: "Брокер черги.",
           worker: "Парсить вакансії через BeautifulSoup і відсікає нерелевантні за стоп-словами.",
           dou: "Відкритий розділ /vacancies/.",
@@ -167,7 +167,7 @@
         },
         en: {
           caption: "Celery Beat runs job scraping from DOU and the Djinni RSS feed on a schedule. A worker filters the listings and saves them to PostgreSQL, and from there they go to a Django dashboard and a Telegram bot.",
-          beat: "Scraping every 4–8 hours and a nightly cleanup of old records.",
+          beat: "Scraping every 4-8 hours and a nightly cleanup of old records.",
           redis: "Queue broker.",
           worker: "Parses listings with BeautifulSoup and drops irrelevant ones by stop words.",
           dou: "The public /vacancies/ section.",
@@ -491,6 +491,16 @@
     setLang(l) { lang = l; if (scene) { capEl.textContent = scene.text[lang].caption; hideTip(); } },
     refreshColors() { readColors(); kick(); },
     // the terminal prints into the same log and pauses the live feed for a while
+    printColors(pairs) {
+      holdUntil = Date.now() + 12000;
+      const parts = [];
+      pairs.forEach(([name, value]) => {
+        const sw = document.createElement("span"); sw.className = "swatch"; sw.style.background = value;
+        const s = document.createElement("span"); s.textContent = `${name} ${value}   `;
+        parts.push(sw, s);
+      });
+      line(parts, "out");
+    },
     print(text, cls) { holdUntil = Date.now() + 12000; const s = document.createElement("span"); s.textContent = text; line([s], ((cls || "") + " out").trim()); },
     clear() { holdUntil = Date.now() + 4000; logEl.innerHTML = ""; }
   };

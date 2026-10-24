@@ -24,7 +24,11 @@
     $$("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
     $$("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
     $$("[data-i18n-ph]").forEach(el => el.setAttribute("placeholder", t(el.dataset.i18nPh)));
-    $("#lang-btn").textContent = lang === "uk" ? "EN" : "UA";
+    $$("[data-i18n-alt]").forEach(el => el.setAttribute("alt", t(el.dataset.i18nAlt)));
+    const langBtn = $("#lang-btn");
+    langBtn.textContent = lang === "uk" ? "EN" : "UA";
+    // the accessible name starts with the visible text, as WCAG 2.5.3 asks
+    langBtn.setAttribute("aria-label", `${langBtn.textContent}, ${t("language")}`);
     $("#job1-dur").textContent = duration(new Date(2025, 0, 1), new Date());
     renderUsed();
     if (window.Explorer) Explorer.setLang(lang);
@@ -67,6 +71,12 @@
     else fallback();
   }
   $("#copy-mail").addEventListener("click", copyMail);
+  // certificate ids copy on click
+  $$(".cert-id").forEach(b => b.addEventListener("click", () => {
+    const id = b.dataset.copy;
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(id).then(() => say(t("cert.copied")), () => say(id));
+    else say(id);
+  }));
   const openCv = () => window.open("assets/cv/Vladyslav_Zamotailo_Backend_Python.pdf", "_blank", "noopener");
 
   /* ---------- header: border, progress, active section ---------- */
@@ -221,6 +231,22 @@
       case "theme": toggleTheme(); return say("t.theme");
       case "lang": return setLang(lang === "uk" ? "en" : "uk");
       case "clear": return Explorer.clear();
+      case "palette": {
+        say("t.palette");
+        const cs = getComputedStyle(root);
+        const pick = keys => keys.map(k => [k.slice(2), cs.getPropertyValue(k).trim()]);
+        Explorer.printColors(pick(["--bg", "--surface", "--text"]));
+        return Explorer.printColors(pick(["--muted", "--accent", "--ok"]));
+      }
+      case "fonts": return say("t.fonts");
+      case "stars": {
+        const on = arg ? arg !== "off" : Sky.hidden();
+        Sky.toggle(on); return say(on ? "t.stars.on" : "t.stars.off");
+      }
+      case "grid": {
+        const on = document.body.classList.toggle("show-grid");
+        return say(on ? "t.grid.on" : "t.grid.off");
+      }
       case "sudo": return say("t.sudo", null, "warn");
       case "cd": {
         const id = sections.find(s => s.startsWith(arg));
@@ -245,7 +271,7 @@
     if (e.key === "ArrowUp" && history.length) { e.preventDefault(); hIdx = Math.max(0, hIdx - 1); term.value = history[hIdx]; }
     if (e.key === "ArrowDown" && history.length) { e.preventDefault(); hIdx = Math.min(history.length, hIdx + 1); term.value = history[hIdx] || ""; }
     if (e.key === "Tab" && term.value) {
-      const all = ["help", "whoami", "stack", "projects", "open ", "ls", "cd ", "contact", "cv", "theme", "lang", "clear"];
+      const all = ["help", "whoami", "stack", "projects", "open ", "ls", "cd ", "contact", "cv", "theme", "lang", "palette", "fonts", "stars", "grid", "clear"];
       const m = all.find(c => c.startsWith(term.value.toLowerCase()));
       if (m) { e.preventDefault(); term.value = m; }
     }
@@ -253,7 +279,7 @@
 
   /* ---------- starfield behind the hero ---------- */
   const Sky = (() => {
-    const cv = $("#sky"); if (!cv) return { refresh() {} };
+    const cv = $("#sky"); if (!cv) return { refresh() {}, toggle() {}, hidden: () => true };
     const ctx = cv.getContext("2d");
     let W = 0, H = 0, stars = [], comet = null, mx = 0, my = 0, tx = 0, ty = 0, running = false, starC = "", accC = "";
     const css = k => getComputedStyle(root).getPropertyValue(k).trim();
@@ -300,7 +326,7 @@
       else if (!e.isIntersecting) running = false;
     }).observe(cv);
     refresh(); resize();
-    return { refresh };
+    return { refresh, toggle(on) { cv.hidden = !on; if (on) resize(); }, hidden: () => cv.hidden };
   })();
 
   /* ---------- command palette ---------- */

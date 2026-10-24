@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-J0b6U5hrcRQ7+Jmv33vJXURrb/fb0RvS47l65JJ+9O0='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Vladyslav Zamotailo, Python backend-розробник</title>
 <meta name="description" content="Python backend-розробник з України. Django, DRF, FastAPI, PostgreSQL, Celery. Продакшн-бекенди для LMS і адмін-систем.">
 <meta name="author" content="Vladyslav Zamotailo">
@@ -26,10 +28,10 @@
     } catch (e) {}
   })();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500;600;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=a0b2c63">
+<link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css?v=617abc3">
+<link rel="stylesheet" href="assets/css/style.css?v=8f86c67">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,11 +69,11 @@
       <a href="#contact" data-i18n="nav.contact">Контакт</a>
     </nav>
     <div class="tools">
-      <button class="tool tool-search" id="open-palette" type="button" aria-haspopup="dialog">
+      <button class="tool tool-search" id="open-palette" type="button" aria-haspopup="dialog" data-i18n-aria="search" aria-label="Пошук">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <span data-i18n="search">Пошук</span> <kbd id="kbd">Ctrl K</kbd>
       </button>
-      <button class="tool" id="lang-btn" type="button" data-i18n-aria="language" aria-label="Змінити мову">EN</button>
+      <button class="tool" id="lang-btn" type="button" aria-label="EN, Змінити мову">EN</button>
       <button class="tool" id="theme-btn" type="button" data-i18n-aria="theme" aria-label="Змінити тему">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
       </button>
@@ -88,7 +90,7 @@
       <div class="who">
         <div class="who-top">
           <div class="avatar">
-            <img src="assets/img/photo.webp" srcset="assets/img/photo.webp 1x, assets/img/photo@2x.webp 2x" width="112" height="112" alt="Vladyslav Zamotailo">
+            <img src="assets/img/avatar.webp" srcset="assets/img/avatar.webp 1x, assets/img/avatar@2x.webp 2x" fetchpriority="high" width="112" height="112" alt="Vladyslav Zamotailo">
             <svg viewBox="0 0 160 160" aria-hidden="true">
               <circle cx="80" cy="80" r="66" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="2 6"/>
               <circle cx="80" cy="80" r="77" fill="none" stroke="currentColor" stroke-opacity=".14"/>
@@ -132,13 +134,13 @@
       <div class="explorer">
         <div class="ex-tabs" role="tablist" aria-label="Projects">
           <span class="ex-ind" aria-hidden="true"></span>
-          <button class="ex-tab" role="tab" aria-selected="true" data-scene="leogame" type="button">LeoGame LMS</button>
-          <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="itleo" type="button">ITLEO admin</button>
-          <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="vysh" type="button">VyshyvankaDaily</button>
-          <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="devscout" type="button">DevScout</button>
-          <button class="ex-tab" role="tab" aria-selected="false" tabindex="-1" data-scene="vartovyi" type="button">Vartovyi</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="true" data-scene="leogame" type="button">LeoGame LMS</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="itleo" type="button">ITLEO admin</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="vysh" type="button">VyshyvankaDaily</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="devscout" type="button">DevScout</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="vartovyi" type="button">Vartovyi</button>
         </div>
-        <div class="ex-stage">
+        <div class="ex-stage" id="ex-panel" role="tabpanel" aria-label="vlad.stack">
           <div class="ex-head"><span>vlad.stack / <b id="ex-path">leogame-lms</b></span><span data-i18n="ex.drag">потягни вузол</span></div>
           <canvas class="ex-canvas" id="ex-canvas" role="img" data-i18n-aria="ex.label" aria-label="Інтерактивна схема архітектури проекту. Вузли можна перетягувати."></canvas>
           <div class="ex-tip" id="ex-tip" hidden></div>
@@ -150,6 +152,7 @@
           <form class="term-input" id="term-form" autocomplete="off">
             <label for="term" class="prompt">vlad@prod:~$</label>
             <input id="term" type="text" spellcheck="false" autocapitalize="off" data-i18n-ph="term.ph" placeholder="введи help">
+            <button class="sr-only" type="submit" data-i18n="term.run">Виконати</button>
           </form>
         </div>
       </div>
@@ -174,9 +177,9 @@
             <h3>Python Backend Developer <small>ITLEO Academy</small></h3>
             <p class="job-stack">Python · Django · DRF · PostgreSQL · Celery · Redis · aiogram · Firebase · Docker · Pytest · Ruff · GitHub Actions</p>
 
-            <details class="case hl-target" open data-name="LeoGame LMS" data-skills="Python Django DRF DjangoORM PostgreSQL Celery Redis asyncio REST TelegramBot Firebase OAuth GoogleCalendar Docker Pytest Ruff GitHubActions Git">
+            <details class="case hl-target" open data-name="LeoGame LMS" data-skills="Python Django DRF DjangoORM PostgreSQL Celery Redis asyncio REST TelegramBot Firebase OAuth GoogleCalendar Docker Pytest Ruff GitHubActions Git OOP">
               <summary>
-                <div><h4 data-i18n="case1.title">LeoGame Academy, LMS-платформа</h4><p data-i18n="case1.sub">Бекенд навчальної платформи з React-фронтендом</p></div>
+                <h4 class="sum-title" data-i18n="case1.title">LeoGame Academy, LMS-платформа</h4><span class="sum-sub" data-i18n="case1.sub">Бекенд навчальної платформи з React-фронтендом</span>
                 <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
               </summary>
               <div class="case-body">
@@ -195,9 +198,9 @@
               </div>
             </details>
 
-            <details class="case hl-target" data-name="ITLEO admin" data-skills="Python Django DjangoORM PostgreSQL Docker DockerCompose Gunicorn Linux Pytest Ruff GitHubActions Git">
+            <details class="case hl-target" data-name="ITLEO admin" data-skills="Bash Python Django DjangoORM PostgreSQL Docker DockerCompose Gunicorn Linux Pytest Ruff GitHubActions Git OOP">
               <summary>
-                <div><h4 data-i18n="case2.title">ITLEO Academy, адмін-система</h4><p data-i18n="case2.sub">Внутрішня система з ролями, бекапами і моїм деплоєм</p></div>
+                <h4 class="sum-title" data-i18n="case2.title">ITLEO Academy, адмін-система</h4><span class="sum-sub" data-i18n="case2.sub">Внутрішня система з ролями, бекапами і моїм деплоєм</span>
                 <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></span>
               </summary>
               <div class="case-body">
@@ -296,7 +299,7 @@
       </div>
 
       <div class="projects">
-        <article class="proj hl-target rv" data-name="VyshyvankaDaily" data-skills="Python Django DjangoORM PostgreSQL HTML CSS JavaScript Bootstrap GoogleOAuth OAuth Brevo Sentry Heroku Gunicorn Docker DockerCompose GitHubActions Pytest Ruff PreCommit Git">
+        <article class="proj hl-target rv" data-name="VyshyvankaDaily" data-skills="Python Django DjangoORM PostgreSQL HTML CSS JavaScript Bootstrap GoogleOAuth OAuth Brevo Sentry Heroku Gunicorn Docker DockerCompose GitHubActions Pytest Ruff PreCommit Git OOP">
           <div class="proj-main">
             <div class="proj-top"><h3>VyshyvankaDaily</h3><span class="tag live" data-i18n="tag.live">працює</span></div>
             <p data-i18n="vy.desc">Двомовний веб-застосунок: щодня новий орнамент вишивки для кожної з 27 областей України з поясненням символіки.</p>
@@ -307,23 +310,30 @@
               <li data-i18n="vy.b4">CSS скоротив з 31 KB до 7 KB, PageSpeed 100 у всіх чотирьох категоріях</li>
               <li data-i18n="vy.b5">Sentry, щоденні бекапи, CI з Ruff, перевіркою міграцій і 300+ тестами</li>
             </ul>
-          </div>
-          <div class="proj-side">
-            <div class="big-metrics">
-            <div><b>100</b><span data-i18n="vy.m1">PageSpeed у 4 категоріях</span></div>
-            <div><b>A+</b><span data-i18n="vy.m2">заголовки безпеки</span></div>
-            <div><b>300+</b><span data-i18n="vy.m3">автотестів</span></div>
-            <div><b>27</b><span data-i18n="vy.m4">областей, новий орнамент щодня</span></div>
-          </div>
             <div class="chips"><span>Django 5.2</span><span>PostgreSQL</span><span>modeltranslation</span><span>allauth</span><span>Brevo</span><span>Bootstrap 5</span><span>Sentry</span><span>Heroku</span><span>Ruff</span><span>pre-commit</span><span>Pytest</span></div>
             <div class="links">
               <a href="https://vyshyvankadaily.live" target="_blank" rel="noopener">vyshyvankadaily.live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
               <a href="https://github.com/ZamotVlad/VyshyvankaDaily" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
           </div>
+          <div class="proj-side">
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>vyshyvankadaily.live</span></div>
+                <img src="assets/img/shots/vyshyvankadaily-640.webp" srcset="assets/img/shots/vyshyvankadaily-640.webp 640w, assets/img/shots/vyshyvankadaily-1280.webp 1280w" sizes="(min-width: 1000px) 460px, 92vw" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="shot.vy.alt" alt="Головна сторінка VyshyvankaDaily з орнаментом дня на силуеті вишиванки">
+              </div>
+              <figcaption data-i18n="shot.real">Справжня сторінка, запущена локально</figcaption>
+            </figure>
+            <div class="big-metrics">
+            <div><b>100</b><span data-i18n="vy.m1">PageSpeed у 4 категоріях</span></div>
+            <div><b>A+</b><span data-i18n="vy.m2">заголовки безпеки</span></div>
+            <div><b>300+</b><span data-i18n="vy.m3">автотестів</span></div>
+            <div><b>27</b><span data-i18n="vy.m4">областей, новий орнамент щодня</span></div>
+          </div>
+          </div>
         </article>
 
-        <article class="proj hl-target rv" data-name="Vartovyi" data-skills="Python FastAPI asyncio Pydantic SQLAlchemy Alembic PostgreSQL Redis REST OpenAPI JWT httpx Docker DockerCompose Pytest Ruff Mypy Uv HTML CSS JavaScript ADR Docs Git">
+        <article class="proj hl-target rv" data-name="Vartovyi" data-skills="Python FastAPI asyncio Pydantic SQLAlchemy Alembic PostgreSQL Redis REST OpenAPI JWT httpx Docker DockerCompose Pytest Ruff Mypy Uv HTML CSS JavaScript ADR Docs Git OOP">
           <div class="proj-main">
             <div class="proj-top"><h3>Vartovyi</h3><span class="tag" data-i18n="tag.wip">в розробці</span></div>
             <p data-i18n="va.desc">Сервіс моніторингу доступності сайтів і API, мій аналог UptimeRobot для вивчення FastAPI і async Python. Перевіряє URL за розкладом, рахує uptime, відкриває й закриває інциденти і показує публічну сторінку статусу.</p>
@@ -334,20 +344,27 @@
               <li data-i18n="va.b4">Тест бере всі маршрути з OpenAPI-схеми і перевіряє, що кожен захищений відхиляє анонімний запит</li>
               <li data-i18n="va.b5">Ключові рішення записані в ADR: SQLAlchemy 2.0 замість SQLModel, власна JWT-автентифікація, рушій перевірок на asyncio</li>
             </ul>
+            <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Alembic</span><span>PostgreSQL</span><span>Redis</span><span>httpx</span><span>uv</span><span>pytest</span><span>Ruff</span><span>mypy --strict</span><span>Docker</span></div>
+            <p class="links-note" data-i18n="va.private">Код поки приватний, покажу на співбесіді.</p>
           </div>
           <div class="proj-side">
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>vartovyi / dashboard</span></div>
+                <img src="assets/img/shots/vartovyi-640.webp" srcset="assets/img/shots/vartovyi-640.webp 640w, assets/img/shots/vartovyi-1280.webp 1280w" sizes="(min-width: 1000px) 460px, 92vw" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="shot.va.alt" alt="Панель моніторів Vartovyi зі статусами, кодами відповіді і часом перевірки">
+              </div>
+              <figcaption data-i18n="shot.demo">Інтерфейс з прикладовими даними</figcaption>
+            </figure>
             <div class="big-metrics">
             <div><b>3</b><span data-i18n="va.m1">ADR з контекстом і наслідками</span></div>
             <div><b>strict</b><span data-i18n="va.m2">mypy для app і tests</span></div>
             <div><b>5 с</b><span data-i18n="va.m3">такт планувальника</span></div>
             <div><b>24 · 7 · 30</b><span data-i18n="va.m4">uptime за години і дні</span></div>
           </div>
-            <div class="chips"><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Alembic</span><span>PostgreSQL</span><span>Redis</span><span>httpx</span><span>uv</span><span>pytest</span><span>Ruff</span><span>mypy --strict</span><span>Docker</span></div>
-            <p class="links-note" data-i18n="va.private">Код поки приватний, покажу на співбесіді.</p>
           </div>
         </article>
 
-        <article class="proj hl-target rv" data-name="DevScout" data-skills="Python Django DRF DjangoORM Celery Redis PostgreSQL REST BeautifulSoup TelegramBot HTML Bootstrap Docker DockerCompose GitHubActions Pytest Git">
+        <article class="proj hl-target rv" data-name="DevScout" data-skills="Python Django DRF DjangoORM Celery Redis PostgreSQL REST BeautifulSoup TelegramBot HTML Bootstrap Docker DockerCompose GitHubActions Pytest Git OOP">
           <div class="proj-main">
             <div class="proj-top"><h3>DevScout</h3><span class="tag live">open source</span></div>
             <p data-i18n="ds.desc">Збирає вакансії Python для початківців з DOU і Djinni, фільтрує їх і показує в дашборді та Telegram-боті.</p>
@@ -357,18 +374,25 @@
               <li data-i18n="ds.b3">Нічна задача видаляє записи, старші за 30 днів</li>
               <li data-i18n="ds.b4">Дашборд на Django і Bootstrap 5 з фільтрами, пошуком і пагінацією. Приватний Telegram-бот з whitelist за chat id</li>
             </ul>
+            <div class="chips"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>BeautifulSoup4</span><span>pyTelegramBotAPI</span><span>Bootstrap 5</span><span>Docker Compose</span><span>GitHub Actions</span></div>
+            <div class="links">
+              <a href="https://github.com/ZamotVlad/devscout" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
           </div>
           <div class="proj-side">
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>devscout / vacancies</span></div>
+                <img src="assets/img/shots/devscout-640.webp" srcset="assets/img/shots/devscout-640.webp 640w, assets/img/shots/devscout-1280.webp 1280w" sizes="(min-width: 1000px) 460px, 92vw" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="shot.ds.alt" alt="Дашборд DevScout зі списком вакансій, пошуком і фільтром за джерелом">
+              </div>
+              <figcaption data-i18n="shot.demo">Інтерфейс з прикладовими даними</figcaption>
+            </figure>
             <div class="big-metrics">
             <div><b>2</b><span data-i18n="ds.m1">джерела вакансій</span></div>
             <div><b>4-8 год</b><span data-i18n="ds.m2">інтервал збору</span></div>
             <div><b>30 днів</b><span data-i18n="ds.m3">зберігання записів</span></div>
             <div><b>1</b><span data-i18n="ds.m4">команда, щоб підняти весь стек у Docker</span></div>
           </div>
-            <div class="chips"><span>Django</span><span>DRF</span><span>Celery Beat</span><span>Redis</span><span>PostgreSQL</span><span>BeautifulSoup4</span><span>pyTelegramBotAPI</span><span>Bootstrap 5</span><span>Docker Compose</span><span>GitHub Actions</span></div>
-            <div class="links">
-              <a href="https://github.com/ZamotVlad/devscout" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-            </div>
           </div>
         </article>
       </div>
@@ -387,25 +411,25 @@
       </div>
       <div class="skills rv" id="skill-list">
         <div class="skill-group"><h3 data-i18n="g.backend">Backend</h3><div class="row">
-          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="FastAPI">FastAPI</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button><button class="skill" type="button" data-skill="Pydantic">Pydantic</button>
+          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="FastAPI">FastAPI</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button><button class="skill" type="button" data-skill="Pydantic">Pydantic</button><button class="skill" type="button" data-skill="OOP">OOP</button><button class="skill" type="button" data-skill="RabbitMQ" data-note="note.ess">RabbitMQ</button><button class="skill" type="button" data-skill="Jinja" data-note="note.ess">Jinja</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.data">Бази даних</h3><div class="row">
           <button class="skill" type="button" data-skill="PostgreSQL">PostgreSQL</button><button class="skill" type="button" data-skill="Redis">Redis</button><button class="skill" type="button" data-skill="DjangoORM">Django ORM</button><button class="skill" type="button" data-skill="SQLAlchemy">SQLAlchemy 2.0</button><button class="skill" type="button" data-skill="Alembic">Alembic</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.api">API і автентифікація</h3><div class="row">
-          <button class="skill" type="button" data-skill="REST">REST API</button><button class="skill" type="button" data-skill="OpenAPI">OpenAPI / Swagger</button><button class="skill" type="button" data-skill="JWT">JWT</button><button class="skill" type="button" data-skill="OAuth">OAuth 2.0</button><button class="skill" type="button" data-skill="GoogleOAuth">Google OAuth</button><button class="skill" type="button" data-skill="Firebase">Firebase Auth</button>
+          <button class="skill" type="button" data-skill="REST">REST API</button><button class="skill" type="button" data-skill="OpenAPI">OpenAPI / Swagger</button><button class="skill" type="button" data-skill="JWT">JWT</button><button class="skill" type="button" data-skill="OAuth">OAuth 2.0</button><button class="skill" type="button" data-skill="GoogleOAuth">Google OAuth</button><button class="skill" type="button" data-skill="Firebase">Firebase Auth</button><button class="skill" type="button" data-skill="WebSocket" data-note="note.ess">WebSocket</button><button class="skill" type="button" data-skill="GraphQL" data-note="note.ess">GraphQL</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.int">Інтеграції</h3><div class="row">
           <button class="skill" type="button" data-skill="TelegramBot">Telegram Bot API</button><button class="skill" type="button" data-skill="GoogleCalendar">Google Calendar API</button><button class="skill" type="button" data-skill="Brevo">Brevo</button><button class="skill" type="button" data-skill="httpx">httpx</button><button class="skill" type="button" data-skill="BeautifulSoup">BeautifulSoup</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.devops">DevOps</h3><div class="row">
-          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button><button class="skill" type="button" data-skill="Sentry">Sentry</button><button class="skill" type="button" data-skill="Uv">uv</button>
+          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Bash">Bash</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitLab" data-note="note.cyber">GitLab</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button><button class="skill" type="button" data-skill="Sentry">Sentry</button><button class="skill" type="button" data-skill="Uv">uv</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.test">Тести і якість</h3><div class="row">
           <button class="skill" type="button" data-skill="Pytest">Pytest</button><button class="skill" type="button" data-skill="Ruff">Ruff</button><button class="skill" type="button" data-skill="Mypy">mypy</button><button class="skill" type="button" data-skill="PreCommit">pre-commit</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.front">Frontend і CMS</h3><div class="row">
-          <button class="skill" type="button" data-skill="HTML">HTML</button><button class="skill" type="button" data-skill="CSS">CSS</button><button class="skill" type="button" data-skill="JavaScript">JavaScript</button><button class="skill" type="button" data-skill="Bootstrap">Bootstrap 5</button><button class="skill" type="button" data-skill="WordPress" data-note="note.wp">WordPress</button><button class="skill" type="button" data-skill="Elementor" data-note="note.wp">Elementor</button>
+          <button class="skill" type="button" data-skill="HTML">HTML</button><button class="skill" type="button" data-skill="CSS">CSS</button><button class="skill" type="button" data-skill="JavaScript">JavaScript</button><button class="skill" type="button" data-skill="Bootstrap">Bootstrap 5</button><button class="skill" type="button" data-skill="SASS" data-note="note.htmlcss">SASS</button><button class="skill" type="button" data-skill="Figma" data-note="note.htmlcss">Figma</button><button class="skill" type="button" data-skill="WordPress" data-note="note.wp">WordPress</button><button class="skill" type="button" data-skill="Elementor" data-note="note.wp">Elementor</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.ai">AI-інструменти</h3><div class="row">
           <button class="skill" type="button" data-skill="ClaudeCode" data-note="note.claude">Claude Code</button><button class="skill" type="button" data-skill="Prompting" data-note="note.prompt">Prompt engineering</button>
@@ -437,7 +461,7 @@
           <h3 data-i18n="edu.lang">Мови</h3>
           <div>
             <div class="lang-row"><span data-i18n="lang.uk">Українська</span><span data-i18n="lang.uk.lvl">рідна</span></div>
-            <div class="lang-row"><span data-i18n="lang.en">Англійська</span><span data-i18n="lang.en.lvl">B1 · EF SET: читання і письмо B2</span></div>
+            <div class="lang-row"><span data-i18n="lang.en">Англійська</span><span data-i18n="lang.en.lvl">B2 за EF SET (51/100), розмовна B1</span></div>
           </div>
         </div>
         <div class="edu-card">
@@ -446,6 +470,79 @@
           <p data-i18n="edu.nowtext">Вчуся на власному проекті Vartovyi: FastAPI, async Python і поділ сервісу на шари.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- certificates -->
+  <section class="section" id="certificates" aria-labelledby="cert-title">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <span class="eyebrow">GET /certificates <b>200</b></span>
+          <h2 id="cert-title" data-i18n="cert.title">Курси і сертифікати</h2>
+        </div>
+        <p class="sec-note" data-i18n="cert.note">Десять курсів за 2025 і 2026 роки. Першими йдуть ті, що найближчі до бекенду.</p>
+      </div>
+      <div class="cert-grid rv">
+          <article class="cert">
+            <div class="cert-top"><span>ITVDN</span><span class="cert-date"><span data-i18n="cm.6">червень</span> 2026</span></div>
+            <h3 data-i18n="c.ess">Django Essential</h3>
+            <div class="chips"><span>Celery</span><span>Redis</span><span>WebSocket</span><span>GraphQL</span></div>
+            <button class="cert-id" type="button" data-copy="TP71141785"><span>ID</span> TP71141785</button>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>ITVDN</span><span class="cert-date"><span data-i18n="cm.2">лютий</span> 2026</span></div>
+            <h3 data-i18n="c.start">Django Starter</h3>
+            <div class="chips"><span>Django</span><span>REST API</span></div>
+            <button class="cert-id" type="button" data-copy="TP92102021"><span>ID</span> TP92102021</button>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>CyberBionic Systematics</span><span class="cert-date"><span data-i18n="cm.5">травень</span> - <span data-i18n="cm.12">грудень</span> 2025</span></div>
+            <h3 data-i18n="c.cyber">Python Developer</h3>
+            <div class="chips"><span>Python</span><span>Django</span><span>PostgreSQL</span><span>Docker</span></div>
+          </article>
+      </div>
+      <details class="cert-more" id="cert-more">
+        <summary class="btn"><span class="when-closed" data-i18n="cert.more">Показати ще 7</span><span class="when-open" data-i18n="cert.less">Згорнути</span><svg class="ico chev-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cert-grid">
+          <article class="cert">
+            <div class="cert-top"><span>Prometheus</span><span class="cert-date"><span data-i18n="cm.10">жовтень</span> 2026</span></div>
+            <h3 data-i18n="c.linux">Основи Linux</h3>
+            <div class="chips"><span>Linux</span><span>Bash</span><span>CLI</span></div>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Anthropic</span><span class="cert-date"><span data-i18n="cm.8">серпень</span> 2026</span></div>
+            <h3 data-i18n="c.claude">Claude Code 101</h3>
+            <div class="chips"><span>Claude Code</span><span>Subagents</span><span>Skills</span></div>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Genius.Space</span><span class="cert-date"><span data-i18n="cm.8">серпень</span> 2026</span></div>
+            <h3 data-i18n="c.ai">AI specialist</h3>
+            <div class="chips"><span>Prompt engineering</span><span>LLM</span></div>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Genius.Space</span><span class="cert-date"><span data-i18n="cm.7">липень</span> 2026</span></div>
+            <h3 data-i18n="c.gs">Python Developer</h3>
+            <div class="chips"><span>FastAPI</span><span>JWT</span><span>CRUD</span></div>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Cisco Networking Academy</span><span class="cert-date"><span data-i18n="cm.4">квітень</span> 2026</span></div>
+            <h3 data-i18n="c.ds">Introduction to Data Science</h3>
+            <div class="chips"><span>Data Analysis</span><span>JSON</span><span>XML</span></div>
+            <button class="cert-id" type="button" data-copy="a56b1e23-3d6a-4803-a97a-3b58a50a3728"><span>ID</span> a56b1e23…</button>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Genius.Space</span><span class="cert-date"><span data-i18n="cm.12">грудень</span> 2025</span></div>
+            <h3 data-i18n="c.html">HTML/CSS specialist</h3>
+            <div class="chips"><span>Semantic HTML</span><span>BEM</span><span>SASS</span><span>Figma</span></div>
+          </article>
+          <article class="cert">
+            <div class="cert-top"><span>Cisco Networking Academy</span><span class="cert-date"><span data-i18n="cm.5">травень</span> 2025</span></div>
+            <h3 data-i18n="c.net">Networking Basics</h3>
+            <div class="chips"><span>TCP/IP</span><span>OSI</span><span>Packet Tracer</span></div>
+          </article>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -473,7 +570,7 @@
       </div>
       <figure class="response rv" aria-label="Contact details as an API response">
         <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>POST /contact</span></div>
-<pre><code><span class="c">HTTP/1.1</span> <span class="ok">201 Created</span>
+<pre tabindex="0"><code><span class="c">HTTP/1.1</span> <span class="ok">201 Created</span>
 <span class="c">Content-Type: application/json</span>
 
 {
@@ -500,15 +597,16 @@
 <div class="hood" id="hood" popover>
   <h3 data-i18n="hood.title">Як зроблено цей сайт</h3>
   <ul>
-    <li data-i18n="hood.1">Чистий HTML, CSS і JavaScript без фреймворків і збірки. Хостинг на GitHub Pages</li>
-    <li data-i18n="hood.2">Canvas 2D для схеми архітектури і зоряного неба, з фізикою пружин</li>
-    <li data-i18n="hood.3">View Transitions API для зміни теми й мови</li>
-    <li data-i18n="hood.4">CSS scroll-driven animations, container queries і @property</li>
-    <li data-i18n="hood.5">Нативні dialog і Popover API, клавіатурна навігація, prefers-reduced-motion</li>
+    <li data-i18n="hood.1">Чистий HTML, CSS і JavaScript без фреймворків і збірки, хостинг на GitHub Pages</li>
+    <li data-i18n="hood.2">Шрифти, скрипти й картинки лежать на самому сайті, а політика CSP забороняє завантаження зі сторонніх доменів</li>
+    <li data-i18n="hood.3">Доступність перевірена axe-core за WCAG 2.1 AA, сайтом можна користуватись з клавіатури</li>
+    <li data-i18n="hood.4">На кожен пуш GitHub Actions перевіряє HTML, посилання і Lighthouse</li>
+    <li data-i18n="hood.5">Canvas 2D для схеми і зоряного неба, View Transitions для зміни теми й мови</li>
   </ul>
 </div>
 
-<dialog class="palette" id="palette" aria-label="Command palette">
+<dialog class="palette" id="palette" aria-labelledby="pal-title">
+  <h2 class="sr-only" id="pal-title" data-i18n="search">Пошук</h2>
   <label>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     <input id="pal-input" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="pal-list" data-i18n-ph="pal.ph" placeholder="Куди перейти або що зробити…">
@@ -518,8 +616,8 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/js/i18n.js?v=a88202e"></script>
-<script src="assets/js/graph.js?v=a204529"></script>
-<script src="assets/js/main.js?v=75fde1d"></script>
+<script defer src="assets/js/i18n.js?v=8f15a0e"></script>
+<script defer src="assets/js/graph.js?v=f238dbc"></script>
+<script defer src="assets/js/main.js?v=a239066"></script>
 </body>
 </html>
