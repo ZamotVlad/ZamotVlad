@@ -12,21 +12,21 @@ jobs:
   html:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - run: npx --yes html-validate@8.24.0 index.html 404.html
 
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: lycheeverse/lychee-action@v2
         with:
           # LinkedIn answers 999 to bots, so it is accepted along with rate limits
           args: >-
-            --no-progress --exclude-mail --max-retries 3
+            --no-progress --max-retries 3
             --accept '200..=299,403,429,999'
             index.html 404.html README.md
           fail: true
@@ -34,7 +34,7 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
