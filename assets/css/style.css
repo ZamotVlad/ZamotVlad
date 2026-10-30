@@ -412,7 +412,6 @@ input[type="range"]:hover::-webkit-slider-thumb, input[type="range"]:active::-we
 @container projects (min-width: 820px) {
   .proj { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; padding: 32px; }
 }
-.links-note { font: 400 .8125rem/1.5 var(--f-mono); color: var(--muted); }
 .proj-side { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
 .proj-side .links { margin-top: 0; }
 .proj-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
