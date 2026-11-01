@@ -222,6 +222,53 @@
           sites: "Checks the status code, a keyword in the body and a degradation threshold."
         }
       }
+    },
+    monetka: {
+      path: "monetka",
+      nodes: {
+        browser: ["Wallet UI", .13, .18], shop: ["Shop API", .13, .52], bank: ["Test bank", .13, .86],
+        api: ["FastAPI", .38, .52], redis: ["Redis", .38, .12], pg: ["PostgreSQL", .62, .52],
+        worker: ["Worker", .84, .78], kafka: ["Kafka", .86, .22], s3: ["S3 · LocalStack", .6, .9]
+      },
+      tall: { browser: [.22, .05], shop: [.5, .05], bank: [.78, .05], api: [.5, .26], redis: [.18, .38], pg: [.5, .52], kafka: [.8, .44], worker: [.72, .74], s3: [.32, .92] },
+      edges: "browser-api shop-api bank-api api-redis api-pg pg-worker worker-kafka kafka-api worker-s3",
+      routes: [
+        ["browser api pg", "POST /api/v1/transfers       201  31ms"],
+        ["shop api pg", "POST /merchant/payments      201  24ms"],
+        ["browser api pg", "POST /payments/{id}/confirm  200  hold"],
+        ["bank api pg", "webhook evt_8f2 hmac ok      credited"],
+        ["bank api pg", "webhook evt_8f2 again        duplicate"],
+        ["pg worker kafka", "outbox relay batch=3         sent"],
+        ["kafka api browser", "ws wallet.changed            pushed"],
+        ["worker pg", "reconcile 210 accounts       Σ = 0"],
+        ["worker s3", "statement 2026-10.csv        uploaded"]
+      ],
+      text: {
+        uk: {
+          caption: "Навчальний гаманець на FastAPI. Гроші рухаються проводками з сумою нуль, вебхуки банку перевіряються підписом, події з outbox ідуть у Kafka і повертаються в браузер по WebSocket, а воркер звіряє книгу.",
+          browser: "Гаманець на HTML, CSS і JS: баланс, перекази, підтвердження покупок. Оновлюється наживо.",
+          shop: "Магазин виставляє рахунок за API-ключем, потім списує або скасовує резерв.",
+          bank: "Тестовий банк: сторінка оплати і вебхук з HMAC-підписом і міткою часу.",
+          api: "FastAPI і Pydantic v2. Idempotency-Key для всіх операцій з грошима, JWT, єдиний формат помилок.",
+          redis: "Ліміти запитів: вхід рахується по IP, операції з грошима по токену.",
+          pg: "Книга проводок, баланси під SELECT FOR UPDATE і CHECK, outbox у тій самій транзакції.",
+          worker: "Пересилає outbox, закриває прострочені резерви, звіряє баланси, робить місячні виписки.",
+          kafka: "Redpanda з Kafka API. Ключ повідомлення це id користувача, тож його події йдуть по порядку.",
+          s3: "CSV-виписки за місяць, посилання на завантаження підписані на 15 хвилин."
+        },
+        en: {
+          caption: "A learning wallet on FastAPI. Money moves as postings that sum to zero, bank webhooks are checked by signature, outbox events go to Kafka and back to the browser over WebSocket, and a worker reconciles the books.",
+          browser: "A wallet in HTML, CSS and JS: balance, transfers, purchase confirmations. Updates live.",
+          shop: "The shop requests a payment with its API key, then charges or releases the reserve.",
+          bank: "A test bank: a checkout page and a webhook signed with HMAC and a timestamp.",
+          api: "FastAPI and Pydantic v2. Idempotency-Key on every money operation, JWT, one error format.",
+          redis: "Rate limits: sign-in is counted per IP, money operations per token.",
+          pg: "The ledger, balances under SELECT FOR UPDATE and a CHECK, the outbox in the same transaction.",
+          worker: "Relays the outbox, closes expired reserves, reconciles balances, builds monthly statements.",
+          kafka: "Redpanda with the Kafka API. The message key is the user id, so a user's events stay in order.",
+          s3: "Monthly CSV statements, download links signed for 15 minutes."
+        }
+      }
     }
   };
 

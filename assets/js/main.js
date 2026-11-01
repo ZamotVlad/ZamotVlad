@@ -215,7 +215,7 @@
   /* ---------- terminal under the graph ---------- */
   const term = $("#term"), history = []; let hIdx = 0;
   const sections = ["experience", "incidents", "projects", "skills", "education", "contact"];
-  const projectAliases = { leogame: "leogame", lms: "leogame", itleo: "itleo", admin: "itleo", vysh: "vysh", vyshyvankadaily: "vysh", devscout: "devscout", vartovyi: "vartovyi" };
+  const projectAliases = { leogame: "leogame", lms: "leogame", itleo: "itleo", admin: "itleo", vysh: "vysh", vyshyvankadaily: "vysh", devscout: "devscout", vartovyi: "vartovyi", monetka: "monetka" };
   function runCommand(raw) {
     const [cmd, ...args] = raw.trim().split(/\s+/), arg = (args[0] || "").toLowerCase(), say = (k, c, cls) => Explorer.print(t(k, c), cls);
     Explorer.print("$ " + raw, "cmd");

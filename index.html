@@ -31,7 +31,7 @@
 <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/geologica-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css?v=617abc3">
-<link rel="stylesheet" href="assets/css/style.css?v=7fb6539">
+<link rel="stylesheet" href="assets/css/style.css?v=1046509">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -139,6 +139,7 @@
           <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="vysh" type="button">VyshyvankaDaily</button>
           <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="devscout" type="button">DevScout</button>
           <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="vartovyi" type="button">Vartovyi</button>
+          <button class="ex-tab" role="tab" aria-controls="ex-panel" aria-selected="false" tabindex="-1" data-scene="monetka" type="button">Monetka</button>
         </div>
         <div class="ex-stage" id="ex-panel" role="tabpanel" aria-label="vlad.stack">
           <div class="ex-head"><span>vlad.stack / <b id="ex-path">leogame-lms</b></span><span data-i18n="ex.drag">потягни вузол</span></div>
@@ -295,7 +296,7 @@
           <span class="eyebrow">GET /projects <b>200</b></span>
           <h2 id="proj-title" data-i18n="proj.title">Власні проекти</h2>
         </div>
-        <p class="sec-note" data-i18n="proj.note">Те, що я будую поза роботою: від ідеї до продакшену.</p>
+        <p class="sec-note" data-i18n="proj.note">Роблю їх у вільний час. VyshyvankaDaily вже працює в продакшені, Vartovyi ще в розробці, а Monetka навчальний проект з тестовими грошима.</p>
       </div>
 
       <div class="projects">
@@ -329,6 +330,40 @@
             <div><b>A+</b><span data-i18n="vy.m2">заголовки безпеки</span></div>
             <div><b>300+</b><span data-i18n="vy.m3">автотестів</span></div>
             <div><b>27</b><span data-i18n="vy.m4">областей, новий орнамент щодня</span></div>
+          </div>
+          </div>
+        </article>
+
+        <article class="proj hl-target rv" data-name="Monetka" data-skills="Python FastAPI asyncio Pydantic SQLAlchemy Alembic PostgreSQL Redis Kafka REST OpenAPI JWT WebSocket httpx Docker DockerCompose GitHubActions Prometheus Grafana S3 Pytest Hypothesis Testcontainers Locust Ruff Mypy PreCommit Uv HTML CSS JavaScript ADR Docs Git OOP">
+          <div class="proj-main">
+            <div class="proj-top"><h3>Monetka</h3><span class="tag" data-i18n="tag.learn">навчальний</span></div>
+            <p data-i18n="mo.desc">Цифровий гаманець з оплатою в магазинах. Навчальний проект, на якому я розбирав задачі фінтеху та iGaming. Справжніх грошей тут немає: банк тестовий, баланси ігрові.</p>
+            <ul>
+              <li data-i18n="mo.b1">Подвійний запис: кожна операція складається з проводок, сума яких дорівнює нулю. Суми зберігаються в цілих копійках, а звірка регулярно перераховує кожен баланс із проводок</li>
+              <li data-i18n="mo.b2">Повторний запит не списує гроші вдруге: Idempotency-Key зберігається в одній транзакції з операцією. У тесті 100 паралельних списань, і баланс не йде в мінус</li>
+              <li data-i18n="mo.b3">Оплата з резервом: магазин блокує суму і списує її після виконання замовлення. Стани платежу описані машиною станів, рядки блокуються через SELECT FOR UPDATE у фіксованому порядку</li>
+              <li data-i18n="mo.b4">Вебхуки тестового банку підписані HMAC з міткою часу. Дублі й запізнілі події не змінюють баланс</li>
+              <li data-i18n="mo.b5">Події йдуть через transactional outbox у Kafka, а звідти по WebSocket у браузер. Метрики в Prometheus і Grafana, місячні виписки в S3 через LocalStack</li>
+            </ul>
+            <div class="chips"><span>FastAPI</span><span>SQLAlchemy 2.0</span><span>PostgreSQL</span><span>Redis</span><span>Kafka (Redpanda)</span><span>WebSocket</span><span>Prometheus</span><span>Grafana</span><span>LocalStack S3</span><span>testcontainers</span><span>Hypothesis</span><span>Locust</span><span>mypy --strict</span><span>Docker Compose</span></div>
+            <div class="links">
+              <a href="https://zamotvlad.github.io/monetka/" target="_blank" rel="noopener"><span data-i18n="mo.demo">Онлайн-демо</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <a href="https://github.com/ZamotVlad/monetka" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="proj-side">
+            <figure class="shot">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>monetka / wallet</span></div>
+                <img src="assets/img/shots/monetka-640.webp" srcset="assets/img/shots/monetka-640.webp 640w, assets/img/shots/monetka-1280.webp 1280w" sizes="(min-width: 1000px) 460px, 92vw" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="shot.mo.alt" alt="Гаманець Monetka: доступний і заблокований баланс, запит на оплату від кав'ярні та історія операцій">
+              </div>
+              <figcaption data-i18n="shot.mo">Онлайн-демо з тестовими грошима</figcaption>
+            </figure>
+            <div class="big-metrics">
+            <div><b>119</b><span data-i18n="mo.m1">автотестів, частина на справжньому PostgreSQL</span></div>
+            <div><b>Σ = 0</b><span data-i18n="mo.m2">у кожній операції книги</span></div>
+            <div><b>0</b><span data-i18n="mo.m3">помилок під навантаженням 100 користувачів</span></div>
+            <div><b>5</b><span data-i18n="mo.m4">ADR про ключові рішення</span></div>
           </div>
           </div>
         </article>
@@ -413,22 +448,22 @@
       </div>
       <div class="skills rv" id="skill-list">
         <div class="skill-group"><h3 data-i18n="g.backend">Backend</h3><div class="row">
-          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="FastAPI">FastAPI</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button><button class="skill" type="button" data-skill="Pydantic">Pydantic</button><button class="skill" type="button" data-skill="OOP">OOP</button><button class="skill" type="button" data-skill="RabbitMQ" data-note="note.ess">RabbitMQ</button><button class="skill" type="button" data-skill="Jinja" data-note="note.ess">Jinja</button>
+          <button class="skill" type="button" data-skill="Python">Python</button><button class="skill" type="button" data-skill="Django">Django</button><button class="skill" type="button" data-skill="DRF">Django REST Framework</button><button class="skill" type="button" data-skill="FastAPI">FastAPI</button><button class="skill" type="button" data-skill="Celery">Celery</button><button class="skill" type="button" data-skill="asyncio">asyncio</button><button class="skill" type="button" data-skill="Pydantic">Pydantic</button><button class="skill" type="button" data-skill="OOP">OOP</button><button class="skill" type="button" data-skill="Kafka">Kafka</button><button class="skill" type="button" data-skill="RabbitMQ" data-note="note.ess">RabbitMQ</button><button class="skill" type="button" data-skill="Jinja" data-note="note.ess">Jinja</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.data">Бази даних</h3><div class="row">
           <button class="skill" type="button" data-skill="PostgreSQL">PostgreSQL</button><button class="skill" type="button" data-skill="Redis">Redis</button><button class="skill" type="button" data-skill="DjangoORM">Django ORM</button><button class="skill" type="button" data-skill="SQLAlchemy">SQLAlchemy 2.0</button><button class="skill" type="button" data-skill="Alembic">Alembic</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.api">API і автентифікація</h3><div class="row">
-          <button class="skill" type="button" data-skill="REST">REST API</button><button class="skill" type="button" data-skill="OpenAPI">OpenAPI / Swagger</button><button class="skill" type="button" data-skill="JWT">JWT</button><button class="skill" type="button" data-skill="OAuth">OAuth 2.0</button><button class="skill" type="button" data-skill="GoogleOAuth">Google OAuth</button><button class="skill" type="button" data-skill="Firebase">Firebase Auth</button><button class="skill" type="button" data-skill="WebSocket" data-note="note.ess">WebSocket</button><button class="skill" type="button" data-skill="GraphQL" data-note="note.ess">GraphQL</button>
+          <button class="skill" type="button" data-skill="REST">REST API</button><button class="skill" type="button" data-skill="OpenAPI">OpenAPI / Swagger</button><button class="skill" type="button" data-skill="JWT">JWT</button><button class="skill" type="button" data-skill="OAuth">OAuth 2.0</button><button class="skill" type="button" data-skill="GoogleOAuth">Google OAuth</button><button class="skill" type="button" data-skill="Firebase">Firebase Auth</button><button class="skill" type="button" data-skill="WebSocket">WebSocket</button><button class="skill" type="button" data-skill="GraphQL" data-note="note.ess">GraphQL</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.int">Інтеграції</h3><div class="row">
-          <button class="skill" type="button" data-skill="TelegramBot">Telegram Bot API</button><button class="skill" type="button" data-skill="GoogleCalendar">Google Calendar API</button><button class="skill" type="button" data-skill="Brevo">Brevo</button><button class="skill" type="button" data-skill="httpx">httpx</button><button class="skill" type="button" data-skill="BeautifulSoup">BeautifulSoup</button>
+          <button class="skill" type="button" data-skill="TelegramBot">Telegram Bot API</button><button class="skill" type="button" data-skill="GoogleCalendar">Google Calendar API</button><button class="skill" type="button" data-skill="Brevo">Brevo</button><button class="skill" type="button" data-skill="httpx">httpx</button><button class="skill" type="button" data-skill="S3">AWS S3 (LocalStack)</button><button class="skill" type="button" data-skill="BeautifulSoup">BeautifulSoup</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.devops">DevOps</h3><div class="row">
-          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Bash">Bash</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitLab" data-note="note.cyber">GitLab</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button><button class="skill" type="button" data-skill="Sentry">Sentry</button><button class="skill" type="button" data-skill="Uv">uv</button>
+          <button class="skill" type="button" data-skill="Docker">Docker</button><button class="skill" type="button" data-skill="DockerCompose">Docker Compose</button><button class="skill" type="button" data-skill="Gunicorn">Gunicorn</button><button class="skill" type="button" data-skill="Linux">Linux</button><button class="skill" type="button" data-skill="Bash">Bash</button><button class="skill" type="button" data-skill="Git">Git</button><button class="skill" type="button" data-skill="GitLab" data-note="note.cyber">GitLab</button><button class="skill" type="button" data-skill="GitHubActions">GitHub Actions</button><button class="skill" type="button" data-skill="Heroku">Heroku</button><button class="skill" type="button" data-skill="Sentry">Sentry</button><button class="skill" type="button" data-skill="Prometheus">Prometheus</button><button class="skill" type="button" data-skill="Grafana">Grafana</button><button class="skill" type="button" data-skill="Uv">uv</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.test">Тести і якість</h3><div class="row">
-          <button class="skill" type="button" data-skill="Pytest">Pytest</button><button class="skill" type="button" data-skill="Ruff">Ruff</button><button class="skill" type="button" data-skill="Mypy">mypy</button><button class="skill" type="button" data-skill="PreCommit">pre-commit</button>
+          <button class="skill" type="button" data-skill="Pytest">Pytest</button><button class="skill" type="button" data-skill="Ruff">Ruff</button><button class="skill" type="button" data-skill="Mypy">mypy</button><button class="skill" type="button" data-skill="Hypothesis">Hypothesis</button><button class="skill" type="button" data-skill="Testcontainers">testcontainers</button><button class="skill" type="button" data-skill="Locust">Locust</button><button class="skill" type="button" data-skill="PreCommit">pre-commit</button>
         </div></div>
         <div class="skill-group"><h3 data-i18n="g.front">Frontend і CMS</h3><div class="row">
           <button class="skill" type="button" data-skill="HTML">HTML</button><button class="skill" type="button" data-skill="CSS">CSS</button><button class="skill" type="button" data-skill="JavaScript">JavaScript</button><button class="skill" type="button" data-skill="Bootstrap">Bootstrap 5</button><button class="skill" type="button" data-skill="SASS" data-note="note.htmlcss">SASS</button><button class="skill" type="button" data-skill="Figma" data-note="note.htmlcss">Figma</button><button class="skill" type="button" data-skill="WordPress" data-note="note.wp">WordPress</button><button class="skill" type="button" data-skill="Elementor" data-note="note.wp">Elementor</button>
@@ -618,8 +653,8 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script defer src="assets/js/i18n.js?v=4ad2827"></script>
-<script defer src="assets/js/graph.js?v=7250289"></script>
-<script defer src="assets/js/main.js?v=96f9918"></script>
+<script defer src="assets/js/i18n.js?v=1de252f"></script>
+<script defer src="assets/js/graph.js?v=51e4fb4"></script>
+<script defer src="assets/js/main.js?v=d3bd945"></script>
 </body>
 </html>

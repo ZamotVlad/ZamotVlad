@@ -209,7 +209,7 @@ p { margin: 0; text-wrap: pretty; }
 .ex-tab {
   position: relative; z-index: 1; flex: none;
   border: 0; background: transparent; cursor: pointer; white-space: nowrap;
-  padding: 9px 16px; border-radius: 999px; font: 500 .875rem/1 var(--f-body); color: var(--muted);
+  padding: 9px 12px; border-radius: 999px; font: 500 .875rem/1 var(--f-body); color: var(--muted);
   transition: color .25s ease;
 }
 .ex-tab:hover { color: var(--text); }
