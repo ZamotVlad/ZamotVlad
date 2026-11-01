@@ -10,6 +10,7 @@ take them to production and keep them running after launch.
   and automated PostgreSQL backups (code is private)
 - Both are covered with tests and deployed with Docker on a VPS
 - Building **[Vartovyi](https://github.com/ZamotVlad/vartovyi)**, an uptime monitoring service on FastAPI and async Python
+- Learning fintech backend patterns on **[Monetka](https://github.com/ZamotVlad/monetka)**, a wallet that runs on test money
 
 ### How I work
 
@@ -27,18 +28,25 @@ decisions in ADRs and write setup guides, so a project can be picked up by someo
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat&logo=sqlalchemy&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
 ![Celery](https://img.shields.io/badge/Celery-37814A?style=flat&logo=celery&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat&logo=apachekafka&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)
 ![Ruff](https://img.shields.io/badge/Ruff-D7FF64?style=flat&logo=ruff&logoColor=black)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 ![Sentry](https://img.shields.io/badge/Sentry-362D59?style=flat&logo=sentry&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
 
 ### Projects
 
 - **[VyshyvankaDaily](https://github.com/ZamotVlad/VyshyvankaDaily)** ([live](https://vyshyvankadaily.live)) - a daily
   Ukrainian embroidery ornament for each of the 27 regions, drawn by a deterministic SVG generator.
   Bilingual, A+ security headers, PageSpeed 100, 300+ tests. Django, PostgreSQL, Google OAuth, Sentry, Pytest
+- **[Monetka](https://github.com/ZamotVlad/monetka)** ([demo](https://zamotvlad.github.io/monetka/)) - a learning
+  project: a digital wallet with shop payments, test money only. Double-entry ledger, idempotent payments,
+  reserve and capture, signed webhooks, a transactional outbox to Kafka and live updates over WebSocket.
+  119 tests, the database ones on real PostgreSQL. FastAPI, PostgreSQL, Redis, Kafka, Prometheus, Grafana, Docker Compose
 - **[Vartovyi](https://github.com/ZamotVlad/vartovyi)** - uptime monitoring for sites and APIs: an async
   check engine, incidents, a public status page and JWT auth with refresh rotation. Key decisions are
   written up as ADRs. FastAPI, SQLAlchemy 2.0, PostgreSQL, Redis, Docker, mypy --strict
