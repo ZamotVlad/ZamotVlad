@@ -2,8 +2,8 @@
    requests fly along real routes like comets and land in the terminal under the graph. */
 (() => {
   const SCENES = {
-    leogame: {
-      path: "leogame-lms",
+    edtech: {
+      path: "edtech-backend",
       nodes: {
         react: ["React SPA", .08, .18], account: ["Student account", .1, .5], fire: ["Firebase Auth", .1, .84],
         api: ["Django · DRF", .4, .5], gcal: ["Google Calendar", .4, .9], pg: ["PostgreSQL", .7, .16],
@@ -16,40 +16,40 @@
         ["react fire api", "auth firebase id_token      ok"],
         ["account api pg", "POST /api/homework/          201  48ms"],
         ["react api pg", "GET  /api/groups/            200  21ms"],
-        ["bots api pg", "bot  POST /api/demo-bookings/ 201  35ms"],
+        ["bots api pg", "bot  POST /api/leads/          201  35ms"],
         ["api celery bots", "task notify_new_lead → staff bot  sent"],
         ["api gcal", "calendar sync oauth2         ok   0.8s"],
         ["account api pg", "GET  /api/account/progress/  200  17ms"]
       ],
       text: {
         uk: {
-          caption: "Бекенд LMS: React-фронтенд і кабінет студента ходять у DRF API, вхід через Firebase, фонові задачі в Celery, два боти на aiogram і синхронізація з Google Calendar.",
+          caption: "Бекенд EdTech-платформи (NDA): React-фронтенд і кабінет студента ходять у DRF API, вхід через Firebase, фонові задачі в Celery, два боти на aiogram і синхронізація з Google Calendar.",
           react: "React-фронтенд, для якого я зробив REST API.",
           account: "Кабінет студента: курси, уроки й матеріали, здача домашніх завдань, оцінки, прогрес і розклад.",
           fire: "Firebase Authentication. Бекенд перевіряє токен у кожному запиті.",
           api: "Групи, зарахування, уроки, перевірка ДЗ, оцінки і прогрес. 390+ тестів, Ruff і CI.",
-          pg: "Основна база LMS.",
+          pg: "Основна база платформи.",
           celery: "Фонові задачі і сповіщення.",
           redis: "Брокер для Celery.",
-          bots: "Публічний бот для запису на демо-урок і бот для команди зі сповіщеннями про нові заявки.",
+          bots: "Публічний бот для заявок і бот для команди зі сповіщеннями про нові заявки.",
           gcal: "OAuth 2.0, токени зберігаються зашифрованими."
         },
         en: {
-          caption: "The LMS backend: a React frontend and the student account call the DRF API, sign-in goes through Firebase, background jobs run on Celery, plus two aiogram bots and Google Calendar sync.",
+          caption: "The EdTech platform backend (NDA): a React frontend and the student account call the DRF API, sign-in goes through Firebase, background jobs run on Celery, plus two aiogram bots and Google Calendar sync.",
           react: "The React frontend I built the REST API for.",
           account: "The student account: courses, lessons and materials, homework submission, grades, progress and schedule.",
           fire: "Firebase Authentication. The backend verifies the token on every request.",
           api: "Groups, enrollment, lessons, homework review, grades and progress. 390+ tests, Ruff and CI.",
-          pg: "The main LMS database.",
+          pg: "The main platform database.",
           celery: "Background jobs and notifications.",
           redis: "Broker for Celery.",
-          bots: "A public bot for booking demo lessons and a staff bot with new-lead alerts.",
+          bots: "A public bot for new requests and a staff bot with new-lead alerts.",
           gcal: "OAuth 2.0 with encrypted tokens."
         }
       }
     },
-    itleo: {
-      path: "itleo-admin",
+    admin: {
+      path: "admin-system",
       nodes: {
         user: ["Browser", .07, .42], proxy: ["Proxy · SSL", .29, .42], guni: ["Gunicorn", .5, .42],
         api: ["Django admin", .72, .42], rbac: ["RBAC · 5 roles", .76, .1], pg: ["PostgreSQL", .9, .74],
@@ -58,7 +58,7 @@
       tall: { user: [.5, .05], proxy: [.5, .22], guni: [.5, .39], rbac: [.78, .56], api: [.36, .56], pg: [.25, .75], backup: [.25, .94], restore: [.72, .94] },
       edges: "user-proxy proxy-guni guni-api api-rbac api-pg pg-backup backup-restore",
       routes: [
-        ["user proxy guni api pg", "GET  /admin/students/       200  34ms"],
+        ["user proxy guni api pg", "GET  /admin/users/          200  34ms"],
         ["user proxy guni api rbac", "rbac deny role=mentor perm=delete 403"],
         ["pg backup", "cron pg_dump nightly         ok   3.4s"],
         ["backup restore", "restore check latest dump    ok"],
@@ -67,8 +67,8 @@
       ],
       text: {
         uk: {
-          caption: "Внутрішня адмін-система: запити йдуть через проксі з SSL і Gunicorn до Django, доступ перевіряється для 5 ролей, а кожен бекап PostgreSQL перевіряється відновленням.",
-          user: "Співробітники академії.",
+          caption: "Внутрішня адмін-система (NDA): запити йдуть через проксі з SSL і Gunicorn до Django, доступ перевіряється для 5 ролей, а кожен бекап PostgreSQL перевіряється відновленням.",
+          user: "Співробітники компанії.",
           proxy: "Тут я виправив подвійний заголовок Origin і маршрут ACME challenge для SSL.",
           guni: "Gunicorn у Docker Compose на VPS, який я підтримую.",
           api: "Адмін-система, 300+ тестів, Ruff і CI.",
@@ -78,8 +78,8 @@
           restore: "Кожен бекап перевіряється відновленням, щоб він точно працював."
         },
         en: {
-          caption: "The internal admin system: requests go through an SSL proxy and Gunicorn to Django, access is checked for 5 roles, and every PostgreSQL backup is verified by restoring it.",
-          user: "Academy staff.",
+          caption: "The internal admin system (NDA): requests go through an SSL proxy and Gunicorn to Django, access is checked for 5 roles, and every PostgreSQL backup is verified by restoring it.",
+          user: "Company staff.",
           proxy: "This is where I fixed the duplicated Origin header and the ACME challenge route for SSL.",
           guni: "Gunicorn in Docker Compose on a VPS that I maintain.",
           api: "The admin system, 300+ tests, Ruff and CI.",
@@ -275,7 +275,7 @@
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let cv, ctx, tip, logEl, capEl, pathEl, stage;
   let W = 0, H = 0, tall = false, colors = {}, lang = "uk";
-  let scene = null, sceneKey = "leogame";
+  let scene = null, sceneKey = "edtech";
   const nodes = new Map();
   let edges = [], packets = [], drag = null, hover = null, running = false, timer = null, lastFrame = 0, holdUntil = 0;
   const MAX_LOG = 5;

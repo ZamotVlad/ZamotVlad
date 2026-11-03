@@ -29,7 +29,7 @@
     langBtn.textContent = lang === "uk" ? "EN" : "UA";
     // the accessible name starts with the visible text, as WCAG 2.5.3 asks
     langBtn.setAttribute("aria-label", `${langBtn.textContent}, ${t("language")}`);
-    $("#job1-dur").textContent = duration(new Date(2025, 0, 1), new Date());
+    $("#job1-dur").textContent = duration(new Date(2025, 10, 1), new Date(2026, 10, 1));
     renderUsed();
     if (window.Explorer) Explorer.setLang(lang);
   }
@@ -215,7 +215,7 @@
   /* ---------- terminal under the graph ---------- */
   const term = $("#term"), history = []; let hIdx = 0;
   const sections = ["experience", "incidents", "projects", "skills", "education", "contact"];
-  const projectAliases = { leogame: "leogame", lms: "leogame", itleo: "itleo", admin: "itleo", vysh: "vysh", vyshyvankadaily: "vysh", devscout: "devscout", vartovyi: "vartovyi", monetka: "monetka" };
+  const projectAliases = { edtech: "edtech", nda: "edtech", admin: "admin", vysh: "vysh", vyshyvankadaily: "vysh", devscout: "devscout", vartovyi: "vartovyi", monetka: "monetka" };
   function runCommand(raw) {
     const [cmd, ...args] = raw.trim().split(/\s+/), arg = (args[0] || "").toLowerCase(), say = (k, c, cls) => Explorer.print(t(k, c), cls);
     Explorer.print("$ " + raw, "cmd");
