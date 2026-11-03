@@ -5,10 +5,10 @@ take them to production and keep them running after launch.
 
 ### What I work on
 
-- Production backends for an EdTech company: an LMS platform with a React frontend
-  and Firebase authentication, and an internal admin system with role-based access
-  and automated PostgreSQL backups (code is private)
-- Both are covered with tests and deployed with Docker on a VPS
+- Python Backend Developer, part-time under NDA (Nov 2025 - Nov 2026): the backend of an
+  EdTech platform with a React frontend and Firebase authentication, and an internal admin
+  system with role-based access and automated PostgreSQL backups. Both covered with tests
+  and deployed with Docker on a VPS (code is private)
 - Building **[Vartovyi](https://github.com/ZamotVlad/vartovyi)**, an uptime monitoring service on FastAPI and async Python
 - Learning fintech backend patterns on **[Monetka](https://github.com/ZamotVlad/monetka)**, a wallet that runs on test money
 
