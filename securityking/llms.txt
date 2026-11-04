@@ -20,8 +20,6 @@ General information pages are located under:
 - [Warranty](https://securityking.com.ua/garantiy): Warranty terms and service conditions.
 - [Returns](https://securityking.com.ua/vozvrat): Product return and exchange policy.
 - [Cashback](https://securityking.com.ua/cashback): Terms of the store cashback program.
-- [Privacy Policy](https://securityking.com.ua/politic): Rules for processing personal data.
-- [Public Offer](https://securityking.com.ua/publichna-oferta): Public offer agreement and terms of sale.
 - [Contact Us](https://securityking.com.ua/contact-us/): Contact details and feedback form.
 
 > All pages are publicly accessible and provide key service and policy information.
