@@ -3,9 +3,9 @@
 # Slugs indicate variable content paths.
 
 
-# SecurityKing
+# Security King
 
-> SecurityKing is a Ukrainian online store of security and low-voltage equipment with delivery across Ukraine. Key areas include video surveillance, alarm systems, intercoms, smart home, access control and electric locks, backup power systems, network equipment, cables and installation supplies, as well as tested used equipment for homes and businesses.
+> Security King is a Kyiv-based online store of security systems with delivery across Ukraine. The store sells video surveillance, alarm systems, intercoms, access control and electric locks, smart home devices and backup power equipment from Hikvision, Dahua, Ajax, Reolink, Imou, Ezviz, ZKTeco, Deye, EcoFlow and other brands. Customers get help choosing equipment, official manufacturer warranty of up to 5 years, installation by qualified engineers and 24/7 security monitoring with rapid response teams.
 
 
 ## Main Pages
@@ -14,13 +14,13 @@
 
 General information pages are located under:
 
-- [Homepage](https://securityking.com.ua/): Main page with catalog sections, popular products and current offers.
-- [About Us](https://securityking.com.ua/about-us): Information about SecurityKing and its assortment.
-- [Delivery & Payment](https://securityking.com.ua/dostavka-i-oplata): Delivery methods across Ukraine and payment options.
-- [Warranty](https://securityking.com.ua/garantiy): Warranty terms and service conditions.
-- [Returns](https://securityking.com.ua/vozvrat): Product return and exchange policy.
-- [Cashback](https://securityking.com.ua/cashback): Terms of the store cashback program.
-- [Contact Us](https://securityking.com.ua/contact-us/): Contact details and feedback form.
+- [Homepage](https://securityking.com.ua/): Catalog sections, new arrivals, promotional products, store advantages and customer reviews.
+- [About Us](https://securityking.com.ua/about-us): The store's mission and its approach to helping customers choose security equipment from leading brands.
+- [Delivery & Payment](https://securityking.com.ua/dostavka-i-oplata): Nova Poshta courier delivery in Kyiv, delivery to Nova Poshta branches across Ukraine, pickup, free-delivery thresholds, and payment on receipt, by card online (Visa/MasterCard, Apple Pay, Google Pay) or by invoice for businesses.
+- [Warranty](https://securityking.com.ua/garantiy): 12-month warranty from the date of sale unless another period is stated for the product, and the conditions for warranty service.
+- [Returns](https://securityking.com.ua/vozvrat): Return or exchange of goods of proper quality within 14 days under Ukrainian consumer protection law.
+- [Cashback](https://securityking.com.ua/cashback): Bonus cashback credited within 24 hours after an order and usable on any next purchase.
+- [Contact Us](https://securityking.com.ua/contact-us/): Phone numbers, email, address in Kyiv (6A Oleny Pchilky St.), working hours and callback form.
 
 > All pages are publicly accessible and provide key service and policy information.
 
@@ -29,19 +29,19 @@ General information pages are located under:
 
 Video surveillance products and accessories are located under:
 
-- [Video Surveillance](https://securityking.com.ua/videosposterezhennia/): Main category for CCTV equipment.
+- [Video Surveillance](https://securityking.com.ua/videosposterezhennia/): Main category with cameras, recorders, CCTV kits, storage and accessories from Dahua, Hikvision, Ajax and other brands.
 
 Subcategories:
 
-- [CCTV Kits](https://securityking.com.ua/komplekty-videosposterezhennia/): Ready-made sets of cameras and a recorder.
-- [Surveillance Cameras](https://securityking.com.ua/kamery-videosposterezhennia/): IP, HD analog, Wi-Fi and 4G cameras.
-- [Video Recorders](https://securityking.com.ua/videoreiestratory/): NVR, DVR and XVR recorders.
-- [Hard Drives](https://securityking.com.ua/zhorstki-dysky/): HDDs for storing surveillance footage.
-- [Video Signal Transmitters](https://securityking.com.ua/peredavachi-videosyhnalu/): Equipment for transmitting video over distance.
-- [Microphones](https://securityking.com.ua/mikrofony/): Audio recording devices for CCTV systems.
-- [Memory Cards](https://securityking.com.ua/kartky-pamiati/): microSD cards for cameras and devices.
-- [Body Cameras](https://securityking.com.ua/body-kamery/): Wearable video recorders.
-- [CCTV Accessories](https://securityking.com.ua/aksesuary-videosposterezhennia/): Brackets, boxes, connectors and other add-ons.
+- [CCTV Kits](https://securityking.com.ua/komplekty-videosposterezhennia/): Ready-made video surveillance kits from Hikvision, Reolink, Ajax, Dahua and ZKTeco.
+- [Surveillance Cameras](https://securityking.com.ua/kamery-videosposterezhennia/): IP, HDCVI, Wi-Fi and 4G cameras, including battery-powered models with solar panels, from Dahua, Hikvision, Tecsar, Ajax, Reolink, Imou and Ezviz.
+- [Video Recorders](https://securityking.com.ua/videoreiestratory/): NVR, XVR and TurboHD recorders from Hikvision, Provision-ISR, Dahua, Ajax and Reolink.
+- [Hard Drives](https://securityking.com.ua/zhorstki-dysky/): Hard drives for video recorders, mainly Western Digital Purple, plus Hikvision drives and Kingston SSDs.
+- [Video Signal Transmitters](https://securityking.com.ua/peredavachi-videosyhnalu/): Video receiver-transmitters, PoC transmitters, HDMI extenders and PoE switches from Atis, Dahua and Utepo.
+- [Microphones](https://securityking.com.ua/mikrofony/): Audio microphones for CCTV systems from Dahua and Hikvision.
+- [Memory Cards](https://securityking.com.ua/kartky-pamiati/): microSD cards for cameras from Kingston, SanDisk, Dahua and Imou.
+- [Body Cameras](https://securityking.com.ua/body-kamery/): Body-worn video recorders from Tecsar, Recoda and Boblov.
+- [CCTV Accessories](https://securityking.com.ua/aksesuary-videosposterezhennia/): Junction boxes, wall and telescopic brackets and mounting boxes for cameras from Atis, Hikvision and Provision-ISR.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -50,18 +50,18 @@ Subcategories:
 
 Alarm system products and accessories are located under:
 
-- [Alarm Systems](https://securityking.com.ua/okhoronni-syhnalizatsii/): Main category for intruder alarm solutions.
+- [Alarm Systems](https://securityking.com.ua/okhoronni-syhnalizatsii/): Main category for intruder alarms: Ajax, Atis, U-Prox and Tiras kits, detectors, sirens and accessories.
 
 Subcategories:
 
-- [Alarm Kits](https://securityking.com.ua/komplekty-syhnalizatsii/): Complete alarm sets for homes and offices.
-- [Control Panels](https://securityking.com.ua/tsentrali/): Hubs and central units of alarm systems.
-- [Alarm Detectors](https://securityking.com.ua/datchyky-okhoronnoi-syhnalizatsii/): Motion, opening, glass-break and other detectors.
-- [Sirens](https://securityking.com.ua/syreny-dlia-syhnalizatsii/): Indoor and outdoor alarm sirens.
-- [Keypads](https://securityking.com.ua/klaviatury-syhnalizatsii/): Keypads for arming and disarming.
-- [Key Fobs & Cards](https://securityking.com.ua/breloky-kartky/): Remote controls, panic buttons and access tags.
-- [Signal Repeaters](https://securityking.com.ua/retransliatory-syhnalu/): Range extenders for wireless alarms.
-- [Alarm Accessories](https://securityking.com.ua/aksesuary-okhoronny/): Mounting parts and additional components.
+- [Alarm Kits](https://securityking.com.ua/komplekty-syhnalizatsii/): Ready-made alarm kits, mostly Ajax, as well as U-Prox and Atis.
+- [Control Panels](https://securityking.com.ua/tsentrali/): Ajax hubs and Tiras, U-Prox, Atis and Hikvision control panels.
+- [Alarm Detectors](https://securityking.com.ua/datchyky-okhoronnoi-syhnalizatsii/): Opening, motion, outdoor and vibration detectors from Trinix, Atis, Ajax and U-Prox.
+- [Sirens](https://securityking.com.ua/syreny-dlia-syhnalizatsii/): Outdoor, indoor and personal sirens, mostly Atis.
+- [Keypads](https://securityking.com.ua/klaviatury-syhnalizatsii/): Alarm keypads from Tiras, U-Prox, Hikvision and Ajax.
+- [Key Fobs & Cards](https://securityking.com.ua/breloky-kartky/): Panic and multifunction buttons, key fobs and tags from Ajax, Hikvision and U-Prox.
+- [Signal Repeaters](https://securityking.com.ua/retransliatory-syhnalu/): Radio signal range extenders for Ajax, U-Prox and Hikvision systems.
+- [Alarm Accessories](https://securityking.com.ua/aksesuary-okhoronny/): Batteries, power supplies, GPRS modules, backup power kits and other add-ons for Ajax, Hikvision and U-Prox systems.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -70,17 +70,17 @@ Subcategories:
 
 Intercom products and accessories are located under:
 
-- [Intercom Systems](https://securityking.com.ua/domofonni-systemy/): Main category for intercom systems.
+- [Intercom Systems](https://securityking.com.ua/domofonni-systemy/): Main category for video intercom kits, monitors, call panels and doorbells from BCOM, NeoLight, Slinex, Hikvision and Dahua.
 
 Subcategories:
 
-- [Video Intercom Kits](https://securityking.com.ua/komplekty-videodomofoniv/): Monitor and call panel bundles.
-- [Video Intercoms](https://securityking.com.ua/videodomofony/): Indoor analog and IP monitors.
-- [Call Panels](https://securityking.com.ua/vyklychni-paneli/): Outdoor door stations.
-- [Video Doorbells](https://securityking.com.ua/videodzvinky/): Smart doorbells with a camera.
-- [Audio Intercoms](https://securityking.com.ua/audiodomofony/): Audio-only intercom devices.
-- [Intercom Memory Cards](https://securityking.com.ua/karty-domofony/): Memory cards for intercoms.
-- [Intercom Accessories](https://securityking.com.ua/aksesuary-domofoni/): Additional intercom equipment.
+- [Video Intercom Kits](https://securityking.com.ua/komplekty-videodomofoniv/): Intercom kits, including Wi-Fi kits, from BCOM and NeoLight.
+- [Video Intercoms](https://securityking.com.ua/videodomofony/): Indoor video intercom monitors from BCOM, NeoLight, Dahua, Dnake and Slinex.
+- [Call Panels](https://securityking.com.ua/vyklychni-paneli/): Outdoor call panels from NeoLight, BCOM, Slinex, Dahua and Provision-ISR.
+- [Video Doorbells](https://securityking.com.ua/videodzvinky/): Video doorbells from Reolink, Ajax, ZKTeco, Ezviz and Provision-ISR.
+- [Audio Intercoms](https://securityking.com.ua/audiodomofony/): BCOM audio handsets, Hikvision audio intercoms and Slinex intercom devices.
+- [Intercom Memory Cards](https://securityking.com.ua/karty-domofony/): microSD cards for intercoms from Hikvision, Kingston, Ezviz and Imou.
+- [Intercom Accessories](https://securityking.com.ua/aksesuary-domofoni/): Expansion modules, brackets, adapters, splitters and power supplies for Slinex, Atis and Dahua intercoms.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -89,18 +89,18 @@ Subcategories:
 
 Smart home products are located under:
 
-- [Smart Home](https://securityking.com.ua/rozumnyi-budynok/): Main category for home automation.
+- [Smart Home](https://securityking.com.ua/rozumnyi-budynok/): Main category for home automation, mostly Ajax, with Trinix and U-Prox devices.
 
 Subcategories:
 
-- [Anti-Flood](https://securityking.com.ua/antypotop/): Leak detection and water shut-off systems.
-- [Smart Home Sensors](https://securityking.com.ua/datchyky-rozumnoho-domu/): Sensors for home automation.
-- [Smart Switches](https://securityking.com.ua/rozumni-vymykachi/): Remotely controlled switches.
-- [Smart Sockets](https://securityking.com.ua/rozumni-rozetky/): Sockets with remote control.
-- [Smart Bulbs](https://securityking.com.ua/rozumni-lampochky/): App-controlled lighting.
-- [Smart Relays](https://securityking.com.ua/rozumni-rele/): Relays for controlling electrical appliances.
-- [Integration Modules](https://securityking.com.ua/moduli-intehratsii/): Modules for connecting third-party devices.
-- [Repeaters](https://securityking.com.ua/retransliatory/): Range extenders for smart home networks.
+- [Anti-Flood](https://securityking.com.ua/antypotop/): Leak protection kits, leak detectors and water shut-off valves, mostly Ajax, as well as U-Prox.
+- [Smart Home Sensors](https://securityking.com.ua/datchyky-rozumnoho-domu/): Gas leak, flood and other sensors, including Tuya Smart models, from Atis, Trinix, Ajax and Dahua.
+- [Smart Switches](https://securityking.com.ua/rozumni-vymykachi/): Smart touch light switches from Ajax, Trinix and Atis.
+- [Smart Sockets](https://securityking.com.ua/rozumni-rozetky/): Wi-Fi, built-in and outdoor smart sockets from Ajax, Atis and Trinix.
+- [Smart Lighting](https://securityking.com.ua/rozumni-lampochky/): Smart bulbs, table lamps, floor lamps and LED strips from Meross and Imou.
+- [Smart Relays](https://securityking.com.ua/rozumni-rele/): Low-voltage and power relays for remote control of appliances from Ajax, Trinix, Atis and U-Prox.
+- [Integration Modules](https://securityking.com.ua/moduli-intehratsii/): Expansion and integration modules for Ajax, Hikvision, U-Prox and Atis systems.
+- [Repeaters](https://securityking.com.ua/retransliatory/): Range extenders for smart home devices from Trinix.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -109,27 +109,27 @@ Subcategories:
 
 Access control products and accessories are located under:
 
-- [Access Control](https://securityking.com.ua/kontrol-dostupu/): Main category for access control systems.
+- [Access Control](https://securityking.com.ua/kontrol-dostupu/): Main category for access control: locks, readers, controllers, exit buttons and door closers from Atis, Trinix, Yli Electronic, Dortec and ZKTeco.
 
 Subcategories:
 
-- [Access Control Kits](https://securityking.com.ua/komplekty-kontroliu-dostupu/): Complete kits for access control installation.
-- [Electric Locks](https://securityking.com.ua/elektrozamky/): Electrically operated locks.
-- [Electromagnetic Locks](https://securityking.com.ua/elektromahnitni-zamky/): Magnetic locks for doors and gates.
-- [Electric Bolt Locks](https://securityking.com.ua/elektroryhelni-zamky/): Bolt-type electric locks.
-- [Electromechanical Locks](https://securityking.com.ua/elektromekhanichni-zamky/): Locks for doors, gates and wickets.
-- [Electric Strikes](https://securityking.com.ua/elektromekhanichni-zashchipky/): Electromechanical door strikes.
-- [Smart Locks](https://securityking.com.ua/smart-zamky/): Connected and automated locks.
-- [Motorized Locks](https://securityking.com.ua/elektromotorni-zamky/): Locks with an electric motor drive.
-- [Lock Accessories](https://securityking.com.ua/aksesuary-dlia-zamkiv/): Brackets and mounting kits for locks.
-- [Readers](https://securityking.com.ua/zchytuvachi/): Devices for reading cards and key fobs.
-- [Controllers](https://securityking.com.ua/kontrolery/): Control units for access management.
-- [Radio Controllers](https://securityking.com.ua/radiokontrolery/): Wireless control receivers.
-- [Door Closers](https://securityking.com.ua/dovodchyky-dverei/): Devices for automatic door closing.
-- [Cards & Key Fobs](https://securityking.com.ua/kartky-breloky/): Access credentials.
-- [Exit Buttons](https://securityking.com.ua/knopky-vyhodu/): Buttons for exit access control.
-- [Parking Barriers](https://securityking.com.ua/parkuvalni-bariery/): Vehicle access barriers.
-- [Access Control Accessories](https://securityking.com.ua/aksesuary-kontrol-dostupu/): Accessories for access control systems.
+- [Access Control Kits](https://securityking.com.ua/komplekty-kontroliu-dostupu/): Smart lock kits, gate and door opening controllers and access control kits from Atis, Trinix and ZKTeco.
+- [Electric Locks](https://securityking.com.ua/elektrozamky/): Electromagnetic, electric bolt and electromechanical locks and smart locks from Yli Electronic, Atis, Trinix, Yale and ZKTeco.
+- [Electromagnetic Locks](https://securityking.com.ua/elektromahnitni-zamky/): Electromagnetic locks, mostly Yli Electronic, as well as Trinix.
+- [Electric Bolt Locks](https://securityking.com.ua/elektroryhelni-zamky/): Electric bolt locks, mostly Yli Electronic, as well as Trinix.
+- [Electromechanical Locks](https://securityking.com.ua/elektromekhanichni-zamky/): Electromechanical locks for doors and gates from Atis, Yli Electronic and Trinix.
+- [Electric Strikes](https://securityking.com.ua/elektromekhanichni-zashchipky/): Electromechanical door strikes from Yli Electronic and Trinix.
+- [Smart Locks](https://securityking.com.ua/smart-zamky/): Biometric and smart locks from Trinix, Atis, ZKTeco, Yale and Ajax.
+- [Motorized Locks](https://securityking.com.ua/elektromotorni-zamky/): Motorized locks from Atis and Trinix.
+- [Lock Accessories](https://securityking.com.ua/aksesuary-dlia-zamkiv/): Flexible door loops, mounting brackets and cylinders for locks from Yli Electronic, Trinix and Yale.
+- [Readers](https://securityking.com.ua/zchytuvachi/): Mifare and EM card readers from ZKTeco, Atis, Dahua and U-Prox.
+- [Controllers](https://securityking.com.ua/kontrolery/): Network and standalone access controllers from U-Prox, ZKTeco, Dahua and Atis.
+- [Radio Controllers](https://securityking.com.ua/radiokontrolery/): Radio controller kits and key fobs from Yli Electronic.
+- [Door Closers](https://securityking.com.ua/dovodchyky-dverei/): Door closers from Dortec, Ryobi and Atis.
+- [Cards & Key Fobs](https://securityking.com.ua/kartky-breloky/): Access cards, key fobs and Mifare keys from Atis, U-Prox and ZKTeco.
+- [Exit Buttons](https://securityking.com.ua/knopky-vyhodu/): Exit and emergency release buttons from Yli Electronic, Trinix, Atis and ViaSecurity.
+- [Parking Barriers](https://securityking.com.ua/parkuvalni-bariery/): Parking barriers, parking blockers and remote controls from ZKTeco and Atis.
+- [Access Control Accessories](https://securityking.com.ua/aksesuary-kontrol-dostupu/): Flexible door loops, brackets, mounting cabinets and other parts from Yli Electronic, Atis and ZKTeco.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -138,22 +138,22 @@ Subcategories:
 
 Power supply products and accessories are located under:
 
-- [Power Systems](https://securityking.com.ua/systemy-zhyvlennia/): Main category for power equipment and backup systems.
+- [Power Systems](https://securityking.com.ua/systemy-zhyvlennia/): Main category for power supplies, batteries, UPS units, inverters and power stations from Full Energy, Ajax, Trinix and Kraft.
 
 Subcategories:
 
-- [Backup Power Kits](https://securityking.com.ua/komplekty-rezervnoho-zhyvlennia/): Complete backup power solutions.
-- [Power Stations](https://securityking.com.ua/zariadni-stantsii/): Portable charging stations.
-- [Powerbanks](https://securityking.com.ua/powerbanky/): Portable battery packs.
-- [Power Supplies](https://securityking.com.ua/bloky-zhyvlennia/): Power units for low-voltage equipment.
-- [UPS 12V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-12v/): Uninterruptible power supplies for low-voltage systems.
-- [UPS 220V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-220v/): Mains uninterruptible power supplies.
-- [UPS for Routers](https://securityking.com.ua/bezperebiinyky-router/): Mini UPS for Wi-Fi routers.
-- [Batteries](https://securityking.com.ua/akumuliatory/): Rechargeable AGM, gel and LiFePO4 batteries.
-- [Batteries (Household)](https://securityking.com.ua/batareiky/): Disposable batteries for sensors and devices.
-- [Inverters](https://securityking.com.ua/invertory/): Devices for converting DC to AC power.
-- [Solar Panels](https://securityking.com.ua/soniachni-paneli/): Photovoltaic panels for autonomous power.
-- [Power Accessories](https://securityking.com.ua/aksesuary-systemy-zhyvlennia/): Cables, connectors and other extras.
+- [Backup Power Kits](https://securityking.com.ua/komplekty-rezervnoho-zhyvlennia/): Uninterruptible and backup power kits from Full Energy, Trinix, Kraft and Ajax.
+- [Power Stations](https://securityking.com.ua/zariadni-stantsii/): Portable power stations from EcoFlow, Kraft, Full Energy, Ezviz and Zendure.
+- [Powerbanks](https://securityking.com.ua/powerbanky/): Powerbanks from Videx and Kraft.
+- [Power Supplies](https://securityking.com.ua/bloky-zhyvlennia/): Power supplies for security equipment from Full Energy and Via Energy.
+- [UPS 12-48V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-12v/): Low-voltage uninterruptible power supplies and UPS boards from Via Energy and Full Energy.
+- [UPS 220V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-220v/): Off-grid and line-interactive 220V UPS units from Full Energy and Kraft.
+- [UPS for Routers](https://securityking.com.ua/bezperebiinyky-router/): Mini UPS units for Wi-Fi routers and optical terminals from Full Energy, Trinix, SKE and Step4Net.
+- [Batteries](https://securityking.com.ua/akumuliatory/): Gel and LiFePO4 batteries for alarm systems and backup power from Full Energy, Deye and Trinix.
+- [Batteries (Household)](https://securityking.com.ua/batareiky/): Batteries for Ajax devices and other sensors from Ajax, Trinix and Full Energy.
+- [Inverters](https://securityking.com.ua/invertory/): Hybrid inverters, LiFePO4 battery modules and accessories from Deye and Full Energy.
+- [Solar Panels](https://securityking.com.ua/soniachni-paneli/): Solar panels for power stations and cameras from Kraft, Reolink, Full Energy and EcoFlow.
+- [Power Accessories](https://securityking.com.ua/aksesuary-systemy-zhyvlennia/): Battery packs, connectors, adapter cables, transformers and battery balancers from Atis, Trinix and Kraft.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -166,12 +166,12 @@ Networking devices and accessories are located under:
 
 Subcategories:
 
-- [Wi-Fi Routers](https://securityking.com.ua/wi-fi-routery/): Wireless routers for internet access.
-- [Access Points](https://securityking.com.ua/tochky-dostupu/): Devices to extend wireless coverage.
-- [Switches](https://securityking.com.ua/komutatory/): Devices for wired network distribution, including PoE.
-- [PoE Injectors](https://securityking.com.ua/poe-inzhektory/): Power over Ethernet injectors.
-- [PoE Splitters](https://securityking.com.ua/poe-splitery/): Power over Ethernet splitters.
-- [Network Accessories](https://securityking.com.ua/aksesuary-merezheve-obladnannia/): Connectors, patch cords and other add-ons.
+- [Wi-Fi Routers](https://securityking.com.ua/wi-fi-routery/): Category for Wi-Fi routers.
+- [Access Points](https://securityking.com.ua/tochky-dostupu/): Category for wireless access points.
+- [Switches](https://securityking.com.ua/komutatory/): PoE switches from Dahua.
+- [PoE Injectors](https://securityking.com.ua/poe-inzhektory/): Category for Power over Ethernet injectors.
+- [PoE Splitters](https://securityking.com.ua/poe-splitery/): Category for Power over Ethernet splitters.
+- [Network Accessories](https://securityking.com.ua/aksesuary-merezheve-obladnannia/): Category for network equipment accessories.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -180,18 +180,18 @@ Subcategories:
 
 Cable products, mounting materials and tools are located under:
 
-- [Cable](https://securityking.com.ua/kabel/): Main category for cabling and installation supplies.
+- [Cable](https://securityking.com.ua/kabel/): Main category for cables, cable ducts and cable tools.
 
 Subcategories:
 
-- [Twisted Pair](https://securityking.com.ua/vyta-para/): UTP/FTP cable for IP networks.
-- [Signal Cable](https://securityking.com.ua/syhnalnyi-kabel/): Cable for alarm and signaling systems.
-- [Coaxial Cable](https://securityking.com.ua/koaksialnyi-kabel/): Cable for analog video transmission.
-- [Power Cable](https://securityking.com.ua/sylovoi-kabel/): Electrical power cable.
-- [Fiber Optic Cable](https://securityking.com.ua/optychnyi-kabel/): Optical cable for long-distance links.
-- [Fire Cable](https://securityking.com.ua/pozhezhnyi-kabel/): Fire-resistant cable for fire alarm systems.
-- [Cable Ducts](https://securityking.com.ua/korob/): Trunking and conduits for cable routing.
-- [Cable Tools](https://securityking.com.ua/instrumenty-dlia-kabeliu/): Instruments for cable installation.
+- [Twisted Pair](https://securityking.com.ua/vyta-para/): Twisted pair cable for IP networks from OK-Net and Atis.
+- [Signal Cable](https://securityking.com.ua/syhnalnyi-kabel/): Category for signal cable for alarm systems.
+- [Coaxial Cable](https://securityking.com.ua/koaksialnyi-kabel/): Coaxial and combined coaxial cable from Atis, Odeskabel and Finmark.
+- [Power Cable](https://securityking.com.ua/sylovoi-kabel/): Category for power cable.
+- [Fiber Optic Cable](https://securityking.com.ua/optychnyi-kabel/): Category for fiber optic cable.
+- [Fire Cable](https://securityking.com.ua/pozhezhnyi-kabel/): Category for fire-resistant cable.
+- [Cable Ducts](https://securityking.com.ua/korob/): Category for cable ducts.
+- [Cable Tools](https://securityking.com.ua/instrumenty-dlia-kabeliu/): Category for cable installation tools.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -200,8 +200,8 @@ Subcategories:
 
 Additional product categories are located under:
 
-- [Used Equipment](https://securityking.com.ua/vzhyvane/): Pre-owned tested equipment at reduced prices.
-- [Other](https://securityking.com.ua/inshe/): Products outside the main categories.
+- [Used Equipment](https://securityking.com.ua/vzhyvane/): Used Ajax equipment at reduced prices: detectors, hubs, range extenders, keypads and buttons.
+- [Other](https://securityking.com.ua/inshe/): Products outside the main catalog sections.
 
 > All URLs use a flat, single-level structure without nested folders.
 
@@ -225,7 +225,7 @@ Examples:
 - [Slinex](https://securityking.com.ua/slinex)
 - [ZKTeco](https://securityking.com.ua/zkteco)
 
-> Each brand page contains product listings of the manufacturer. All brand pages are publicly accessible under root-level paths.
+> Each brand page lists all of the manufacturer's products available in the store. All brand pages are publicly accessible under root-level paths.
 
 
 ## Product Pages
@@ -249,14 +249,14 @@ Examples:
 
 All blog articles are listed on the main blog page:
 
-- [Blog Overview](https://securityking.com.ua/blog/): News, articles, reviews and useful tips.
+- [Blog Overview](https://securityking.com.ua/blog/): Articles, news, reviews and tips about security systems.
 
 Blog sections:
 
-- [News](https://securityking.com.ua/novyny/): Industry and product news.
-- [Articles](https://securityking.com.ua/statti/): Guides on security systems.
-- [Reviews](https://securityking.com.ua/ohliady/): Product and equipment reviews.
-- [Useful](https://securityking.com.ua/korysne/): Practical tips for users.
+- [News](https://securityking.com.ua/novyny/): News about new products, such as the Ajax Superior product line.
+- [Articles](https://securityking.com.ua/statti/): Articles about video surveillance technology, cloud storage, low-light recording, alarm system basics and protecting detectors from tampering.
+- [Reviews](https://securityking.com.ua/ohliady/): Reviews of specific devices, such as Ajax FireProtect 2 and Ajax KeyPad TouchScreen.
+- [Useful](https://securityking.com.ua/korysne/): Practical tips, such as keeping Ajax running during power outages and the benefits of professional monitoring.
 
 Blog articles have clean, flat URLs without the `/blog/` prefix:
 
