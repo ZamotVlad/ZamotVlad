@@ -210,6 +210,10 @@ Additional product categories are located under:
 
 All brand profiles are located under a flat URL structure:
 
+- [Brands Overview](https://securityking.com.ua/brands/): Main page listing all brands available in the store.
+
+Brand-specific pages follow the pattern:
+
 - URL pattern: https://securityking.com.ua/[brand-slug]
 
 Examples:
@@ -226,6 +230,29 @@ Examples:
 - [ZKTeco](https://securityking.com.ua/zkteco)
 
 > Each brand page lists all of the manufacturer's products available in the store. All brand pages are publicly accessible under root-level paths.
+
+
+## Brand + Category Pages
+
+Product listings by brand and product type are located inside their parent category:
+
+- URL pattern: https://securityking.com.ua/[category-slug]/[filter-slug]
+
+Examples:
+
+- [AJAX Cameras](https://securityking.com.ua/kamery-videosposterezhennia/ajax-cameras)
+- [Dahua Cameras](https://securityking.com.ua/kamery-videosposterezhennia/dahua-cameras)
+- [Hikvision Cameras](https://securityking.com.ua/kamery-videosposterezhennia/hikvision-cameras)
+- [Reolink Cameras](https://securityking.com.ua/kamery-videosposterezhennia/reolink-cameras)
+- [Wi-Fi Cameras](https://securityking.com.ua/kamery-videosposterezhennia/wi-fi-kamery)
+- [Outdoor Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-na-vulytsiu)
+- [Battery-Powered Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-z-akumuliatorom)
+- [4G Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-4g)
+- [AJAX Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-ajax)
+- [Dahua Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-dahua)
+- [Hikvision Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-hikvision)
+
+> These pages exist for the main camera and recorder brands and camera types. All are publicly accessible.
 
 
 ## Product Pages
