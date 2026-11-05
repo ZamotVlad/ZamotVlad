@@ -1,18 +1,14 @@
-# This is a navigational route list for AI crawlers.
-# All URLs use a flat, single-level structure without nested folders.
-# Slugs indicate variable content paths.
-
-
 # Security King
 
 > Security King is a Kyiv-based online store of security systems with delivery across Ukraine. The store sells video surveillance, alarm systems, intercoms, access control and electric locks, smart home devices and backup power equipment from Hikvision, Dahua, Ajax, Reolink, Imou, Ezviz, ZKTeco, Deye, EcoFlow and other brands. Customers get help choosing equipment, official manufacturer warranty of up to 5 years, installation by qualified engineers and 24/7 security monitoring with rapid response teams.
 
+- Site language: Ukrainian, with a Russian version under `/ru/`.
+- Prices are in Ukrainian hryvnia (UAH); delivery covers all of Ukraine.
+- Categories, products, brands and blog articles use root-level URLs (`https://securityking.com.ua/[slug]`); brand + category filter pages are nested under their parent category.
+- All listed pages are publicly accessible.
 
-## Main Pages
 
 ## Informational Pages
-
-General information pages are located under:
 
 - [Homepage](https://securityking.com.ua/): Catalog sections, new arrivals, promotional products, store advantages and customer reviews.
 - [About Us](https://securityking.com.ua/about-us): The store's mission and its approach to helping customers choose security equipment from leading brands.
@@ -21,8 +17,6 @@ General information pages are located under:
 - [Returns](https://securityking.com.ua/vozvrat): Return or exchange of goods of proper quality within 14 days under Ukrainian consumer protection law.
 - [Cashback](https://securityking.com.ua/cashback): Bonus cashback credited within 24 hours after an order and usable on any next purchase.
 - [Contact Us](https://securityking.com.ua/contact-us/): Phone numbers, email, address in Kyiv (6A Oleny Pchilky St.), working hours and callback form.
-
-> All pages are publicly accessible and provide key service and policy information.
 
 
 ## Video Surveillance
@@ -43,8 +37,6 @@ Subcategories:
 - [Body Cameras](https://securityking.com.ua/body-kamery/): Body-worn video recorders from Tecsar, Recoda and Boblov.
 - [CCTV Accessories](https://securityking.com.ua/aksesuary-videosposterezhennia/): Junction boxes, wall and telescopic brackets and mounting boxes for cameras from Atis, Hikvision and Provision-ISR.
 
-> All URLs use a flat, single-level structure without nested folders.
-
 
 ## Alarm Systems
 
@@ -63,8 +55,6 @@ Subcategories:
 - [Signal Repeaters](https://securityking.com.ua/retransliatory-syhnalu/): Radio signal range extenders for Ajax, U-Prox and Hikvision systems.
 - [Alarm Accessories](https://securityking.com.ua/aksesuary-okhoronny/): Batteries, power supplies, GPRS modules, backup power kits and other add-ons for Ajax, Hikvision and U-Prox systems.
 
-> All URLs use a flat, single-level structure without nested folders.
-
 
 ## Intercoms
 
@@ -81,8 +71,6 @@ Subcategories:
 - [Audio Intercoms](https://securityking.com.ua/audiodomofony/): BCOM audio handsets, Hikvision audio intercoms and Slinex intercom devices.
 - [Intercom Memory Cards](https://securityking.com.ua/karty-domofony/): microSD cards for intercoms from Hikvision, Kingston, Ezviz and Imou.
 - [Intercom Accessories](https://securityking.com.ua/aksesuary-domofoni/): Expansion modules, brackets, adapters, splitters and power supplies for Slinex, Atis and Dahua intercoms.
-
-> All URLs use a flat, single-level structure without nested folders.
 
 
 ## Smart Home
@@ -101,8 +89,6 @@ Subcategories:
 - [Smart Relays](https://securityking.com.ua/rozumni-rele/): Low-voltage and power relays for remote control of appliances from Ajax, Trinix, Atis and U-Prox.
 - [Integration Modules](https://securityking.com.ua/moduli-intehratsii/): Expansion and integration modules for Ajax, Hikvision, U-Prox and Atis systems.
 - [Repeaters](https://securityking.com.ua/retransliatory/): Range extenders for smart home devices from Trinix.
-
-> All URLs use a flat, single-level structure without nested folders.
 
 
 ## Access Control Systems
@@ -131,8 +117,6 @@ Subcategories:
 - [Parking Barriers](https://securityking.com.ua/parkuvalni-bariery/): Parking barriers, parking blockers and remote controls from ZKTeco and Atis.
 - [Access Control Accessories](https://securityking.com.ua/aksesuary-kontrol-dostupu/): Flexible door loops, brackets, mounting cabinets and other parts from Yli Electronic, Atis and ZKTeco.
 
-> All URLs use a flat, single-level structure without nested folders.
-
 
 ## Power Systems
 
@@ -155,45 +139,28 @@ Subcategories:
 - [Solar Panels](https://securityking.com.ua/soniachni-paneli/): Solar panels for power stations and cameras from Kraft, Reolink, Full Energy and EcoFlow.
 - [Power Accessories](https://securityking.com.ua/aksesuary-systemy-zhyvlennia/): Battery packs, connectors, adapter cables, transformers and battery balancers from Atis, Trinix and Kraft.
 
-> All URLs use a flat, single-level structure without nested folders.
-
 
 ## Network Equipment
 
 Networking devices and accessories are located under:
 
-- [Network Equipment](https://securityking.com.ua/merezheve-obladnannia/): Main category for network hardware.
+- [Network Equipment](https://securityking.com.ua/merezheve-obladnannia/): Main category for network hardware, including PoE switches.
 
 Subcategories:
 
-- [Wi-Fi Routers](https://securityking.com.ua/wi-fi-routery/): Category for Wi-Fi routers.
-- [Access Points](https://securityking.com.ua/tochky-dostupu/): Category for wireless access points.
 - [Switches](https://securityking.com.ua/komutatory/): PoE switches from Dahua.
-- [PoE Injectors](https://securityking.com.ua/poe-inzhektory/): Category for Power over Ethernet injectors.
-- [PoE Splitters](https://securityking.com.ua/poe-splitery/): Category for Power over Ethernet splitters.
-- [Network Accessories](https://securityking.com.ua/aksesuary-merezheve-obladnannia/): Category for network equipment accessories.
-
-> All URLs use a flat, single-level structure without nested folders.
 
 
-## Cable & Mounting
+## Cable
 
-Cable products, mounting materials and tools are located under:
+Cable products are located under:
 
-- [Cable](https://securityking.com.ua/kabel/): Main category for cables, cable ducts and cable tools.
+- [Cable](https://securityking.com.ua/kabel/): Main category for cables, including twisted pair and coaxial cable.
 
 Subcategories:
 
 - [Twisted Pair](https://securityking.com.ua/vyta-para/): Twisted pair cable for IP networks from OK-Net and Atis.
-- [Signal Cable](https://securityking.com.ua/syhnalnyi-kabel/): Category for signal cable for alarm systems.
 - [Coaxial Cable](https://securityking.com.ua/koaksialnyi-kabel/): Coaxial and combined coaxial cable from Atis, Odeskabel and Finmark.
-- [Power Cable](https://securityking.com.ua/sylovoi-kabel/): Category for power cable.
-- [Fiber Optic Cable](https://securityking.com.ua/optychnyi-kabel/): Category for fiber optic cable.
-- [Fire Cable](https://securityking.com.ua/pozhezhnyi-kabel/): Category for fire-resistant cable.
-- [Cable Ducts](https://securityking.com.ua/korob/): Category for cable ducts.
-- [Cable Tools](https://securityking.com.ua/instrumenty-dlia-kabeliu/): Category for cable installation tools.
-
-> All URLs use a flat, single-level structure without nested folders.
 
 
 ## Other Categories
@@ -202,8 +169,6 @@ Additional product categories are located under:
 
 - [Used Equipment](https://securityking.com.ua/vzhyvane/): Used Ajax equipment at reduced prices: detectors, hubs, range extenders, keypads and buttons.
 - [Other](https://securityking.com.ua/inshe/): Products outside the main catalog sections.
-
-> All URLs use a flat, single-level structure without nested folders.
 
 
 ## Brand Pages
@@ -229,7 +194,9 @@ Examples:
 - [Slinex](https://securityking.com.ua/slinex)
 - [ZKTeco](https://securityking.com.ua/zkteco)
 
-> Each brand page lists all of the manufacturer's products available in the store. All brand pages are publicly accessible under root-level paths.
+Other brands with their own pages include Akuvox, AlphaESS, Atis, BCOM, Boblov, Dortec, Faraday Electronics, Full Energy, Kingston, Kraft, LogicPower, Mean Well, NeoLight, Odeskabel, Provision-ISR, Recoda, Ritar, Ryobi, Samsung, SanDisk, Seagate, Step4Net, Tecsar, Trinix, U-Prox, Utepo, Via Energy, ViaSecurity, Western Digital, Yale, Yli Electronic and Zendure.
+
+> Each brand page lists all of the manufacturer's products available in the store.
 
 
 ## Brand + Category Pages
@@ -252,7 +219,7 @@ Examples:
 - [Dahua Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-dahua)
 - [Hikvision Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-hikvision)
 
-> These pages exist for the main camera and recorder brands and camera types. All are publicly accessible.
+> These pages exist for the main camera and recorder brands and camera types.
 
 
 ## Product Pages
@@ -268,8 +235,6 @@ Examples:
 - [4 MP IP Camera Hikvision DS-2CD2E43G2-U (2.8 mm)](https://securityking.com.ua/hikvision-ds-2cd2e43g2-u-2-8mm)
 - [5 MP HDCVI Camera Dahua DH-HAC-HFW1500DP (3.6 mm) Starlight](https://securityking.com.ua/dahua-dh-hac-hfw1500dp-3-6mm)
 - [IP Call Panel Slinex UMA](https://securityking.com.ua/slinex-uma)
-
-> All product pages are publicly accessible at root-level URLs.
 
 
 ## Blog Posts
@@ -294,4 +259,8 @@ Examples:
 - [How to Choose a Security System for a House](https://securityking.com.ua/yak-vybraty-systemu-bezpeky-dlia-budynku)
 - [Ajax WaterStop: Reliable Anti-Flood System](https://securityking.com.ua/ajax-waterstop-nadiina-antypotop-systema)
 
-> All articles are publicly accessible via root-level URLs and aggregated on the `/blog/` page.
+
+## Optional
+
+- [XML Sitemap](https://securityking.com.ua/sitemap.xml): Complete list of all page URLs, including every product.
+- [XML Sitemap (Russian)](https://securityking.com.ua/ru/sitemap.xml): URLs of the Russian-language version of the site.
