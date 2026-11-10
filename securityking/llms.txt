@@ -1,266 +1,103 @@
 # Security King
 
-> Security King is a Kyiv-based online store of security systems with delivery across Ukraine. The store sells video surveillance, alarm systems, intercoms, access control and electric locks, smart home devices and backup power equipment from Hikvision, Dahua, Ajax, Reolink, Imou, Ezviz, ZKTeco, Deye, EcoFlow and other brands. Customers get help choosing equipment, official manufacturer warranty of up to 5 years, installation by qualified engineers and 24/7 security monitoring with rapid response teams.
+> Security King (securityking.com.ua) is a Ukrainian multi-brand online store of security and backup power equipment, with a pickup point in Kyiv and delivery across Ukraine. Besides selling equipment, the company advises on equipment selection and installs and configures it.
 
-- Site language: Ukrainian, with a Russian version under `/ru/`.
-- Prices are in Ukrainian hryvnia (UAH); delivery covers all of Ukraine.
-- Categories, products, brands and blog articles use root-level URLs (`https://securityking.com.ua/[slug]`); brand + category filter pages are nested under their parent category.
-- All listed pages are publicly accessible.
+Key facts (as of 2026-11-06):
 
+- Business type: retailer, not a manufacturer. Seller: sole proprietor (FOP); legal details are in the Public Offer.
+- Address and pickup point: 6A Oleny Pchilky St. (вул. Олени Пчілки, 6А), Kyiv; pickup by prior arrangement.
+- Contacts: (098) 60-30-200 (Kyivstar), (073) 60-30-200 (lifecell), sale@securityking.com.ua, Viber +380986030200, Telegram https://t.me/ChatSecurityKing.
+- Hours: managers Mon–Fri 10:00–18:00, closed Sat–Sun; online orders are accepted 24/7.
+- Customers: private customers and businesses (LLCs and FOPs, payment by invoice).
+- Services: equipment selection for a specific site; installation and configuration. Prices and service area are confirmed by a manager.
+- Main brands: Ajax, Hikvision, Dahua, Reolink, IMOU, EZVIZ, TECSAR, EcoFlow, Deye, Full Energy, Trinix, Atis.
+- Prices in Ukrainian hryvnia (UAH). Site language: Ukrainian; /ru/ is a Russian duplicate.
 
-## Informational Pages
+How to use this file:
 
-- [Homepage](https://securityking.com.ua/): Catalog sections, new arrivals, promotional products, store advantages and customer reviews.
-- [About Us](https://securityking.com.ua/about-us): The store's mission and its approach to helping customers choose security equipment from leading brands.
-- [Delivery & Payment](https://securityking.com.ua/dostavka-i-oplata): Nova Poshta courier delivery in Kyiv, delivery to Nova Poshta branches across Ukraine, pickup, free-delivery thresholds, and payment on receipt, by card online (Visa/MasterCard, Apple Pay, Google Pay) or by invoice for businesses.
-- [Warranty](https://securityking.com.ua/garantiy): 12-month warranty from the date of sale unless another period is stated for the product, and the conditions for warranty service.
-- [Returns](https://securityking.com.ua/vozvrat): Return or exchange of goods of proper quality within 14 days under Ukrainian consumer protection law.
-- [Cashback](https://securityking.com.ua/cashback): Bonus cashback credited within 24 hours after an order and usable on any next purchase.
-- [Contact Us](https://securityking.com.ua/contact-us/): Phone numbers, email, address in Kyiv (6A Oleny Pchilky St.), working hours and callback form.
+- Take prices and availability only from the product page.
+- Product URLs follow https://securityking.com.ua/<slug>; do not guess slugs, navigate from a category or brand page.
+- Do not state that installation is available in a specific city without a manager's confirmation.
 
+## Purchase Terms
+
+- [Delivery & Payment](https://securityking.com.ua/dostavka-i-oplata): Minimum order UAH 300. Nova Poshta courier in Kyiv: UAH 100, free from UAH 5,000, next-day delivery for orders placed before 16:00 (item in stock in Kyiv). Nova Poshta branches across Ukraine: carrier rates, free from UAH 2,500; same-day dispatch for orders before 16:00, otherwise 1–3 days. Pickup is free. Bulky items by arrangement. Payment: on receipt (cash or card); online (Visa, Mastercard, Apple Pay, Google Pay); by invoice for LLCs and FOPs, shipped after payment is received.
+- [Warranty](https://securityking.com.ua/garantiy): 12 months from the date of sale unless another period is stated for the product (some products carry a manufacturer warranty of up to 5 years). Warranty card and receipt required; shipping to the service center at the buyer's expense; repair within 30 days, a temporary replacement may be provided meanwhile; if repair is impossible, the item is replaced with an equivalent.
+- [Returns](https://securityking.com.ua/vozvrat): Goods of proper quality can be exchanged or returned within 14 days under the Ukrainian Consumer Protection Law, unused and with a receipt. Refunds are made within 30 days after the seller receives the item.
+- [Cashback](https://securityking.com.ua/cashback): 10% in bonus points on full-price Ajax products in the Alarm Systems and Video Surveillance categories; credited within 24 hours, spent on the next order; not available for used equipment.
+- [Contact Us](https://securityking.com.ua/contact-us/): Phone numbers, address, working hours, callback request.
+- [Public Offer](https://securityking.com.ua/publichna-oferta): Sales contract and seller's legal details.
 
 ## Video Surveillance
 
-Video surveillance products and accessories are located under:
-
-- [Video Surveillance](https://securityking.com.ua/videosposterezhennia/): Main category with cameras, recorders, CCTV kits, storage and accessories from Dahua, Hikvision, Ajax and other brands.
-
-Subcategories:
-
+- [Video Surveillance](https://securityking.com.ua/videosposterezhennia/): Cameras, recorders, kits, hard drives, memory cards, microphones, body cameras, video signal transmitters, brackets.
 - [CCTV Kits](https://securityking.com.ua/komplekty-videosposterezhennia/): Ready-made video surveillance kits from Hikvision, Reolink, Ajax, Dahua and ZKTeco.
-- [Surveillance Cameras](https://securityking.com.ua/kamery-videosposterezhennia/): IP, HDCVI, Wi-Fi and 4G cameras, including battery-powered models with solar panels, from Dahua, Hikvision, Tecsar, Ajax, Reolink, Imou and Ezviz.
+- [Surveillance Cameras](https://securityking.com.ua/kamery-videosposterezhennia/): IP, HDCVI, Wi-Fi and 4G cameras, including battery-powered models with solar panels, from Dahua, Hikvision, TECSAR, Ajax, Reolink, IMOU and EZVIZ.
+- [3G/4G Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-4g): SIM-card cameras for sites without internet, including battery and solar-powered models.
+- [Battery-Powered Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-z-akumuliatorom): Autonomous cameras with a battery and solar panel, no cabling required.
+- [Wi-Fi Cameras](https://securityking.com.ua/kamery-videosposterezhennia/wi-fi-kamery): Home cameras controlled from a smartphone.
 - [Video Recorders](https://securityking.com.ua/videoreiestratory/): NVR, XVR and TurboHD recorders from Hikvision, Provision-ISR, Dahua, Ajax and Reolink.
-- [Hard Drives](https://securityking.com.ua/zhorstki-dysky/): Hard drives for video recorders, mainly Western Digital Purple, plus Hikvision drives and Kingston SSDs.
-- [Video Signal Transmitters](https://securityking.com.ua/peredavachi-videosyhnalu/): Video receiver-transmitters, PoC transmitters, HDMI extenders and PoE switches from Atis, Dahua and Utepo.
-- [Microphones](https://securityking.com.ua/mikrofony/): Audio microphones for CCTV systems from Dahua and Hikvision.
-- [Memory Cards](https://securityking.com.ua/kartky-pamiati/): microSD cards for cameras from Kingston, SanDisk, Dahua and Imou.
-- [Body Cameras](https://securityking.com.ua/body-kamery/): Body-worn video recorders from Tecsar, Recoda and Boblov.
-- [CCTV Accessories](https://securityking.com.ua/aksesuary-videosposterezhennia/): Junction boxes, wall and telescopic brackets and mounting boxes for cameras from Atis, Hikvision and Provision-ISR.
-
 
 ## Alarm Systems
 
-Alarm system products and accessories are located under:
-
-- [Alarm Systems](https://securityking.com.ua/okhoronni-syhnalizatsii/): Main category for intruder alarms: Ajax, Atis, U-Prox and Tiras kits, detectors, sirens and accessories.
-
-Subcategories:
-
+- [Alarm Systems](https://securityking.com.ua/okhoronni-syhnalizatsii/): Wireless and wired systems from Ajax, U-Prox, Tiras, Atis and Hikvision: control panels, detectors, sirens, keypads, key fobs, range extenders.
 - [Alarm Kits](https://securityking.com.ua/komplekty-syhnalizatsii/): Ready-made alarm kits, mostly Ajax, as well as U-Prox and Atis.
 - [Control Panels](https://securityking.com.ua/tsentrali/): Ajax hubs and Tiras, U-Prox, Atis and Hikvision control panels.
 - [Alarm Detectors](https://securityking.com.ua/datchyky-okhoronnoi-syhnalizatsii/): Opening, motion, outdoor and vibration detectors from Trinix, Atis, Ajax and U-Prox.
-- [Sirens](https://securityking.com.ua/syreny-dlia-syhnalizatsii/): Outdoor, indoor and personal sirens, mostly Atis.
-- [Keypads](https://securityking.com.ua/klaviatury-syhnalizatsii/): Alarm keypads from Tiras, U-Prox, Hikvision and Ajax.
-- [Key Fobs & Cards](https://securityking.com.ua/breloky-kartky/): Panic and multifunction buttons, key fobs and tags from Ajax, Hikvision and U-Prox.
-- [Signal Repeaters](https://securityking.com.ua/retransliatory-syhnalu/): Radio signal range extenders for Ajax, U-Prox and Hikvision systems.
-- [Alarm Accessories](https://securityking.com.ua/aksesuary-okhoronny/): Batteries, power supplies, GPRS modules, backup power kits and other add-ons for Ajax, Hikvision and U-Prox systems.
-
 
 ## Intercoms
 
-Intercom products and accessories are located under:
-
-- [Intercom Systems](https://securityking.com.ua/domofonni-systemy/): Main category for video intercom kits, monitors, call panels and doorbells from BCOM, NeoLight, Slinex, Hikvision and Dahua.
-
-Subcategories:
-
+- [Intercom Systems](https://securityking.com.ua/domofonni-systemy/): Video intercoms, call panels and audio intercoms from BCOM, NeoLight, Slinex, Hikvision and Dahua.
 - [Video Intercom Kits](https://securityking.com.ua/komplekty-videodomofoniv/): Intercom kits, including Wi-Fi kits, from BCOM and NeoLight.
-- [Video Intercoms](https://securityking.com.ua/videodomofony/): Indoor video intercom monitors from BCOM, NeoLight, Dahua, Dnake and Slinex.
-- [Call Panels](https://securityking.com.ua/vyklychni-paneli/): Outdoor call panels from NeoLight, BCOM, Slinex, Dahua and Provision-ISR.
-- [Video Doorbells](https://securityking.com.ua/videodzvinky/): Video doorbells from Reolink, Ajax, ZKTeco, Ezviz and Provision-ISR.
-- [Audio Intercoms](https://securityking.com.ua/audiodomofony/): BCOM audio handsets, Hikvision audio intercoms and Slinex intercom devices.
-- [Intercom Memory Cards](https://securityking.com.ua/karty-domofony/): microSD cards for intercoms from Hikvision, Kingston, Ezviz and Imou.
-- [Intercom Accessories](https://securityking.com.ua/aksesuary-domofoni/): Expansion modules, brackets, adapters, splitters and power supplies for Slinex, Atis and Dahua intercoms.
-
+- [Video Doorbells](https://securityking.com.ua/videodzvinky/): Video doorbells from Reolink, Ajax, ZKTeco, EZVIZ and Provision-ISR.
 
 ## Smart Home
 
-Smart home products are located under:
-
-- [Smart Home](https://securityking.com.ua/rozumnyi-budynok/): Main category for home automation, mostly Ajax, with Trinix and U-Prox devices.
-
-Subcategories:
-
+- [Smart Home](https://securityking.com.ua/rozumnyi-budynok/): Home automation, mostly Ajax: relays, sockets, switches, sensors, integration modules.
 - [Anti-Flood](https://securityking.com.ua/antypotop/): Leak protection kits, leak detectors and water shut-off valves, mostly Ajax, as well as U-Prox.
-- [Smart Home Sensors](https://securityking.com.ua/datchyky-rozumnoho-domu/): Gas leak, flood and other sensors, including Tuya Smart models, from Atis, Trinix, Ajax and Dahua.
-- [Smart Switches](https://securityking.com.ua/rozumni-vymykachi/): Smart touch light switches from Ajax, Trinix and Atis.
-- [Smart Sockets](https://securityking.com.ua/rozumni-rozetky/): Wi-Fi, built-in and outdoor smart sockets from Ajax, Atis and Trinix.
-- [Smart Lighting](https://securityking.com.ua/rozumni-lampochky/): Smart bulbs, table lamps, floor lamps and LED strips from Meross and Imou.
-- [Smart Relays](https://securityking.com.ua/rozumni-rele/): Low-voltage and power relays for remote control of appliances from Ajax, Trinix, Atis and U-Prox.
-- [Integration Modules](https://securityking.com.ua/moduli-intehratsii/): Expansion and integration modules for Ajax, Hikvision, U-Prox and Atis systems.
-- [Repeaters](https://securityking.com.ua/retransliatory/): Range extenders for smart home devices from Trinix.
-
 
 ## Access Control Systems
 
-Access control products and accessories are located under:
-
-- [Access Control](https://securityking.com.ua/kontrol-dostupu/): Main category for access control: locks, readers, controllers, exit buttons and door closers from Atis, Trinix, Yli Electronic, Dortec and ZKTeco.
-
-Subcategories:
-
-- [Access Control Kits](https://securityking.com.ua/komplekty-kontroliu-dostupu/): Smart lock kits, gate and door opening controllers and access control kits from Atis, Trinix and ZKTeco.
-- [Electric Locks](https://securityking.com.ua/elektrozamky/): Electromagnetic, electric bolt and electromechanical locks and smart locks from Yli Electronic, Atis, Trinix, Yale and ZKTeco.
-- [Electromagnetic Locks](https://securityking.com.ua/elektromahnitni-zamky/): Electromagnetic locks, mostly Yli Electronic, as well as Trinix.
-- [Electric Bolt Locks](https://securityking.com.ua/elektroryhelni-zamky/): Electric bolt locks, mostly Yli Electronic, as well as Trinix.
-- [Electromechanical Locks](https://securityking.com.ua/elektromekhanichni-zamky/): Electromechanical locks for doors and gates from Atis, Yli Electronic and Trinix.
-- [Electric Strikes](https://securityking.com.ua/elektromekhanichni-zashchipky/): Electromechanical door strikes from Yli Electronic and Trinix.
+- [Access Control](https://securityking.com.ua/kontrol-dostupu/): Electric locks, readers, controllers, exit buttons, door closers, access cards and parking barriers from Atis, Trinix, Yli Electronic, ZKTeco and U-Prox.
+- [Electric Locks](https://securityking.com.ua/elektrozamky/): Electromagnetic, electric bolt, electromechanical and motorized locks and electric strikes from Yli Electronic, Atis, Trinix and Yale.
 - [Smart Locks](https://securityking.com.ua/smart-zamky/): Biometric and smart locks from Trinix, Atis, ZKTeco, Yale and Ajax.
-- [Motorized Locks](https://securityking.com.ua/elektromotorni-zamky/): Motorized locks from Atis and Trinix.
-- [Lock Accessories](https://securityking.com.ua/aksesuary-dlia-zamkiv/): Flexible door loops, mounting brackets and cylinders for locks from Yli Electronic, Trinix and Yale.
-- [Readers](https://securityking.com.ua/zchytuvachi/): Mifare and EM card readers from ZKTeco, Atis, Dahua and U-Prox.
-- [Controllers](https://securityking.com.ua/kontrolery/): Network and standalone access controllers from U-Prox, ZKTeco, Dahua and Atis.
-- [Radio Controllers](https://securityking.com.ua/radiokontrolery/): Radio controller kits and key fobs from Yli Electronic.
-- [Door Closers](https://securityking.com.ua/dovodchyky-dverei/): Door closers from Dortec, Ryobi and Atis.
-- [Cards & Key Fobs](https://securityking.com.ua/kartky-breloky/): Access cards, key fobs and Mifare keys from Atis, U-Prox and ZKTeco.
-- [Exit Buttons](https://securityking.com.ua/knopky-vyhodu/): Exit and emergency release buttons from Yli Electronic, Trinix, Atis and ViaSecurity.
-- [Parking Barriers](https://securityking.com.ua/parkuvalni-bariery/): Parking barriers, parking blockers and remote controls from ZKTeco and Atis.
-- [Access Control Accessories](https://securityking.com.ua/aksesuary-kontrol-dostupu/): Flexible door loops, brackets, mounting cabinets and other parts from Yli Electronic, Atis and ZKTeco.
-
 
 ## Power Systems
 
-Power supply products and accessories are located under:
-
-- [Power Systems](https://securityking.com.ua/systemy-zhyvlennia/): Main category for power supplies, batteries, UPS units, inverters and power stations from Full Energy, Ajax, Trinix and Kraft.
-
-Subcategories:
-
+- [Power Systems](https://securityking.com.ua/systemy-zhyvlennia/): Power for security systems and homes during blackouts: from 12 V power supplies and 220 V UPS units to hybrid inverters.
 - [Backup Power Kits](https://securityking.com.ua/komplekty-rezervnoho-zhyvlennia/): Uninterruptible and backup power kits from Full Energy, Trinix, Kraft and Ajax.
-- [Power Stations](https://securityking.com.ua/zariadni-stantsii/): Portable power stations from EcoFlow, Kraft, Full Energy, Ezviz and Zendure.
-- [Powerbanks](https://securityking.com.ua/powerbanky/): Powerbanks from Videx and Kraft.
-- [Power Supplies](https://securityking.com.ua/bloky-zhyvlennia/): Power supplies for security equipment from Full Energy and Via Energy.
-- [UPS 12-48V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-12v/): Low-voltage uninterruptible power supplies and UPS boards from Via Energy and Full Energy.
-- [UPS 220V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-220v/): Off-grid and line-interactive 220V UPS units from Full Energy and Kraft.
+- [Power Stations](https://securityking.com.ua/zariadni-stantsii/): Portable power stations from EcoFlow, Kraft, Full Energy, EZVIZ and Zendure.
+- [UPS 12-48V](https://securityking.com.ua/bloky-bezperebiinoho-zhyvlennia-12v/): Low-voltage uninterruptible power supplies and UPS boards from Via Energy and Full Energy, including DIN-rail models.
 - [UPS for Routers](https://securityking.com.ua/bezperebiinyky-router/): Mini UPS units for Wi-Fi routers and optical terminals from Full Energy, Trinix, SKE and Step4Net.
-- [Batteries](https://securityking.com.ua/akumuliatory/): Gel and LiFePO4 batteries for alarm systems and backup power from Full Energy, Deye and Trinix.
-- [Batteries (Household)](https://securityking.com.ua/batareiky/): Batteries for Ajax devices and other sensors from Ajax, Trinix and Full Energy.
+- [Batteries](https://securityking.com.ua/akumuliatory/): AGM, gel and LiFePO4 12 V batteries for alarm systems and backup power from Full Energy, Ritar, Deye and Trinix.
 - [Inverters](https://securityking.com.ua/invertory/): Hybrid inverters, LiFePO4 battery modules and accessories from Deye and Full Energy.
 - [Solar Panels](https://securityking.com.ua/soniachni-paneli/): Solar panels for power stations and cameras from Kraft, Reolink, Full Energy and EcoFlow.
-- [Power Accessories](https://securityking.com.ua/aksesuary-systemy-zhyvlennia/): Battery packs, connectors, adapter cables, transformers and battery balancers from Atis, Trinix and Kraft.
-
-
-## Network Equipment
-
-Networking devices and accessories are located under:
-
-- [Network Equipment](https://securityking.com.ua/merezheve-obladnannia/): Main category for network hardware, including PoE switches.
-
-Subcategories:
-
-- [Switches](https://securityking.com.ua/komutatory/): PoE switches from Dahua.
-
-
-## Cable
-
-Cable products are located under:
-
-- [Cable](https://securityking.com.ua/kabel/): Main category for cables, including twisted pair and coaxial cable.
-
-Subcategories:
-
-- [Twisted Pair](https://securityking.com.ua/vyta-para/): Twisted pair cable for IP networks from OK-Net and Atis.
-- [Coaxial Cable](https://securityking.com.ua/koaksialnyi-kabel/): Coaxial and combined coaxial cable from Atis, Odeskabel and Finmark.
-
 
 ## Other Categories
 
-Additional product categories are located under:
-
+- [Cable](https://securityking.com.ua/kabel/): Twisted pair (OK-Net, Atis), coaxial and combined coaxial cable (Atis, Odeskabel, Finmark).
 - [Used Equipment](https://securityking.com.ua/vzhyvane/): Used Ajax equipment at reduced prices: detectors, hubs, range extenders, keypads and buttons.
-- [Other](https://securityking.com.ua/inshe/): Products outside the main catalog sections.
-
 
 ## Brand Pages
 
-All brand profiles are located under a flat URL structure:
-
-- [Brands Overview](https://securityking.com.ua/brands/): Main page listing all brands available in the store.
-
-Brand-specific pages follow the pattern:
-
-- URL pattern: https://securityking.com.ua/[brand-slug]
-
-Examples:
-
-- [AJAX](https://securityking.com.ua/ajax)
-- [Dahua](https://securityking.com.ua/dahua)
-- [Deye](https://securityking.com.ua/deye)
-- [EcoFlow](https://securityking.com.ua/ecoflow)
-- [Ezviz](https://securityking.com.ua/ezviz)
-- [Hikvision](https://securityking.com.ua/hikvision)
-- [IMOU](https://securityking.com.ua/imou)
-- [Reolink](https://securityking.com.ua/reolink)
-- [Slinex](https://securityking.com.ua/slinex)
-- [ZKTeco](https://securityking.com.ua/zkteco)
-
-Other brands with their own pages include Akuvox, AlphaESS, Atis, BCOM, Boblov, Dortec, Faraday Electronics, Full Energy, Kingston, Kraft, LogicPower, Mean Well, NeoLight, Odeskabel, Provision-ISR, Recoda, Ritar, Ryobi, Samsung, SanDisk, Seagate, Step4Net, Tecsar, Trinix, U-Prox, Utepo, Via Energy, ViaSecurity, Western Digital, Yale, Yli Electronic and Zendure.
-
-> Each brand page lists all of the manufacturer's products available in the store.
-
-
-## Brand + Category Pages
-
-Product listings by brand and product type are located inside their parent category:
-
-- URL pattern: https://securityking.com.ua/[category-slug]/[filter-slug]
-
-Examples:
-
-- [AJAX Cameras](https://securityking.com.ua/kamery-videosposterezhennia/ajax-cameras)
-- [Dahua Cameras](https://securityking.com.ua/kamery-videosposterezhennia/dahua-cameras)
-- [Hikvision Cameras](https://securityking.com.ua/kamery-videosposterezhennia/hikvision-cameras)
-- [Reolink Cameras](https://securityking.com.ua/kamery-videosposterezhennia/reolink-cameras)
-- [Wi-Fi Cameras](https://securityking.com.ua/kamery-videosposterezhennia/wi-fi-kamery)
-- [Outdoor Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-na-vulytsiu)
-- [Battery-Powered Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-z-akumuliatorom)
-- [4G Cameras](https://securityking.com.ua/kamery-videosposterezhennia/kamery-4g)
-- [AJAX Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-ajax)
-- [Dahua Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-dahua)
-- [Hikvision Video Recorders](https://securityking.com.ua/videoreiestratory/videoreiestratory-hikvision)
-
-> These pages exist for the main camera and recorder brands and camera types.
-
-
-## Product Pages
-
-The store offers a wide range of security products across all categories.
-
-All product pages use root-level URLs without folder structure:
-
-- URL pattern: https://securityking.com.ua/[product-slug]
-
-Examples:
-
-- [4 MP IP Camera Hikvision DS-2CD2E43G2-U (2.8 mm)](https://securityking.com.ua/hikvision-ds-2cd2e43g2-u-2-8mm)
-- [5 MP HDCVI Camera Dahua DH-HAC-HFW1500DP (3.6 mm) Starlight](https://securityking.com.ua/dahua-dh-hac-hfw1500dp-3-6mm)
-- [IP Call Panel Slinex UMA](https://securityking.com.ua/slinex-uma)
-
+- [Brands](https://securityking.com.ua/brands/): All brands in the store; a brand page at https://securityking.com.ua/<brand> lists all of its products.
+- [Ajax](https://securityking.com.ua/ajax): Ukrainian manufacturer of wireless security systems: alarms, cameras, smart home, anti-flood.
+- [Dahua](https://securityking.com.ua/dahua): IP and HDCVI cameras, recorders, intercoms, PoE switches.
+- [Deye](https://securityking.com.ua/deye): Hybrid inverters and LiFePO4 batteries.
+- [EcoFlow](https://securityking.com.ua/ecoflow): Portable power stations and solar panels.
+- [Hikvision](https://securityking.com.ua/hikvision): IP and TurboHD cameras, recorders, intercoms.
+- [Reolink](https://securityking.com.ua/reolink): Wi-Fi, PoE and battery cameras, kits, video doorbells.
+- [TECSAR](https://securityking.com.ua/tecsar): 4G and solar-powered cameras, body cameras.
+- [ZKTeco](https://securityking.com.ua/zkteco): Access control, smart locks, readers, CCTV kits, parking barriers.
 
 ## Blog Posts
 
-All blog articles are listed on the main blog page:
-
-- [Blog Overview](https://securityking.com.ua/blog/): Articles, news, reviews and tips about security systems.
-
-Blog sections:
-
-- [News](https://securityking.com.ua/novyny/): News about new products, such as the Ajax Superior product line.
-- [Articles](https://securityking.com.ua/statti/): Articles about video surveillance technology, cloud storage, low-light recording, alarm system basics and protecting detectors from tampering.
-- [Reviews](https://securityking.com.ua/ohliady/): Reviews of specific devices, such as Ajax FireProtect 2 and Ajax KeyPad TouchScreen.
-- [Useful](https://securityking.com.ua/korysne/): Practical tips, such as keeping Ajax running during power outages and the benefits of professional monitoring.
-
-Blog articles have clean, flat URLs without the `/blog/` prefix:
-
-- URL pattern: https://securityking.com.ua/[article-slug]
-
-Examples:
-
-- [How to Choose a Security System for a House](https://securityking.com.ua/yak-vybraty-systemu-bezpeky-dlia-budynku)
-- [Ajax WaterStop: Reliable Anti-Flood System](https://securityking.com.ua/ajax-waterstop-nadiina-antypotop-systema)
-
+- [Blog](https://securityking.com.ua/blog/): Articles, news, device reviews (Ajax FireProtect 2, Ajax KeyPad TouchScreen) and practical tips, including keeping Ajax running during power outages.
+- [How to Choose a Security System for a House](https://securityking.com.ua/yak-vybraty-systemu-bezpeky-dlia-budynku): Tips on choosing a security system for a private house.
+- [Ajax WaterStop: Reliable Anti-Flood System](https://securityking.com.ua/ajax-waterstop-nadiina-antypotop-systema): How the Ajax WaterStop valve shuts off water automatically or remotely from the Ajax app.
 
 ## Optional
 
-- [XML Sitemap](https://securityking.com.ua/sitemap.xml): Complete list of all page URLs, including every product.
-- [XML Sitemap (Russian)](https://securityking.com.ua/ru/sitemap.xml): URLs of the Russian-language version of the site.
+- [About Us](https://securityking.com.ua/about-us): A short note on the store's mission.
+- [Network Equipment](https://securityking.com.ua/merezheve-obladnannia/): A few Dahua PoE switches.
+- [Privacy Policy](https://securityking.com.ua/politic): Processing of customers' personal data.
